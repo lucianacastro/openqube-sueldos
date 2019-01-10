@@ -11,8 +11,8 @@ class Header extends Component {
               <img src='https://openqube.io/img/logo-text.png' className='header-logo-img' />
             </a>
             <div className='header-slogan'>
-              <span className="header-slogan-slash" data-reactid="12">/</span>
-              <span class="header-slogan-text" data-reactid="13">Lo que no te cuentan en la entrevista</span>
+              <span className="header-slogan-slash">/</span>
+              <span class="header-slogan-text">Lo que no te cuentan en la entrevista</span>
             </div>
           </div>
         </div>

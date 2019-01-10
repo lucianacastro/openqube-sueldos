@@ -1,10 +1,25 @@
 
+body {
+  background-color: #20005C;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.42857;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+header {
+  padding: 20px 0px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
 header .container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .header-brand {
@@ -21,7 +36,6 @@ header .container {
   color: #999;
   display: inline-block;
   font-size: 12px;
-  font-weight: 600;
   margin: 0px;
   vertical-align: 2px;
 }
@@ -33,6 +47,10 @@ header .container {
   margin: 0px 10px 0px 0px;
   vertical-align: middle;
 }
+.header-slogan-text {
+  vertical-align: middle;
+  font-weight: 600;
+}
 
 
 
@@ -41,14 +59,26 @@ header .container {
       width: 992px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   header .container {
     width: 970px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   header .container {
     width: 750px;
   }
 }
 
+@media (max-width: 768px) {
+  header{
+    height: 103px;
+    box-sizing: border-box;
+  }
+  .header-slogan {
+    display: none;
+  }
+  .header-brand {
+    float: initial;
+  }
+}
