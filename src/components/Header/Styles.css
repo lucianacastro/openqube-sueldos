@@ -1,0 +1,54 @@
+
+header .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header-brand {
+    float: left;
+}
+
+.header-logo-img {
+  margin: 0px 20px 0px 0px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.header-slogan {
+  color: #999;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0px;
+  vertical-align: 2px;
+}
+
+.header-slogan-slash {
+  color: rgba(0,0,0,0.1);
+  font-size: 46px;
+  font-weight: 300;
+  margin: 0px 10px 0px 0px;
+  vertical-align: middle;
+}
+
+
+
+@media (min-width: 1200px) {
+  header .container {
+      width: 992px;
+  }
+}
+@media (min-width: 992px) {
+  header .container {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) {
+  header .container {
+    width: 750px;
+  }
+}
+
