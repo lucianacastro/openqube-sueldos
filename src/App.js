@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Header from './components/Header';
+import SectionTitle from './components/SectionTitle';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <SectionTitle title='Geography' id='geography'/>
         <Footer />
       </div>
     );
