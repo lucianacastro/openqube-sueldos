@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 import Container from '../Container';
+import SectionTitle from '../SectionTitle';
+import SectionTabs from '../SectionTabs';
 import './Styles.css';
 
-class SectionTitle extends Component {
+class Section extends Component {
   static propTypes = {
     title: PropTypes.string,
     titleId: PropTypes.string,
@@ -13,18 +15,16 @@ class SectionTitle extends Component {
   static defaultProps = {
     title: '',
     titleId: '',
-    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Purple_circle_100%25.svg',
+    
   }
   render() {
     return (
       <Container>
-        <h1 className='section-title' id={this.props.titleId}>
-          <img href={this.props.iconUrl}/>
-          <a src={'#' + this.props.titleId}>{this.props.title}</a>
-        </h1>
+        <SectionTitle title={this.props.title} titleId={this.props.titleId}/>
+        <SectionTabs />
       </Container>
     )
   }
 }
 
-export default SectionTitle;
+export default Section;

@@ -7,3 +7,8 @@
     text-decoration: none;
     color: #623296;
 }
+
+.section-title img {
+    width: 10px;
+    height: 10px;
+}
