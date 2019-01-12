@@ -8,25 +8,25 @@ class Tab extends Component {
   static displayName = "Tab";
 
   static propTypes = {
-    item: PropTypes.string,
+    label: PropTypes.string,
     activeTab: PropTypes.string,
     onClick: PropTypes.func
   }
   static defaultProps = {
-    item: '',
+    label: '',
     activeTab: '',
   }
 
   onClick = () => {
-    const { item, onClick } = this.props;
-    onClick(item);
+    const { label, onClick } = this.props;
+    onClick(label);
   }
 
   render() {
-    const { item, activeTab } = this.props;
+    const { label, activeTab } = this.props;
     return (
-      <li onClick={this.onClick} className={cn('tabs-item', activeTab === item ? 'active' : '')} >
-        {item}
+      <li onClick={this.onClick} className={cn('tabs-item', activeTab === label ? 'active' : '')} >
+        {label}
       </li>
     )
   }

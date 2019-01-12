@@ -9,14 +9,14 @@ class Tabs extends Component {
   static displayName = "Tabs";
 
   static propTypes = {
-    tabsList: PropTypes.array,
+    data: PropTypes.array,
   }
   static defaultProps = {
-    tabsList: ['title1', 'title2', 'title3'],
+    data: ['title1', 'title2', 'title3'],
   }
 
   state = {
-    activeTab: this.props.tabsList[0]
+    activeTab: this.props.data[0].title
   };
 
   onClickTabItem = (tab) => {
@@ -24,17 +24,19 @@ class Tabs extends Component {
   }
 
   render() {
-    const { tabsList } = this.props;
+    const { data } = this.props;
     return (
-      <Container>
+      <React.Fragment>
         <div className='tabs-wrapper'>
           <ul className='tabs-list'>
-            {tabsList.map(item => (
-              <Tab key={item} item={item} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
+            {data.map(item => (
+              item.title && <Tab key={item.title} label={item.title} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
             ))}
           </ul>
+          <div className='tab-content'>
+          </div>
         </div>
-      </Container>
+      </React.Fragment>
     )
   }
 }

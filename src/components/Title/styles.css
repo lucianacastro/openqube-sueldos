@@ -1,0 +1,19 @@
+.title {
+  text-align: left;
+  color: #623296;
+}
+.title.category {
+  font-size: 26px;
+}
+.title.subcategory {
+  font-size: 22px;
+}
+
+.title.section {
+  font-size: 18px;
+}
+
+.title a {
+  text-decoration: none;
+  color: #623296;
+}
