@@ -17,17 +17,16 @@ class Tab extends Component {
     activeTab: '',
   }
 
-  onClick = (event) => {
+  onClick = () => {
     const { item, onClick } = this.props;
     onClick(item);
-    event.preventDefault();
   }
 
   render() {
     const { item, activeTab } = this.props;
     return (
-      <li className={cn('tabs-item', activeTab === item ? 'active' : '')} >
-        <a href='' onClick={this.onClick} className='tabs-item-link'> {item} </a>
+      <li onClick={this.onClick} className={cn('tabs-item', activeTab === item ? 'active' : '')} >
+        {item}
       </li>
     )
   }
