@@ -30,7 +30,7 @@ class Tabs extends Component {
         <div className='tabs-wrapper'>
           <ul className='tabs-list'>
             {tabsList.map(item => (
-              <Tab item={item} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
+              <Tab key={item} item={item} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
             ))}
           </ul>
         </div>

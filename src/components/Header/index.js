@@ -12,7 +12,7 @@ class Header extends Component {
             </a>
             <div className='header-slogan'>
               <span className="header-slogan-slash">/</span>
-              <span class="header-slogan-text">Lo que no te cuentan en la entrevista</span>
+              <span className="header-slogan-text">Lo que no te cuentan en la entrevista</span>
             </div>
           </div>
         </div>
