@@ -34,13 +34,18 @@ class Title extends Component {
       case 'category':
       default:
         return (
+
           <h1 className={cn('title', this.props.type)} id={this.props.titleId}>
+            <div className='color-bar'>
+              <span className='color-bar-section-1' />
+              <span className='color-bar-section-2' />
+              <span className='color-bar-section-3' />
+            </div>
             <a href={'#' + this.props.titleId}>{this.props.title}</a>
           </h1>
         )
     }
   }
-
 
   render() {
     return (
