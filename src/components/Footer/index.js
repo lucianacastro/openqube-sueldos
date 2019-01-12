@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Container from '../Container';
-import './Styles.css';
+import './styles.css';
 
 class Header extends Component {
   render() {

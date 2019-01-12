@@ -1,14 +1,9 @@
-.section-title {
+.title {
     text-align: left;
     color: #623296;
     font-size: 22px;
 }
-.section-title a {
+.title a {
     text-decoration: none;
     color: #623296;
-}
-
-.section-title img {
-    width: 10px;
-    height: 10px;
 }
