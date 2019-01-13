@@ -1,0 +1,9 @@
+ .main {
+  width: 100%;
+  padding: 60px 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #fff; 
+}
+
+

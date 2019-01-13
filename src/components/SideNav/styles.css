@@ -1,0 +1,8 @@
+.side-nav-wrapper {
+    float: left;
+    width: calc((100% / 12 * 4) - 10px);
+    height: 500px;
+    margin-right: 10px; 
+    border: 1px solid #623296;
+    box-sizing: border-box;
+}
