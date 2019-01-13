@@ -16,11 +16,12 @@ class Tabs extends Component {
   }
 
   state = {
-    activeTab: this.props.data[0].title
+    activeTab: this.props.data[0].title,
+    activeTabIndex: 0
   };
 
-  onClickTabItem = (tab) => {
-    this.setState({ activeTab: tab });
+  onClickTabItem = (tab, tabIndex) => {
+    this.setState({ activeTab: tab, activeTabIndex: tabIndex });
   }
 
   render() {
@@ -28,13 +29,21 @@ class Tabs extends Component {
     return (
       <React.Fragment>
         <div className='tabs-wrapper'>
-          <ul className='tabs-list'>
-            {data.map(item => (
-              item.title && <Tab key={item.title} label={item.title} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
-            ))}
-          </ul>
-          <div className='tab-content'>
-          </div>
+          {data.length > 1 &&
+            <ul className='tabs-list'>
+              {data.map((item, index) => (
+                <Tab key={item.title} label={item.title} labelIndex={index} activeTab={this.state.activeTab} onClick={this.onClickTabItem}></Tab>
+              ))}
+            </ul>
+          }
+          {data.map((item, index) => (
+            index === this.state.activeTabIndex &&
+            <div className='tab-content'>
+              {item.component}
+            </div>
+          ))
+          }
+
         </div>
       </React.Fragment>
     )

@@ -9,6 +9,7 @@ class Tab extends Component {
 
   static propTypes = {
     label: PropTypes.string,
+    labelIndex: PropTypes.number,
     activeTab: PropTypes.string,
     onClick: PropTypes.func
   }
@@ -18,8 +19,8 @@ class Tab extends Component {
   }
 
   onClick = () => {
-    const { label, onClick } = this.props;
-    onClick(label);
+    const { label, labelIndex, onClick } = this.props;
+    onClick(label, labelIndex);
   }
 
   render() {

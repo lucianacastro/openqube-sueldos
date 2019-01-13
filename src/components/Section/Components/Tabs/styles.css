@@ -6,3 +6,6 @@
     box-sizing: border-box;
 }
 
+.tab-content {
+    text-align: left;
+}
