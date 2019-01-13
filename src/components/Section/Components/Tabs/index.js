@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import Tab from './Components/Tab';
 import './styles.css';
 
+// recharts components
+import Barh from '../../Components/Barh';
+
+
 class Tabs extends Component {
   static displayName = "Tabs";
 
@@ -23,6 +27,20 @@ class Tabs extends Component {
     this.setState({ activeTab: tab, activeTabIndex: tabIndex });
   }
 
+  getComponent(tabItem) {
+    if (!tabItem.props || !tabItem.props.data) {
+      console.error('Invalid component props, missing data.', tabItem);
+      return null;
+    }
+    
+    switch (tabItem.component) {
+      case 'Barh':
+        console.log(tabItem.props);
+        return <Barh {...tabItem.props} />;
+      return null;
+    }
+  }
+
   render() {
     const { data } = this.props;
     return (
@@ -38,7 +56,8 @@ class Tabs extends Component {
           {data.map((item, index) => (
             index === this.state.activeTabIndex &&
             <div className='tab-content' key={item + index}>
-              {item.component}
+              {this.getComponent(item)}
+              <p>{item.description}</p>
             </div>
           ))
           }
