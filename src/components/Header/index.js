@@ -8,7 +8,7 @@ class Header extends Component {
         <div className='container'>
           <div className='header-brand'>
             <a href='/'>
-              <img src='https://openqube.io/img/logo-text.png' className='header-logo-img' />
+              <img src='./logo-text.png' className='header-logo-img' />
             </a>
             <div className='header-slogan'>
               <span className="header-slogan-slash">/</span>
