@@ -6,3 +6,9 @@
     border: 1px solid #623296;
     box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+    .side-nav-wrapper {
+        display: none;
+    }
+}
