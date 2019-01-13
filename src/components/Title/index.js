@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-import Container from '../Container';
 import './styles.css';
 
 class Title extends Component {

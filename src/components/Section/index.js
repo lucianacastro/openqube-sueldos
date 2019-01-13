@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Container from '../Container';
 import Title from '../Title';
 import Tabs from './Components/Tabs';
 
@@ -9,7 +8,7 @@ class Section extends Component {
   static propTypes = {
     title: PropTypes.string,
     titleId: PropTypes.string,
-    data: PropTypes.arrayOf
+    data: PropTypes.array
   }
   static defaultProps = {
     title: '',

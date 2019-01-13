@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Container from '../Container';
 import Section from '../Section';
@@ -16,14 +15,14 @@ class Landing extends Component {
       <Container>
         <SideNav />
         <div className='right-wrapper'>
-          {data.map(category => (
-            <React.Fragment>
+          {data.map((category, index) => (
+            <React.Fragment key={category + index}>
               <Title title={category.title} type='category' />
-              {category.data.map(subcategory => (
-                <React.Fragment>
+              {category.data.map((subcategory, index) => (
+                <React.Fragment key={subcategory + index}>
                   <Title title={subcategory.title} type='subcategory' />
-                  {subcategory.data.map(section => (
-                    <Section title={section.title} data={section.data} />
+                  {subcategory.data.map((section, index) => (
+                    <Section title={section.title} key={section + index} data={section.data} />
                   ))}
                 </React.Fragment>
               ))}
