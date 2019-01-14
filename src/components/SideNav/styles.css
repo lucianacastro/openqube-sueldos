@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+.is-current {
+    border: 1px solid red;
+}
+
 @media (max-width: 768px) {
     .side-nav-wrapper {
         display: none;

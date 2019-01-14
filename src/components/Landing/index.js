@@ -17,12 +17,12 @@ class Landing extends Component {
         <div className='right-wrapper'>
           {data.map((category, index) => (
             <React.Fragment key={category + index}>
-              <Title title={category.title} type='category' />
+              <Title titleId={category.title} title={category.title} type='category' />
               {category.data.map((subcategory, index) => (
                 <React.Fragment key={subcategory + index}>
-                  <Title title={subcategory.title} type='subcategory' />
+                  <Title titleId={subcategory.title} title={subcategory.title} type='subcategory' />
                   {subcategory.data.map((section, index) => (
-                    <Section title={section.title} key={section + index} data={section.data} />
+                    <Section titleId={section.title} title={section.title} key={section + index} data={section.data} />
                   ))}
                 </React.Fragment>
               ))}
