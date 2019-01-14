@@ -9,7 +9,7 @@ class SideNav extends Component {
   render() {
     return (
       <div className='side-nav-wrapper'>
-        <Scrollspy items={data.map(category => category.title)} currentClassName="is-current">
+        <Scrollspy className='side-nav' items={data.map(category => category.title)} currentClassName="is-current">
 
           {data.map((category, index) => (
             <li key={category + index}><a href={'#' + category.title} type='category' >{category.title}</a>
