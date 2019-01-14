@@ -37,7 +37,8 @@ class Tabs extends Component {
       case 'Barh':
         console.log(tabItem.props);
         return <Barh {...tabItem.props} />;
-      return null;
+      default: 
+        return null;
     }
   }
 
