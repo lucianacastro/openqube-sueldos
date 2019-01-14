@@ -1,14 +1,28 @@
 .side-nav-wrapper {
     float: left;
     width: calc((100% / 12 * 4) - 10px);
-    height: 500px;
     margin-right: 10px; 
     border: 1px solid #623296;
     box-sizing: border-box;
 }
 
-.is-current {
-    border: 1px solid red;
+.side-nav-wrapper ul {
+    padding: 20px 10px;
+    list-style: none;
+}
+
+.side-nav-wrapper li {
+    text-align: left;
+}
+
+.side-nav-wrapper li a {
+    color: #623296;
+    text-decoration: none;
+}
+
+li.is-current >a {
+   color: #000;
+   font-weight: 700;
 }
 
 @media (max-width: 768px) {
