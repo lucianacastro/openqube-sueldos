@@ -6,6 +6,7 @@ import './styles.css';
 import data from '../Landing/data';
 
 class SideNav extends Component {
+  static displayName = "SideNav";
   render() {
     return (
       <div className='side-nav-wrapper'>

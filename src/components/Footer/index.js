@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Container from '../Container';
 import './styles.css';
 
-class Header extends Component {
+class Footer extends Component {
+  static displayName = "Footer";
   render() {
     return (
       <footer>
@@ -30,4 +31,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Footer;

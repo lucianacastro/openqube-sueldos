@@ -9,6 +9,7 @@ import './styles.css';
 import data from './data';
 
 class Landing extends Component {
+  static displayName = "Landing";
 
   render() {
     return (

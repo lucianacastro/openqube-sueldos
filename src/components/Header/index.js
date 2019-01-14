@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 
 class Header extends Component {
+  static displayName = "Header";
   render() {
     return (
       <header>

@@ -5,6 +5,7 @@ import Title from '../Title';
 import Tabs from './Components/Tabs';
 
 class Section extends Component {
+  static displayName = "Section";
   static propTypes = {
     title: PropTypes.string,
     titleId: PropTypes.string,
