@@ -64,12 +64,12 @@ class Barh extends Component {
   
   	return (
     	<BarChart width={640} height={30 * (rowCount +1) + (isStacked ? 80 : 20)} data={data}
-        margin={{top: 5, right: 50, left: 100, bottom: 5}} layout="vertical"
+        margin={{top: 5, right: 50, left: 0, bottom: 5}} layout="vertical"
         maxBarSize={30}
         >
         <CartesianGrid strokeDasharray="2 2" />
         <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : null} />
-        <YAxis dataKey="name" type="category" width={150} />
+        <YAxis dataKey="name" type="category" width={200} />
         <Tooltip formatter={isPercentual ? this.toPercent : null} />
         { isStacked ? <Legend /> : null }
         {dataKeys.map((dataKey, index) => <Bar dataKey={dataKey} stackId="a" fill={this.getDataKeyColor(index)} />)}
