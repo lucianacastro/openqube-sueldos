@@ -1,11 +1,11 @@
- .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  overflow: hidden;
-  box-sizing: border-box;
+.container {
+    display: inline-flex;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
 }
 
 

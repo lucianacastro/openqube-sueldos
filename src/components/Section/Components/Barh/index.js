@@ -45,7 +45,7 @@ class Barh extends Component {
     return this.props.data
       .reduce((dataKeys, row) => [...dataKeys, ...Object.keys(row)], [])
       .filter((value, index, self) => self.indexOf(value) === index) // unique keys
-      .filter(value => value != 'name');
+      .filter(value => value !== 'name');
   }
 
   getDataKeyColor(index) {
