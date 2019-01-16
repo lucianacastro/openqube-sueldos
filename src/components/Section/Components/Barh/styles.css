@@ -1,5 +1,10 @@
+.recharts-cartesian-axis.yAxis {
+    width: 150%;
+    background-color: green;
+}
+
 .recharts-cartesian-axis-tick {    
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     /*font-family: Roboto, sans-serif;*/
 }
 

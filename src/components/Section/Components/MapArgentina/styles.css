@@ -1,0 +1,25 @@
+.map-argentina-container {
+    position: relative;
+}
+
+.map-argentina-container path:hover {
+    stroke: #ffb57c;
+    stroke-width: 2px;
+}
+
+.map-argentina-container .continent {
+    margin-left: 20%;
+}
+
+.map-argentina-container .caba {
+    position: absolute;
+    right: 20%;
+    top: 20%;
+}
+
+.map-argentina-container .malvinas {
+    position: absolute;
+    margin-left: 20%;
+    left: 120px;
+    top: 410px;
+}
