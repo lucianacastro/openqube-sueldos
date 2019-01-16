@@ -7,6 +7,7 @@ import './styles.css';
 // recharts components
 import Barh from '../../Components/Barh';
 import MapArgentina from '../../Components/MapArgentina';
+import Pie from '../../Components/Pie';
 
 
 class Tabs extends Component {
@@ -37,6 +38,8 @@ class Tabs extends Component {
     switch (tabItem.component) {
       case 'Barh':
         return <Barh {...tabItem.props} />;
+      case 'Pie':
+        return <Pie {...tabItem.props} />;
       case 'MapArgentina':
         return <MapArgentina {...tabItem.props} />;
       default: 

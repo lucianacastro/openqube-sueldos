@@ -1,0 +1,8 @@
+.pie-chart {
+    margin-left: 25%;
+}
+
+.pie-chart svg {
+    overflow: visible;
+    font-size: 0.85rem;
+}

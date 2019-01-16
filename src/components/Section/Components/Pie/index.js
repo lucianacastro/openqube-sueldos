@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  PieChart,
+  Pie as _Pie,
+  Cell,
   Tooltip,
   Legend,
 } from 'recharts';
@@ -36,7 +34,7 @@ class CustomizedLabel extends Component {
   }
 }
 
-class Barh extends Component {
+class Pie extends Component {
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.object),
     isPercentual: PropTypes.bool,
@@ -56,29 +54,26 @@ class Barh extends Component {
 
   toPercent(decimal, fixed = 0) {
 	  return `${(decimal * 100).toFixed(fixed)}%`;
+  }
+
+  toPercentLabel({ percent: decimal, name: name }, fixed = 0) {
+	  return `${name}: ${(decimal * 100).toFixed(fixed)}%`;
   };
 
 	render () {
     const { data, isPercentual = false, isLogScale = false } = this.props;
-    const dataKeys = this.getDataKeys();
-    const isStacked = !dataKeys.includes('value');
-    const rowCount = isStacked ? dataKeys.length : data.length;
-    const logScaleProps = isLogScale ? { scale: 'log', domain: [0.01, 'auto'], allowDataOverflow: true } : null;
   
   	return (
-    	<BarChart width={640} height={30 * (rowCount +1) + (isStacked ? 80 : 20)} data={data}
-        margin={{top: 5, right: 50, left: 0, bottom: 5}} layout="vertical"
-        maxBarSize={30}
-        >
-        <CartesianGrid strokeDasharray="2 2" />
-        <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : null} {...logScaleProps} />
-        <YAxis dataKey="name" type="category" width={200} />
+      <PieChart width={400} height={250} className='pie-chart'>
+        <_Pie isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS[0]} label={isPercentual ? this.toPercentLabel : null}>
+        {
+          	data.map((row, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+        }
+        </_Pie>
         <Tooltip formatter={isPercentual ? this.toPercent : null} />
-        { isStacked ? <Legend /> : null }
-        {dataKeys.map((dataKey, index) => <Bar key={dataKey} dataKey={dataKey} stackId="a" fill={this.getDataKeyColor(index)} />)}
-      </BarChart>
-    ); // label={<CustomizedLabel />}
+     </PieChart>
+    );
   }
 }
 
-export default Barh;
+export default Pie;
