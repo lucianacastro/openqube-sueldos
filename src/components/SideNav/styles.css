@@ -35,6 +35,10 @@ li.is-current >a {
    font-weight: 700;
 }
 
+.item-title {
+    font-size: 14px;
+}
+
 @media (max-width: 768px) {
     .side-nav-wrapper {
         display: none;

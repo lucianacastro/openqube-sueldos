@@ -2,6 +2,7 @@ body {
   background-color: #f7f7f7;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.42857;
+  -webkit-font-smoothing: unset;
 }
 
 .App {
