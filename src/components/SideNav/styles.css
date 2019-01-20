@@ -1,6 +1,6 @@
 .sticky-wrapper {
     width: calc((100% / 12 * 4) - 10px);
-    min-height: 100%;
+    min-height: 100vh;
 
 }
 .side-nav-wrapper {
@@ -13,7 +13,7 @@
 }
 
 .side-nav {
-    width: 300px;
+    width: 100%;
 }
 
 .side-nav-wrapper ul {
@@ -36,11 +36,11 @@ li.is-current >a {
 }
 
 .item-title {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 @media (max-width: 768px) {
-    .side-nav-wrapper {
+    .sticky-wrapper {
         display: none;
     }
 }

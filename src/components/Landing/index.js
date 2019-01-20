@@ -17,17 +17,17 @@ class Landing extends Component {
         <SideNav />
         <div className='right-wrapper'>
           {data.map((category, index) => (
-            <React.Fragment key={category + index}>
-              <Title titleId={category.title} title={category.title} type='category' />
+            <section id={category.title} key={category + index} >
+              <Title titleId='' title={category.title} type='category' />
               {category.data.map((subcategory, index) => (
-                <React.Fragment key={subcategory + index}>
-                  <Title titleId={subcategory.title} title={subcategory.title} type='subcategory' />
+                <section id={subcategory.title} key={subcategory + index}>
+                  <Title title={subcategory.title} type='subcategory' />
                   {subcategory.data.map((section, index) => (
-                    <Section titleId={section.title} title={section.title} key={section + index} data={section.data} />
+                    <Section id={section.title} title={section.title} key={section + index} data={section.data} />
                   ))}
-                </React.Fragment>
+                </section>
               ))}
-            </React.Fragment>
+            </section>
           ))
           }
         </div>

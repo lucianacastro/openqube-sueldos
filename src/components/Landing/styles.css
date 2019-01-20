@@ -9,5 +9,6 @@
 @media (max-width: 768px) {
     .right-wrapper {
         width: 100%;
+        padding: 0;
     }
 }

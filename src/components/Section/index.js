@@ -8,21 +8,21 @@ class Section extends Component {
   static displayName = "Section";
   static propTypes = {
     title: PropTypes.string,
-    titleId: PropTypes.string,
-    data: PropTypes.array
+    id: PropTypes.string,
+    data: PropTypes.array,
   }
   static defaultProps = {
     title: '',
-    titleId: '',
+    id: '',
     data: [],
 
   }
   render() {
     return (
-      <React.Fragment>
-        <Title title={this.props.title} titleId={this.props.titleId} type='section' />
+      <div id={this.props.id} className='section-wrapper'>
+        <Title title={this.props.title} type='section' />
         <Tabs data={this.props.data} />
-      </React.Fragment>
+      </div>
     )
   }
 }
