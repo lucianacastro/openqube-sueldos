@@ -65,9 +65,12 @@ class Pie extends Component {
   
   	return (
       <PieChart width={400} height={250} className='pie-chart'>
-        <_Pie isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS[0]} label={isPercentual ? this.toPercentLabel : null}>
+        <_Pie
+          isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS[0]}
+          label={isPercentual ? this.toPercentLabel : null}
+          dataKey="value">
         {
-          	data.map((row, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          	data.map((row, index) => <Cell fill={COLORS[index % COLORS.length]} key={index} />)
         }
         </_Pie>
         <Tooltip formatter={isPercentual ? this.toPercent : null} />
