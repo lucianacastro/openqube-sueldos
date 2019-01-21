@@ -1,7 +1,6 @@
 .sticky-wrapper {
     width: calc((100% / 12 * 4) - 10px);
     min-height: 100vh;
-
 }
 .side-nav-wrapper {
     width: 100%;

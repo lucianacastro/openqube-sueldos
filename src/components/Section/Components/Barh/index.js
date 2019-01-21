@@ -15,6 +15,26 @@ import {
 import './styles.css';
 
 const COLORS = [
+  // OpenQube logo
+  //'#6d71ac',
+  '#9265b3',
+  '#f15b88',
+  '#fea241',
+  
+  // https://www.color-hex.com/color-palette/67140
+  '#8577b6',
+  '#d072cc',
+  '#e5ab83',
+  '#fff2a5',
+  '#856363',
+
+  // https://www.color-hex.com/color-palette/61298 (inverse)
+  '#656abb',
+  '#9b7cc3',
+  '#d28eca',
+  '#e3c2bd',
+  '#f4f6af',
+
   // https://www.color-hex.com/color-palette/71119
   '#ffb57c',
   '#fa6579',
@@ -51,13 +71,15 @@ class Barh extends Component {
   }
 
   getData() {
-    const { data = [], cutoff = 0 } = this.props;
+    const { data = [], cutoff = 0, isPercentual = false } = this.props;
 
     if (this.state.collapsed && cutoff) {
-      return data.filter((v, i) => i < cutoff)
-        .concat({
+      const visibleRows = data.filter((v, i) => i < cutoff);
+      const hiddenRows = data.filter((v, i) => i >= cutoff);
+      
+      return visibleRows.concat({
           name: 'Otros',
-          value: data.filter((v, i) => i >= cutoff).reduce((val, row) => val + row.value, 0),
+          value: hiddenRows.reduce((val, row) => val + row.value, 0),
         });
     }
 
@@ -76,7 +98,11 @@ class Barh extends Component {
   }
 
   toPercent(decimal, fixed = 0) {
-    return `${(decimal * 100).toFixed(fixed)}%`;
+	  return `${(decimal * 100 * 100).toFixed(fixed)/100}%`;
+  }
+
+  toNumber(decimal, fixed = 2) {
+	  return `${(decimal * 100).toFixed(fixed)/100}`;
   }
 
   toggleCollapse(e) {
@@ -86,26 +112,26 @@ class Barh extends Component {
 
   render() {
     const { isPercentual = false, isLogScale = false, cutoff = 0 } = this.props;
+    const { collapsed } = this.state;
     const data = this.getData();
     const dataKeys = this.getDataKeys();
     const isStacked = !dataKeys.includes('value');
-    const rowCount = this.state.collapsed && cutoff ? cutoff : (isStacked ? dataKeys.length : data.length);
+    const rowCount = this.state.collapsed && cutoff ? cutoff : data.length;
     const logScaleProps = isLogScale ? { scale: 'log', domain: [0.01, 'auto'], allowDataOverflow: true } : null;
-    const height = 31 * (rowCount + 2) + (isStacked ? 80 : 20);
-    const { collapsed } = this.state;
-
-    return (
+    const height = 31 * (rowCount+2) + 20;
+  
+  	return (
       <div>
         {cutoff ? <div className='more-info-wrapper'><a className={cn('more-info-link', collapsed && 'collapsed')} href='#' onClick={(e) => this.toggleCollapse(e)} >{collapsed ? 'ver más' : 'ver menos'}</a></div> : null}
-        <BarChart width={640} height={height} data={data}
+        <BarChart width={620} height={height} data={data}
           margin={{ top: 5, right: 50, left: 0, bottom: 5 }} layout="vertical"
           maxBarSize={30}
         >
           <CartesianGrid strokeDasharray="2 2" />
-          <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : null} {...logScaleProps} />
+          <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber} {...logScaleProps} />
           <YAxis dataKey="name" type="category" width={200} />
-          <Tooltip formatter={isPercentual ? this.toPercent : null} />
-          {isStacked ? <Legend /> : null}
+          <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
+          { isStacked ? <Legend /> : null }
           {dataKeys.map((dataKey, indexGroup) =>
             <Bar key={dataKey} dataKey={dataKey} stackId="a" fill={this.getDataKeyColor(indexGroup)} >
               {
