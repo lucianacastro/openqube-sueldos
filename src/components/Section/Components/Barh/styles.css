@@ -11,3 +11,20 @@
 .recharts-legend-wrapper {
     font-size: 0.85rem;
 }
+
+.more-info-wrapper {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.more-info-link {
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px 0px;
+    font-size: 12px;
+    text-decoration: none; 
+    transition: all ease-in-out 0.4s;
+}
+
+.more-info-link:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 3px 0px;
+}
