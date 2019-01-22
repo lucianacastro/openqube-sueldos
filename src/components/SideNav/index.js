@@ -19,11 +19,11 @@ class SideNav extends Component {
                   <Scrollspy items={category.data.map(subcategory => subcategory.title)} currentClassName="is-current">
                     {category.data.map((subcategory, index) => (
                       <li key={subcategory + index}><a className='item-title' href={'#' + subcategory.title} type='subcategory' >{subcategory.title}</a>
-                        <Scrollspy items={subcategory.data.map(section => section.title)} currentClassName="is-current">
+                        {/*<Scrollspy items={subcategory.data.map(section => section.title)} currentClassName="is-current">
                           {subcategory.data.map((section, index) => (
                             <li><a className='item-title' href={'#' + section.title} key={section + index} data={section.data} >{section.title}</a></li>
                           ))}
-                        </Scrollspy>
+                        </Scrollspy>*/}
                       </li>
                     ))}
                   </Scrollspy>
