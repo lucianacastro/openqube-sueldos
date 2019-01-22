@@ -14,3 +14,9 @@
     border-bottom-color: #F7F7F7; 
     color: #623296;
 }
+
+@media (max-width: 460px) {
+    .tabs-item{
+        font-size: 12px;
+    }
+  }

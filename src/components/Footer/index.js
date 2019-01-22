@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <footer>
         <div className='footer-top'>
-          <Container>
+          <Container variant='footer'>
             <div className='footer-top-left-content'>
               <img src='https://openqube.io/img/logo-text-gray.png' alt='logo-openqube' />
               <p className='footer-top-left-content-text'>openqube.io es una plataforma colaborativa en la que empleados y ex empleados pueden calificar y escribir reseñas anónimas para brindar información de calidad sobre las empresas</p>

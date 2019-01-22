@@ -22,9 +22,10 @@
     box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px 0px;
     font-size: 12px;
     text-decoration: none; 
-    transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.3s;
 }
 
 .more-info-link:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 3px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
+    transition: all ease-in-out 0.3s
 }
