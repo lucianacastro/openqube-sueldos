@@ -19,10 +19,16 @@ export default [
                                 description: 'Vista rápida del nivel de participación en la encuesta por regiones del país.',
                             },
                             {  // tab
-                                title: 'Porcentaje de participantes por región de la Argentina',
+                                title: 'Nivel de participación',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true },
                                 description: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
+                            },
+                            {  // tab
+                                title: 'Media salarial',
+                                component: 'Barh', // graph
+                                props: { ...charts['regions_salary_mean'], isPercentual: false, isLogScale: false },
+                                description: 'Media salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -35,21 +41,33 @@ export default [
                         title: 'Porcentaje de participantes por tipo de rol',
                         data: [
                             {  // tab
-                                title: '',
+                                title: 'Nivel de participación',
                                 component: 'Barh', // graph
                                 props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, cutoff: 10 },
-                                description: 'Porcentaje de encuestados por tecnologeia, presentados es escala logarítmica.',
+                                description: 'Porcentaje de encuestados por rol, presentados es escala logarítmica.',
                             },
+                            /*{  // tab
+                                title: 'Media salarial',
+                                component: 'Barh', // graph
+                                props: { ...charts['roles_percent_salary_mean'], isPercentual: false, isLogScale: false, cutoff: 10 },
+                                description: 'Media salarial en [AR$] por rol.',
+                            },*/
                         ],
                     },
                     {
                         title: '¿Cuántos contribuyen al Open Source?',
                         data: [
                             { // tab
-                                title: '',
+                                title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
                                 description: 'datos porcentuales',
+                            },
+                            { // tab
+                                title: 'Media salarial',
+                                component: 'Barh',
+                                props: { ...charts['opensource_salary_mean'], isPercentual: false },
+                                description: 'Meddia salarial en [AR$]',
                             },
                         ],
                     },
@@ -57,10 +75,16 @@ export default [
                         title: '¿Cuántos programan por hobbie?',
                         data: [
                             { // tab
-                                title: '',
+                                title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 description: 'datos porcentuales',
+                            },
+                            { // tab
+                                title: 'Media salarial',
+                                component: 'Barh',
+                                props: { ...charts['hobbie_salary_mean'], isPercentual: false },
+                                description: 'Meddia salarial en [AR$]',
                             },
                         ],
                     },
@@ -113,7 +137,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['education_stacked'], isPercentual: false },
+                                props: { ...charts['education_stacked'], isPercentual: true },
                                 description: 'datos en volúmen total',
                             },
                         ],
@@ -122,10 +146,16 @@ export default [
                         title: '¿Cuales son las carreras más estudiadas?',
                         data: [
                             { // tab
-                                title: '',
+                                title: 'Carreras',
                                 component: 'Barh',
-                                props: { ...charts['careeres_percent'], isPercentual: true, cutoff: 9 },
-                                description: 'datos en volúmen total',
+                                props: { ...charts['careeres_percent'], isPercentual: true, isLogScale: true, cutoff: 9 },
+                                description: 'datos porcentuales',
+                            },
+                            { // tab
+                                title: 'Carreras y estado',
+                                component: 'Barh',
+                                props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: false, cutoff: 9 },
+                                description: 'datos porcentuales',
                             },
                         ],
                     },
@@ -133,10 +163,16 @@ export default [
                         title: '¿Y cuales las Universidades más concurridas?',
                         data: [
                             { // tab
-                                title: 'Todas las Universidades',
+                                title: 'Universidades',
                                 component: 'Barh',
-                                props: { ...charts['universities_percent'], isPercentual: true, cutoff: 10 },
-                                description: 'datos en volúmen total',
+                                props: { ...charts['universities_percent'], isPercentual: true, isLogScale: true, cutoff: 10 },
+                                description: 'datos porcentuales',
+                            },
+                            { // tab
+                                title: 'Universidades y estado de las carreras',
+                                component: 'Barh',
+                                props: { ...charts['universities_stacked_percent'], isPercentual: true, isLogScale: false, cutoff: 10 },
+                                description: 'datos porcentuales',
                             },
                         ],
                     },
