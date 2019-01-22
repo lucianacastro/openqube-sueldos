@@ -1,0 +1,16 @@
+.main-title-wrapper {
+    width: 100%;
+    height: 100px;
+    background-image: url('https://openqube.io/img/slider_bg.jpg'); 
+    background-position: 0;
+}
+
+.main-title {
+    display: inline-block;
+    padding: 20px;
+    margin: 11px auto;
+    color: #f7f7f7;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+}
