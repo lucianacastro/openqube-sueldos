@@ -1,6 +1,8 @@
 .main-title-wrapper {
     width: 100%;
+    max-width: 1733px;
     height: 100px;
+    margin: 0 auto;
     background-image: url('https://openqube.io/img/slider_bg.jpg'); 
     background-position: 0;
 }
