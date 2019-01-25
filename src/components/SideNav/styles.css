@@ -35,6 +35,15 @@ li.is-current >a {
    color: #000;
    font-weight: 700;
 }
+li.is-current >.item-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 6px 1px 0;
+    background-color: #623296;
+    color: #623296;
+}
 
 .item-title {
     font-size: 12px;
