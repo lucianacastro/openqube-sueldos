@@ -1,6 +1,6 @@
 .right-wrapper {
     float: left;
-    width: calc(100% / 12 * 8);
+    width: calc(100% / 12 * 9);
     padding: 0 20px;
     box-sizing: border-box;
     overflow: hidden;

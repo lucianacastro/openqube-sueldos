@@ -1,5 +1,5 @@
 .sticky-wrapper {
-    width: calc((100% / 12 * 4) - 10px);
+    width: calc((100% / 12 * 3) - 10px);
     min-height: 100vh;
 }
 .side-nav-wrapper {
@@ -11,6 +11,7 @@
     box-sizing: border-box;
     max-height: 90vh;
     overflow: scroll;
+    box-sizing: border-box;
 }
 
 .side-nav {
@@ -20,6 +21,7 @@
 .side-nav-wrapper ul {
     padding: 20px 10px;
     list-style: none;
+    box-sizing: border-box;
 }
 
 .side-nav-wrapper li {
