@@ -52,3 +52,10 @@
   background-color: #c158dc;
   background-color: #F4A04B;
 }
+
+@media (max-width: 460px) {
+  .title.section {
+    border: none;
+  }
+  
+}
