@@ -1,11 +1,37 @@
 import React from 'react';
 import charts from './charts';
 
+const historic_charts = JSON.parse(
+    '{"historic_salary_means": {"data": [{"name": "0", "publish_date": "2015-01-01", "salary": 15657.327692307692, "us_salary": 1831.0094129838753}, {"name": "1", "publish_date": "2015-09-01", "salary": 18354.930953367875, "us_salary": 1982.559347753113}, {"name": "2", "publish_date": "2016-02-01", "salary": 18038.123880968713, "us_salary": 1315.547086822658}, {"name": "3", "publish_date": "2016-08-01", "salary": 22654.065336804586, "us_salary": 1519.3771562098698}, {"name": "4", "publish_date": "2017-02-01", "salary": 26258.34959043176, "us_salary": 1650.4305210830648}, {"name": "5", "publish_date": "2017-09-01", "salary": 35187.43930996702, "us_salary": 2038.4335134959522}, {"name": "6", "publish_date": "2018-03-01", "salary": 38631.863063591714, "us_salary": 1954.1933998488341}, {"name": "7", "publish_date": "2018-09-04", "salary": 46313.559180631026, "us_salary": 1499.5437664320675}, {"name": "8", "publish_date": "2018-12-14", "salary": 55797.48322140491, "us_salary": 1478.137759683293}]}}'
+);
+
 // https://insights.stackoverflow.com/survey/2018#developer-profile
 export default [
     { // category
         title: 'Perfil de los Encuestados',
         data: [
+            { // sub-category
+                title: 'Salarios',
+                data: [
+                    {  // section
+                        title: 'Datos Históricos',
+                        data: [
+                            {  // tab
+                                title: 'Salarios en AR$',
+                                component: 'Area', // graph
+                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                            {  // tab
+                                title: 'Salarios en US$',
+                                component: 'Area', // graph
+                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                        ],
+                    },
+                ],
+            },
             { // sub-category
                 title: 'Regiones',
                 data: [
