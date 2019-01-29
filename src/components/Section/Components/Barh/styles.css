@@ -30,3 +30,10 @@
     box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
     transition: all ease-in-out 0.3s
 }
+
+
+@media (max-width: 460px) {
+    .recharts-wrapper {
+        zoom: 50%;
+    }
+}
