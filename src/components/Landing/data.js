@@ -43,7 +43,7 @@ export default [
                             {  // tab
                                 title: 'Nivel de participación',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true },
+                                props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001 },
                                 description: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
                             },
                         ],
@@ -59,15 +59,9 @@ export default [
                             {  // tab
                                 title: 'Nivel de participación',
                                 component: 'Barh', // graph
-                                props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, cutoff: 10 },
+                                props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'Porcentaje de encuestados por rol, presentados es escala logarítmica.',
                             },
-                            /*{  // tab
-                                title: 'Media salarial',
-                                component: 'Barh', // graph
-                                props: { ...charts['roles_percent_salary_mean'], isPercentual: false, isLogScale: false, cutoff: 10 },
-                                description: 'Media salarial en [AR$] por rol.',
-                            },*/
                         ],
                     },
                     {
@@ -78,13 +72,13 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
                                 description: 'datos porcentuales',
-                            },
+                            },/*
                             { // tab
                                 title: 'Media salarial',
                                 component: 'Barh',
                                 props: { ...charts['opensource_salary_mean'], isPercentual: false },
                                 description: 'Meddia salarial en [AR$]',
-                            },
+                            },*/
                         ],
                     },
                     {
@@ -95,13 +89,13 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 description: 'datos porcentuales',
-                            },
+                            },/*
                             { // tab
                                 title: 'Media salarial',
                                 component: 'Barh',
                                 props: { ...charts['hobbie_salary_mean'], isPercentual: false },
                                 description: 'Meddia salarial en [AR$]',
-                            },
+                            },*/
                         ],
                     },
                 ],
@@ -153,7 +147,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['education_stacked'], isPercentual: true },
+                                props: { ...charts['education_stacked'], isPercentual: true, isStacked: true },
                                 description: 'datos en volúmen total',
                             },
                         ],
@@ -164,13 +158,13 @@ export default [
                             { // tab
                                 title: 'Carreras',
                                 component: 'Barh',
-                                props: { ...charts['careeres_percent'], isPercentual: true, isLogScale: true, cutoff: 9 },
+                                props: { ...charts['careeres_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 9 },
                                 description: 'datos porcentuales',
                             },
                             { // tab
                                 title: 'Carreras y estado',
                                 component: 'Barh',
-                                props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: false, cutoff: 9 },
+                                props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 9, isStacked: false },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -181,7 +175,7 @@ export default [
                             { // tab
                                 title: 'Universidades',
                                 component: 'Barh',
-                                props: { ...charts['universities_percent'], isPercentual: true, isLogScale: true, cutoff: 10 },
+                                props: { ...charts['universities_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                             { // tab
@@ -293,13 +287,44 @@ export default [
                         title: '',
                         data: [
                             {  // tab
-                                title: 'Juniors',
+                                title: 'Todos',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['roles_seniority_salary_mean'].data
+                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    cutoff: 15,
+                                },
+                                description: 'Media salarial en [AR$] por región del país.',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Según Carrera',
+                data: [
+                    {  // section
+                        title: '',
+                        data: [
+                            {  // tab
+                                title: 'Por experiencia',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['carrera_seniority_salary_mean'].data
+                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    cutoff: 15,
+                                },
+                                description: 'Media salarial en [AR$] por región del país.',
                             },
                             {  // tab
-                                title: 'Semi-Seniors',
-                            },
-                            {  // tab
-                                title: 'Seniors',
+                                title: 'Por estado de la carrera',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['carrera_estado_salary_mean'].data
+                                        .sort((a, b) => b['Completado'] - a['Completado']),
+                                    cutoff: 15,
+                                },
+                                description: 'Media salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -312,13 +337,14 @@ export default [
                         title: 'Plataformas',
                         data: [
                             {  // tab
-                                title: 'Juniors',
-                            },
-                            {  // tab
-                                title: 'Semi-Seniors',
-                            },
-                            {  // tab
-                                title: 'Seniors',
+                                title: 'Por experiencia',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['plataformas_seniority_salary_mean'].data
+                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    cutoff: 15,
+                                },
+                                description: 'Media salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -326,13 +352,14 @@ export default [
                         title: 'Lenguajes de Programación',
                         data: [
                             {  // tab
-                                title: 'Juniors',
-                            },
-                            {  // tab
-                                title: 'Semi-Seniors',
-                            },
-                            {  // tab
-                                title: 'Seniors',
+                                title: 'Por experiencia',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['lenguajes_de_programacion_seniority_salary_mean'].data
+                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    cutoff: 15,
+                                },
+                                description: 'Media salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -436,7 +463,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['plataformas'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['plataformas'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -447,7 +474,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -458,7 +485,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['frameworksherramientas_y_librerias'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['frameworksherramientas_y_librerias'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -469,7 +496,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['bases_de_datos'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['bases_de_datos'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -480,7 +507,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['qa_testing'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['qa_testing'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -491,7 +518,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['ides'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['ides'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -512,7 +539,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['tipo_de_contrato_percent'], isLogScale: true },
+                                props: { ...charts['tipo_de_contrato_percent'], isLogScale: true, isPercentual: true },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -528,7 +555,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true },
+                                props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true, isPercentual: true },
                                 description: 'datos porcentuales',
                             },
                         ],
