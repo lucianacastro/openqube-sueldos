@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import slugify from 'slugify';
 
 import Container from '../Container';
 import Section from '../Section';
@@ -16,14 +17,27 @@ class Landing extends Component {
       <Container>
         <SideNav />
         <div className='right-wrapper'>
-          {data.map((category, index) => (
-            <section id={category.title} key={category + index} >
-              <Title titleId='' title={category.title} type='category' />
-              {category.data.map((subcategory, index) => (
-                <section id={subcategory.title} key={subcategory + index}>
-                  <Title title={subcategory.title} type='subcategory' />
-                  {subcategory.data.map((section, index) => (
-                    <Section id={section.title} title={section.title} key={section + index} data={section.data} />
+          {data.map((category, categoryIndex) => (
+            <section
+              id={slugify(category.title)}
+              key={categoryIndex}
+              className='category-section'>
+              <Title titleId={slugify(category.title)} title={category.title} type='category' />
+              {category.data.map((subcategory, subcategoryIndex) => (
+                <section
+                  id={slugify(`${category.title} ${subcategory.title}`)}
+                  key={`${categoryIndex}-${subcategoryIndex}`}
+                  className='subcategory-section'
+                  >
+                  <Title titleId={slugify(`${category.title} ${subcategory.title}`)} title={subcategory.title} type='subcategory' />
+                  {subcategory.data.map((section, sectionIndex) => (
+                    <Section 
+                      id={slugify(`${subcategory.title} ${subcategory.title} ${section.title}`)}
+                      key={`${categoryIndex}-${subcategoryIndex}-${sectionIndex}`}
+                      data={section.data}
+                      title={section.title}
+                      titleId={slugify(`${category.title} ${subcategory.title} ${section.title}`)}
+                      />
                   ))}
                 </section>
               ))}
