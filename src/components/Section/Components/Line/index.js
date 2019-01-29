@@ -75,8 +75,9 @@ class Line extends Component {
     const { data, xDataKey, yDataKeys } = this.props;
   
   	return (
-    	<LineChart width={600} height={400} data={data}
-            margin={{top: 10, right: 30, left: 0, bottom: 0}}>
+    	<LineChart width={620} height={400} data={data}
+        margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
+        className='line-chart'>
         <CartesianGrid strokeDasharray="3 3"/>
         <XAxis dataKey={xDataKey} />
         <YAxis/>

@@ -64,6 +64,7 @@ class Barh extends Component {
     isPercentual: PropTypes.bool,
     isLogScale: PropTypes.bool,
     cutoff: PropTypes.number,
+    isStacked: PropTypes.bool
   }
 
   state = {
@@ -77,10 +78,10 @@ class Barh extends Component {
       const visibleRows = data.filter((v, i) => i < cutoff);
       const hiddenRows = data.filter((v, i) => i >= cutoff);
       
-      return visibleRows.concat({
+      return data[0].value !== undefined ? visibleRows.concat({
           name: 'Otros',
           value: hiddenRows.reduce((val, row) => val + row.value, 0),
-        });
+        }) : visibleRows;
     }
 
     return data;
@@ -111,13 +112,12 @@ class Barh extends Component {
   }
 
   render() {
-    const { isPercentual = false, isLogScale = false, cutoff = 0 } = this.props;
+    const { isPercentual = false, isLogScale = false, cutoff = 0, minLogScale = 0.01, isStacked = false } = this.props;
     const { collapsed } = this.state;
     const data = this.getData();
     const dataKeys = this.getDataKeys();
-    const isStacked = !dataKeys.includes('value');
     const rowCount = this.state.collapsed && cutoff ? cutoff : data.length;
-    const logScaleProps = isLogScale ? { scale: 'log', domain: [0.01, 'auto'], allowDataOverflow: true } : null;
+    const logScaleProps = isLogScale ? { scale: 'log', domain: [minLogScale, 'auto'], allowDataOverflow: true } : null;
     const height = 31 * (rowCount+2) + 20;
   
   	return (
@@ -131,12 +131,12 @@ class Barh extends Component {
           <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber} {...logScaleProps} />
           <YAxis dataKey="name" type="category" width={200} />
           <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
-          { isStacked ? <Legend /> : null }
+          { !dataKeys.includes('value') ? <Legend /> : null }
           {dataKeys.map((dataKey, indexGroup) =>
-            <Bar key={dataKey} dataKey={dataKey} stackId="a" fill={this.getDataKeyColor(indexGroup)} >
+            <Bar key={dataKey} dataKey={dataKey} stackId={ isStacked ? 'a' : null } fill={this.getDataKeyColor(indexGroup)} >
               {
                 data.map((entry, indexRow) => (
-                  <Cell cursor="pointer" fill={entry.name === 'Otros' ? '#82ca9d' : this.getDataKeyColor(indexGroup)} key={`cell-${indexRow}`} />
+                  <Cell cursor="pointer" fill={entry.name === 'Otros' && data[0].value !== undefined ? '#82ca9d' : this.getDataKeyColor(indexGroup)} key={`cell-${indexRow}`} />
                 ))
               }
             </Bar>
