@@ -8,30 +8,26 @@ const historic_charts = JSON.parse(
 // https://insights.stackoverflow.com/survey/2018#developer-profile
 export default [
     { // category
-        title: 'Perfil de los Encuestados',
+        title: 'Introducción',
         data: [
             { // sub-category
-                title: 'Salarios',
+                title: 'Metodología',
                 data: [
                     {  // section
-                        title: 'Datos Históricos',
+                        title: '',
                         data: [
                             {  // tab
-                                title: 'Salarios en AR$',
-                                component: 'Area', // graph
-                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
-                            },
-                            {  // tab
-                                title: 'Salarios en US$',
-                                component: 'Area', // graph
-                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                title: '',
                             },
                         ],
                     },
                 ],
             },
+        ],
+    },
+    { // category
+        title: 'Perfil de los Encuestados',
+        data: [
             { // sub-category
                 title: 'Regiones',
                 data: [
@@ -49,12 +45,6 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true },
                                 description: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
-                            },
-                            {  // tab
-                                title: 'Media salarial',
-                                component: 'Barh', // graph
-                                props: { ...charts['regions_salary_mean'], isPercentual: false, isLogScale: false },
-                                description: 'Media salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -248,6 +238,185 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true, cutoff: 3 },
                                 description: 'datos porcentuales',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    { // category
+        title: 'Salarios',
+        data: [
+            { // sub-category
+                title: 'Progresión histórica',
+                data: [
+                    {  // section
+                        title: 'Media salarial en Argentina',
+                        data: [
+                            {  // tab
+                                title: 'Salarios en AR$',
+                                component: 'Line', // graph
+                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                            {  // tab
+                                title: 'Salarios en US$',
+                                component: 'Line', // graph
+                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Según Región',
+                data: [
+                    {  // section
+                        title: '',
+                        data: [
+                            {  // tab
+                                title: 'Media salarial',
+                                component: 'Barh', // graph
+                                props: { ...charts['regions_salary_mean'], isPercentual: false, isLogScale: false },
+                                description: 'Media salarial en [AR$] por región del país.',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Según Puesto',
+                data: [
+                    {  // section
+                        title: '',
+                        data: [
+                            {  // tab
+                                title: 'Juniors',
+                            },
+                            {  // tab
+                                title: 'Semi-Seniors',
+                            },
+                            {  // tab
+                                title: 'Seniors',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Según Tecnología',
+                data: [
+                    {  // section
+                        title: 'Plataformas',
+                        data: [
+                            {  // tab
+                                title: 'Juniors',
+                            },
+                            {  // tab
+                                title: 'Semi-Seniors',
+                            },
+                            {  // tab
+                                title: 'Seniors',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Lenguajes de Programación',
+                        data: [
+                            {  // tab
+                                title: 'Juniors',
+                            },
+                            {  // tab
+                                title: 'Semi-Seniors',
+                            },
+                            {  // tab
+                                title: 'Seniors',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    { // category
+        title: 'Género',
+        data: [
+            { // sub-category
+                title: 'Progresión histórica',
+                data: [
+                    {  // section
+                        title: 'Nivel de participación',
+                        data: [
+                            {  // tab
+                                title: '',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Preparación',
+                data: [
+                    {  // section
+                        title: 'Nivel de estudios alcanzados y completitud',
+                        data: [
+                            {  // tab
+                                title: 'Hombres',
+                            },
+                            {  // tab
+                                title: 'Mujeres',
+                            },
+                            {  // tab
+                                title: 'No Binarios',
+                            },
+                        ],
+                    },
+                ],
+            },
+            { // sub-category
+                title: 'Salarios',
+                data: [
+                    {  // section
+                        title: 'Juniors',
+                        data: [
+                            {  // tab
+                                title: 'Hombres',
+                            },
+                            {  // tab
+                                title: 'Mujeres',
+                            },
+                            {  // tab
+                                title: 'No Binarios',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Semi-Seniors',
+                        data: [
+                            {  // tab
+                                title: 'Hombres',
+                            },
+                            {  // tab
+                                title: 'Mujeres',
+                            },
+                            {  // tab
+                                title: 'No Binarios',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Semi-Seniors',
+                        data: [
+                            {  // tab
+                                title: 'Hombres',
+                            },
+                            {  // tab
+                                title: 'Mujeres',
+                            },
+                            {  // tab
+                                title: 'No Binarios',
                             },
                         ],
                     },
