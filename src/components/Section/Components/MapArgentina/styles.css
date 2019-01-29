@@ -1,5 +1,7 @@
 .map-argentina-container {
     position: relative;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .map-argentina-container path:hover {
@@ -7,19 +9,43 @@
     stroke-width: 2px;
 }
 
-.map-argentina-container .continent {
-    margin-left: 20%;
+.map-argentina-container .continent svg {
+    width: 75%;
 }
 
 .map-argentina-container .caba {
     position: absolute;
-    right: 20%;
+    right: 0;
     top: 20%;
+}
+
+.map-argentina-container .caba svg {
+    width: 75%;
 }
 
 .map-argentina-container .malvinas {
     position: absolute;
-    margin-left: 20%;
     left: 120px;
     top: 410px;
+}
+
+@media(max-width: 360px) {
+    .map-argentina-container {
+        width: 320px;
+    }
+    .map-argentina-container .caba {
+        right: 30px;
+    }
+}
+
+@media(max-width: 460px) {
+    .map-argentina-container {
+        width: 320px;
+    }
+}
+
+@media(min-width: 461px) {
+    .map-argentina-container {
+        width: 400px;
+    }
 }

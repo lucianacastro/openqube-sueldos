@@ -17,8 +17,18 @@
     font-weight: 400;
 }
 
+@media (min-width: 340px) and (max-width: 768px) {
+    .main-title {
+        margin-top: 24px;
+    }
+}
+
 @media (max-width: 768px) {
+    .main-title-wrapper {
+        height: 80px;
+    }
     .main-title {
         padding: 0 20px;
+        font-size: 22px;
     }
 }

@@ -20,15 +20,15 @@ class Title extends Component {
     switch (this.props.type) {
       case 'subcategory':
         return (
-          <h2 className={cn('title', this.props.type)} id={this.props.titleId}>
+          <h3 className={cn('title', this.props.type)} id={this.props.titleId}>
             <a href={'#' + this.props.titleId}>{this.props.title}</a>
-          </h2>
+          </h3>
         )
       case 'section':
         return (
-          < h3 className={cn('title', this.props.type)} id={this.props.titleId} >
+          <h4 className={cn('title', this.props.type)} id={this.props.titleId} >
             <a href={'#' + this.props.titleId}>{this.props.title}</a>
-          </h3 >
+          </h4>
         )
       case 'category':
       default:
@@ -39,9 +39,9 @@ class Title extends Component {
               <span className='color-bar-section-2' />
               <span className='color-bar-section-3' />
             </div>
-            <h1 className={cn('title', this.props.type)} id={this.props.titleId}>
+            <h2 className={cn('title', this.props.type)} id={this.props.titleId}>
               <a href={'#' + this.props.titleId}>{this.props.title}</a>
-            </h1>
+            </h2>
           </div>
         )
     }

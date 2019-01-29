@@ -54,8 +54,19 @@
 }
 
 @media (max-width: 460px) {
+  .title.category {
+    font-size: 22px;
+  }
+
+  .title.subcategory {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
   .title.section {
+    margin: 10px 0;
     border: none;
+    font-size: 14px;
   }
   
 }
