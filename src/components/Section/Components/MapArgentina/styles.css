@@ -29,6 +29,29 @@
     top: 410px;
 }
 
+.description {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 110px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e9e9e9;
+    font-size: 12px;
+}
+
+.description p {
+    margin: 0;
+}
+.province-name {
+    color: #623296;
+}
+.province-value {
+    font-size: 22px;
+    color: #623296;
+    font-weight: 600;
+}
+
 @media(max-width: 360px) {
     .map-argentina-container {
         width: 320px;
