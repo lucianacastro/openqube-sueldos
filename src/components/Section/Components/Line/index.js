@@ -61,10 +61,19 @@ class Line extends Component {
     data: PropTypes.arrayOf(PropTypes.object),
     xDataKey: PropTypes.string.isRequired,
     yDataKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+    isPercentual: PropTypes.bool,
   }
 
   state = {
     collapsed: true,
+  }
+
+  toPercent(decimal, fixed = 0) {
+	  return `${(decimal * 100 * 100).toFixed(fixed)/100}%`;
+  }
+
+  toNumber(decimal, fixed = 2) {
+	  return `${(decimal * 100).toFixed(fixed)/100}`;
   }
 
   getDataKeyColor(index) {
@@ -72,7 +81,7 @@ class Line extends Component {
   }
 
   render() {
-    const { data, xDataKey, yDataKeys } = this.props;
+    const { data, xDataKey, yDataKeys, isPercentual } = this.props;
   
   	return (
     	<LineChart width={620} height={400} data={data}
@@ -80,8 +89,8 @@ class Line extends Component {
         className='line-chart'>
         <CartesianGrid strokeDasharray="3 3"/>
         <XAxis dataKey={xDataKey} />
-        <YAxis/>
-        <Tooltip/>
+        <YAxis tickFormatter={isPercentual ? this.toPercent : this.toNumber} />
+        <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
         {yDataKeys.map((dataKey, i) => (
           <_Line type='monotone' dataKey={dataKey} stroke={COLORS[i]} fill={COLORS[i + 1]} key={`${dataKey}-${i}`} />
         ))}

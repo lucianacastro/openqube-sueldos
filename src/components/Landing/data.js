@@ -2,7 +2,7 @@ import React from 'react';
 import charts from './charts';
 
 const historic_charts = JSON.parse(
-    '{"historic_salary_means": {"data": [{"name": "0", "publish_date": "2015-01-01", "salary": 15657.327692307692, "us_salary": 1831.0094129838753}, {"name": "1", "publish_date": "2015-09-01", "salary": 18354.930953367875, "us_salary": 1982.559347753113}, {"name": "2", "publish_date": "2016-02-01", "salary": 18038.123880968713, "us_salary": 1315.547086822658}, {"name": "3", "publish_date": "2016-08-01", "salary": 22654.065336804586, "us_salary": 1519.3771562098698}, {"name": "4", "publish_date": "2017-02-01", "salary": 26258.34959043176, "us_salary": 1650.4305210830648}, {"name": "5", "publish_date": "2017-09-01", "salary": 35187.43930996702, "us_salary": 2038.4335134959522}, {"name": "6", "publish_date": "2018-03-01", "salary": 38631.863063591714, "us_salary": 1954.1933998488341}, {"name": "7", "publish_date": "2018-09-04", "salary": 46313.559180631026, "us_salary": 1499.5437664320675}, {"name": "8", "publish_date": "2018-12-14", "salary": 55797.48322140491, "us_salary": 1478.137759683293}]}}'
+    '{"historic_salary_medians": {"data": [{"name": "0", "publish_date": "2015-01-01", "salary": 14000.0, "us_salary": 1633.6132257326756}, {"name": "1", "publish_date": "2015-09-01", "salary": 16000.0, "us_salary": 1719.588803327404}, {"name": "2", "publish_date": "2016-02-01", "salary": 15060.240963855424, "us_salary": 1060.2630173261823}, {"name": "3", "publish_date": "2016-08-01", "salary": 20000.0, "us_salary": 1347.1937112997557}, {"name": "4", "publish_date": "2017-02-01", "salary": 24000.0, "us_salary": 1524.7074070603483}, {"name": "5", "publish_date": "2017-09-01", "salary": 31325.30120481928, "us_salary": 1823.7577726451937}, {"name": "6", "publish_date": "2018-03-01", "salary": 33734.93975903615, "us_salary": 1678.9482732226884}, {"name": "7", "publish_date": "2018-09-04", "salary": 41000.0, "us_salary": 1134.7290038809115}, {"name": "8", "publish_date": "2018-12-14", "salary": 48500.0, "us_salary": 1284.262444988552}]}, "historic_gender_percent": {"data": [{"name": "(Timestamp(\'2016-02-01 00:00:00\'), \'Hombre\')", "count": 0.942024492326771}, {"name": "(Timestamp(\'2016-02-01 00:00:00\'), \'Mujer\')", "count": 0.057975507673228954}, {"name": "(Timestamp(\'2016-08-01 00:00:00\'), \'Hombre\')", "count": 0.9228052472250252}, {"name": "(Timestamp(\'2016-08-01 00:00:00\'), \'Mujer\')", "count": 0.07719475277497477}, {"name": "(Timestamp(\'2017-02-01 00:00:00\'), \'Hombre\')", "count": 0.9073646394662561}, {"name": "(Timestamp(\'2017-02-01 00:00:00\'), \'Mujer\')", "count": 0.09263536053374391}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Hombre\')", "count": 0.8911970382558618}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Mujer\')", "count": 0.10448375154257507}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Otros\')", "count": 0.0043192102015631425}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Hombre\')", "count": 0.8535061328396205}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Mujer\')", "count": 0.14325387641749596}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Otros\')", "count": 0.0032399907428835918}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Hombre\')", "count": 0.8622691292875989}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Mujer\')", "count": 0.1345646437994723}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Otros\')", "count": 0.0031662269129287598}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Hombre\')", "count": 0.864739471805853}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Mujer\')", "count": 0.12955032119914348}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Otros\')", "count": 0.005710206995003569}]}, "historic_gender_salary_median": {"data": [{"name": "(Timestamp(\'2016-02-01 00:00:00\'), \'Hombre\')", "salary": 15060.240963855424}, {"name": "(Timestamp(\'2016-02-01 00:00:00\'), \'Mujer\')", "salary": 14042.168674698796}, {"name": "(Timestamp(\'2016-08-01 00:00:00\'), \'Hombre\')", "salary": 20000.0}, {"name": "(Timestamp(\'2016-08-01 00:00:00\'), \'Mujer\')", "salary": 18072.289156626506}, {"name": "(Timestamp(\'2017-02-01 00:00:00\'), \'Hombre\')", "salary": 24096.38554216868}, {"name": "(Timestamp(\'2017-02-01 00:00:00\'), \'Mujer\')", "salary": 20481.927710843374}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Hombre\')", "salary": 32000.0}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Mujer\')", "salary": 28039.75903614458}, {"name": "(Timestamp(\'2017-09-01 00:00:00\'), \'Otros\')", "salary": 31325.30120481928}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Hombre\')", "salary": 35000.0}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Mujer\')", "salary": 27710.84337349398}, {"name": "(Timestamp(\'2018-03-01 00:00:00\'), \'Otros\')", "salary": 26605.421686746988}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Hombre\')", "salary": 42168.674698795185}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Mujer\')", "salary": 33800.0}, {"name": "(Timestamp(\'2018-09-04 00:00:00\'), \'Otros\')", "salary": 34337.34939759036}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Hombre\')", "salary": 50000.0}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Mujer\')", "salary": 41000.0}, {"name": "(Timestamp(\'2018-12-14 00:00:00\'), \'Otros\')", "salary": 46500.0}]}}'
 );
 
 // https://insights.stackoverflow.com/survey/2018#developer-profile
@@ -74,9 +74,9 @@ export default [
                                 description: 'datos porcentuales',
                             },/*
                             { // tab
-                                title: 'Media salarial',
+                                title: 'Mediana salarial',
                                 component: 'Barh',
-                                props: { ...charts['opensource_salary_mean'], isPercentual: false },
+                                props: { ...charts['opensource_salary_median'], isPercentual: false },
                                 description: 'Meddia salarial en [AR$]',
                             },*/
                         ],
@@ -91,9 +91,9 @@ export default [
                                 description: 'datos porcentuales',
                             },/*
                             { // tab
-                                title: 'Media salarial',
+                                title: 'Mediana salarial',
                                 component: 'Barh',
-                                props: { ...charts['hobbie_salary_mean'], isPercentual: false },
+                                props: { ...charts['hobbie_salary_median'], isPercentual: false },
                                 description: 'Meddia salarial en [AR$]',
                             },*/
                         ],
@@ -246,18 +246,18 @@ export default [
                 title: 'Progresión histórica',
                 data: [
                     {  // section
-                        title: 'Media salarial en Argentina',
+                        title: 'Medianana salarial en Argentina',
                         data: [
                             {  // tab
                                 title: 'Salarios en AR$',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
                                 description: 'Serie histórica de salarios basada en encuestas anteriores.',
                             },
                             {  // tab
                                 title: 'Salarios en US$',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_means'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
                                 description: 'Serie histórica de salarios basada en encuestas anteriores.',
                             },
                         ],
@@ -271,10 +271,10 @@ export default [
                         title: '',
                         data: [
                             {  // tab
-                                title: 'Media salarial',
+                                title: 'Mediana salarial',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_salary_mean'], isPercentual: false, isLogScale: false },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false },
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -290,11 +290,11 @@ export default [
                                 title: 'Todos',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_mean'].data
+                                    data: charts['roles_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
                                 },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -310,21 +310,30 @@ export default [
                                 title: 'Por experiencia',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['carrera_seniority_salary_mean'].data
+                                    data: charts['carrera_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
                                 },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                             {  // tab
                                 title: 'Por estado de la carrera',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['carrera_estado_salary_mean'].data
+                                    data: charts['carrera_estado_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
                                     cutoff: 15,
                                 },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                description: 'Mediana salarial en [AR$] por región del país.',
+                            },
+                            {  // tab
+                                title: 'Por nivel de estudios alcanzado',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['nivel_estudios_salary_median'].data
+                                        .sort((a, b) => b['Completado'] - a['Completado']),
+                                },
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -340,11 +349,11 @@ export default [
                                 title: 'Por experiencia',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['plataformas_seniority_salary_mean'].data
+                                    data: charts['plataformas_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
                                 },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -355,11 +364,11 @@ export default [
                                 title: 'Por experiencia',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['lenguajes_de_programacion_seniority_salary_mean'].data
+                                    data: charts['lenguajes_de_programacion_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
                                 },
-                                description: 'Media salarial en [AR$] por región del país.',
+                                description: 'Mediana salarial en [AR$] por región del país.',
                             },
                         ],
                     },
@@ -378,6 +387,49 @@ export default [
                         data: [
                             {  // tab
                                 title: '',
+                                component: 'Area', // graph
+                                props: {
+                                    data: Object.values(
+                                        historic_charts['historic_gender_percent'].data
+                                            .reduce((dates, row) => ({
+                                                ...dates,
+                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                    publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
+                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
+                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.count,
+                                                },
+                                            }), {})
+                                    ),
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    isPercentual: true,
+                                },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Salarios',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Line', // graph
+                                props: {
+                                    data: Object.values(
+                                        historic_charts['historic_gender_salary_median'].data
+                                            .reduce((dates, row) => ({
+                                                ...dates,
+                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                    publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
+                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
+                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.salary,
+                                                },
+                                            }), {})
+                                    ),
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
                             },
                         ],
                     },
