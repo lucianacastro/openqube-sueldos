@@ -8,6 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
 } from 'recharts';
 
 import './styles.css';
@@ -91,6 +92,7 @@ class Line extends Component {
         <XAxis dataKey={xDataKey} />
         <YAxis tickFormatter={isPercentual ? this.toPercent : this.toNumber} />
         <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
+        { !yDataKeys.includes('value') ? <Legend /> : null }
         {yDataKeys.map((dataKey, i) => (
           <_Line type='monotone' dataKey={dataKey} stroke={COLORS[i]} fill={COLORS[i + 1]} key={`${dataKey}-${i}`} />
         ))}

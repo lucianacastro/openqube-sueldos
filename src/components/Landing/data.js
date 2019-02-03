@@ -287,10 +287,20 @@ export default [
                         title: '',
                         data: [
                             {  // tab
-                                title: 'Todos',
+                                title: 'Por seniority y roles',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['roles_seniority_salary_median'].data
+                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    cutoff: 15,
+                                },
+                                description: 'Mediana salarial en [AR$] por región del país.',
+                            },
+                            {  // tab
+                                title: 'Por seniority y actividad principal de la empresa',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['actividad_principal_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
                                 },
@@ -676,7 +686,7 @@ export default [
                         data: [
                             {  // tab
                                 title: '',
-                                component: 'Pie', // graph
+                                component: 'Barh', // graph
                                 props: { ...charts['actividad_principal'], isPercentual: true },
                                 description: 'datos porcentuales',
                             },
