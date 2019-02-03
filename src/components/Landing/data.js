@@ -386,7 +386,7 @@ export default [
                         title: 'Nivel de participación',
                         data: [
                             {  // tab
-                                title: '',
+                                title: 'Mujeres / Otros',
                                 component: 'Area', // graph
                                 props: {
                                     data: Object.values(
@@ -401,7 +401,28 @@ export default [
                                             }), {})
                                     ),
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    yDataKeys: ['Mujer', 'Otros'],
+                                    isPercentual: true,
+                                },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                            {  // tab
+                                title: 'Todos',
+                                component: 'Area', // graph
+                                props: {
+                                    data: Object.values(
+                                        historic_charts['historic_gender_percent'].data
+                                            .reduce((dates, row) => ({
+                                                ...dates,
+                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                    publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
+                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
+                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.count,
+                                                },
+                                            }), {})
+                                    ),
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Mujer', 'Otros', 'Hombre'],
                                     isPercentual: true,
                                 },
                                 description: 'Serie histórica de salarios basada en encuestas anteriores.',
