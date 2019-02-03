@@ -59,6 +59,14 @@
     .map-argentina-container .caba {
         right: 30px;
     }
+    .description {
+        right: 30px;
+        padding: 3px;
+        font-size: 10px;
+    }
+    .province-value {
+        font-size: 14px;
+    }
 }
 
 @media(max-width: 460px) {
