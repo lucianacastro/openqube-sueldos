@@ -1,7 +1,8 @@
 .main-title-wrapper {
+    display: flex;
     width: 100%;
     max-width: 1733px;
-    height: 100px;
+    height: 200px;
     margin: 0 auto;
     background-image: url('https://openqube.io/img/slider_bg.jpg'); 
     background-position: 0;
@@ -9,17 +10,24 @@
 
 .main-title {
     display: inline-block;
-    padding: 20px;
+    align-self: center;
+    padding: 0 20px;
     margin: 11px auto;
     color: #f7f7f7;
     font-family: 'Open Sans', sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 400;
+    box-sizing: border-box;
+}
+
+.main-title span {
+    margin: 0;
+    line-height: 34px;
 }
 
 @media (min-width: 340px) and (max-width: 768px) {
     .main-title {
-        margin-top: 24px;
+        margin-top: 11px;
     }
 }
 
