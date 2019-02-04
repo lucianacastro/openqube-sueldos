@@ -31,7 +31,7 @@
 
 .description {
     position: absolute;
-    top: 0;
+    bottom: 180px;
     right: 0;
     width: 110px;
     padding: 10px;
@@ -52,7 +52,7 @@
     font-weight: 600;
 }
 
-@media(max-width: 360px) {
+@media(max-width: 350px) {
     .map-argentina-container {
         width: 320px;
     }
