@@ -812,7 +812,8 @@ export default [
                                         <h4>Series temporales</h4>
                                         <h5>Salarios</h5>
                                         <p>
-                                            Para los valores presentados de Progresión Histórica, tanto en el apartado de <a href="#Salarios-Progresion-historica">Salarios</a> como de <a href="#Genero-Progresion-historica">Género</a>, también hemos aplicado <a target="_blank" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">reglas de normalización de valores</a>.
+                                            Para los valores presentados de Progresión Histórica, tanto en el apartado de <a href="#Salarios-Progresion-historica">Salarios</a> como de <a href="#Genero-Progresion-historica">Género</a>,
+                                            también hemos aplicado reglas de normalización de valores y remoción de valores atípicos.
                                         </p>
                                         <p>
                                             Por ejemplo, para los datasets de entre <i>2016</i> a <i>2018</i>, los salarios podrían estar dados en valores brutos o netos según cada respuesta.
