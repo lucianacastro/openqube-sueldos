@@ -259,7 +259,7 @@ export default [
                 title: 'Progresión histórica',
                 data: [
                     {  // section
-                        title: 'Medianana salarial en Argentina',
+                        title: 'Mediana salarial en Argentina',
                         data: [
                             {  // tab
                                 title: 'Salarios en AR$',
@@ -288,6 +288,18 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false },
                                 description: 'Mediana salarial en [AR$] por región del país.',
+                            },
+                            {  // tab
+                                title: '% de ajustes por inflación 2018',
+                                component: 'Barh', // graph
+                                props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false },
+                                description: 'Mediana de porcentaje de ajustes por región del país.',
+                            },
+                            {  // tab
+                                title: 'Nivel de conformidad',
+                                component: 'Barh', // graph
+                                props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false },
+                                description: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 5.',
                             },
                         ],
                     },
@@ -558,6 +570,17 @@ export default [
                                     cutoff: 15,
                                 },
                                 description: 'Mediana salarial en [AR$].',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Ajustes por inflación 2018',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
+                                description: 'Porcentaje de ajustes por región del país.',
                             },
                         ],
                     },
