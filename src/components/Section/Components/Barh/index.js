@@ -111,6 +111,35 @@ class Barh extends Component {
     this.setState(({ collapsed }) => ({ collapsed: !collapsed }));
   }
 
+  renderTooltip(props) {
+    const { payload: dimensions, active, label, formatter } = props;
+
+    if (!active) {
+      return null;
+    }
+
+    if (dimensions.length === 1) {
+      return (
+        <ul className='tooltip'>
+            <li className='tooltip-item' style={{ color: dimensions[0].color }}>
+              <span className='name'>{`${label}:`}</span>
+              <span className='value'>{`${formatter(dimensions[0].value)}`}</span>
+            </li>
+        </ul>
+      );
+    }
+
+    return (
+      <ul className='tooltip'>
+        {dimensions.map((payload, idx) =>
+          <li className='tooltip-item' key={idx} style={{ color: payload.color }}>
+            <span className='name'>{`${payload.dataKey}:`}</span>
+            <span className='value'>{`${formatter(payload.value)}`}</span>
+          </li>)}
+      </ul>
+    );
+  }
+
   render() {
     const { isPercentual = false, isLogScale = false, cutoff = 0, minLogScale = 0.01, isStacked = false } = this.props;
     const { collapsed } = this.state;
@@ -130,7 +159,7 @@ class Barh extends Component {
           <CartesianGrid strokeDasharray="2 2" />
           <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber} {...logScaleProps} />
           <YAxis dataKey="name" type="category" width={200} />
-          <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
+          <Tooltip content={this.renderTooltip} formatter={isPercentual ? this.toPercent : this.toNumber} />
           { !dataKeys.includes('value') ? <Legend /> : null }
           {dataKeys.map((dataKey, indexGroup) =>
             <Bar key={dataKey} dataKey={dataKey} stackId={ isStacked ? 'a' : null } fill={this.getDataKeyColor(indexGroup)} >
