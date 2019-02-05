@@ -462,6 +462,22 @@ export default [
                             },
                         ],
                     },
+                    {  // section
+                        title: 'Conformidad',
+                        data: [
+                            {  // tab
+                                title: 'Conformidad con los salarios',
+                                component: 'Line', // graph
+                                props: {
+                                    data: historic_charts['historic_acquiescence_means'].data
+                                        .map(row => ({ ...row, Otros: row.Otros || undefined })), // remove 0 values
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                },
+                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                            },
+                        ],
+                    },
                 ],
             },
             { // sub-category
