@@ -9,28 +9,17 @@ import {
 } from 'recharts';
 
 import './styles.css';
+import { COLORS2 } from '../chartsUtils';
+import CustomizedTooltip from '../CustomizedTooltip';
 
-const COLORS = [
-  // https://www.color-hex.com/color-palette/71119
-  '#ffb57c',
-  '#fa6579',
-  '#bb1f8c',
-  '#6a1596',
-  '#18299b',
 
-  // https://www.color-hex.com/color-palette/70941
-  '#b1e2f0',
-  '#f4f4b9',
-  '#fdc268',
-  '#fb9ed6',
-  '#d282e1',
-];
+
 
 class CustomizedLabel extends Component {
-  render () {
+  render() {
     const { x, y, stroke, value } = this.props;
-		const formattedValue = parseInt(value*100*100, 10) / 100;
-   	return <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">{formattedValue}%</text>
+    const formattedValue = parseInt(value * 100 * 100, 10) / 100;
+    return <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">{formattedValue}%</text>
   }
 }
 
@@ -49,32 +38,32 @@ class Pie extends Component {
   }
 
   getDataKeyColor(index) {
-    return COLORS[index] || COLORS[COLORS.length-1];
+    return COLORS2[index] || COLORS2[COLORS2.length - 1];
   }
 
   toPercent(decimal, fixed = 0) {
-	  return `${(decimal * 100).toFixed(fixed)}%`;
+    return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
   toPercentLabel({ percent: decimal, name: name }, fixed = 0) {
-	  return `${name}: ${(decimal * 100).toFixed(fixed)}%`;
+    return `${name}: ${(decimal * 100).toFixed(fixed)}%`;
   };
 
-	render () {
+  render() {
     const { data, isPercentual = false, isLogScale = false } = this.props;
-  
-  	return (
+
+    return (
       <PieChart width={400} height={250} className='pie-chart'>
         <_Pie
-          isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS[0]}
+          isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS2[0]}
           label={isPercentual ? this.toPercentLabel : null}
           dataKey="value">
-        {
-          	data.map((row, index) => <Cell fill={COLORS[index % COLORS.length]} key={index} />)
-        }
+          {
+            data.map((row, index) => <Cell fill={COLORS2[index % COLORS2.length]} key={index} />)
+          }
         </_Pie>
-        <Tooltip formatter={isPercentual ? this.toPercent : null} />
-     </PieChart>
+        <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : null} />
+      </PieChart>
     );
   }
 }
