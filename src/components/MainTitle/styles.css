@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
     .main-title-wrapper {
-        height: 80px;
+        height: 160px;
     }
     .main-title {
         padding: 0 20px;

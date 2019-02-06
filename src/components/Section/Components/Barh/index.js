@@ -122,7 +122,7 @@ class Barh extends Component {
       return (
         <ul className='tooltip'>
             <li className='tooltip-item' style={{ color: dimensions[0].color }}>
-              <span className='name'>{`${label}:`}</span>
+              <span className='name'>{`${label}`}</span>
               <span className='value'>{`${formatter(dimensions[0].value)}`}</span>
             </li>
         </ul>
@@ -133,7 +133,7 @@ class Barh extends Component {
       <ul className='tooltip'>
         {dimensions.map((payload, idx) =>
           <li className='tooltip-item' key={idx} style={{ color: payload.color }}>
-            <span className='name'>{`${payload.dataKey}:`}</span>
+            <span className='name'>{`${payload.dataKey}`}</span>
             <span className='value'>{`${formatter(payload.value)}`}</span>
           </li>)}
       </ul>
@@ -154,7 +154,7 @@ class Barh extends Component {
         {cutoff ? <div className='more-info-wrapper'><a className={cn('more-info-link', collapsed && 'collapsed')} href='#' onClick={(e) => this.toggleCollapse(e)} >{collapsed ? 'ver más' : 'ver menos'}</a></div> : null}
         <BarChart width={620} height={height} data={data}
           margin={{ top: 5, right: 50, left: 0, bottom: 5 }} layout="vertical"
-          maxBarSize={30}
+          maxBarSize={25}
         >
           <CartesianGrid strokeDasharray="2 2" />
           <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber} {...logScaleProps} />
