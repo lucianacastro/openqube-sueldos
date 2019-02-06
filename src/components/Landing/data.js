@@ -250,7 +250,7 @@ export default [
                             {  // tab
                                 title: 'Salarios en AR$',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['salary'] },
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['salary'], currency: 'AR$' },
                                 description: 'Serie histórica de salarios basada en encuestas anteriores.',
                             },
                             {  // tab
@@ -272,7 +272,7 @@ export default [
                             {  // tab
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false },
+                                props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$' },
                                 description: 'Mediana salarial en [AR$] por región del país.',
                             },
                             {  // tab
@@ -414,10 +414,10 @@ export default [
                                         historic_charts['historic_gender_percent'].data
                                             .reduce((dates, row) => ({
                                                 ...dates,
-                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
-                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
-                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.count,
+                                                    ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
+                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.count,
                                                 },
                                             }), {})
                                     ),
@@ -435,10 +435,10 @@ export default [
                                         historic_charts['historic_gender_percent'].data
                                             .reduce((dates, row) => ({
                                                 ...dates,
-                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
-                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
-                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.count,
+                                                    ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
+                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.count,
                                                 },
                                             }), {})
                                     ),
@@ -461,10 +461,10 @@ export default [
                                         historic_charts['historic_gender_salary_median'].data
                                             .reduce((dates, row) => ({
                                                 ...dates,
-                                                [ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ]: {
+                                                [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
-                                                    ...dates[ row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] ],
-                                                    [ row.name.match(/'(\w+)'\)$/)[1] ]: row.salary,
+                                                    ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
+                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.salary,
                                                 },
                                             }), {})
                                     ),

@@ -31,7 +31,8 @@ class Barh extends Component {
     isPercentual: PropTypes.bool,
     isLogScale: PropTypes.bool,
     cutoff: PropTypes.number,
-    isStacked: PropTypes.bool
+    isStacked: PropTypes.bool,
+    currency: PropTypes.string
   }
 
   state = {
@@ -70,7 +71,8 @@ class Barh extends Component {
   }
 
   toNumber(decimal, fixed = 2) {
-    return `${(decimal * 100).toFixed(fixed) / 100}`;
+    const { currency } = this.props;
+    return `${currency ? currency + ' ' : ''}${(decimal * 100).toFixed(fixed) / 100}`;
   }
 
   toggleCollapse(e) {
@@ -95,9 +97,9 @@ class Barh extends Component {
           maxBarSize={25}
         >
           <CartesianGrid strokeDasharray="2 2" />
-          <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber} {...logScaleProps} />
+          <XAxis type="number" tickFormatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} {...logScaleProps} />
           <YAxis dataKey="name" type="category" width={200} />
-          <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber} />
+          <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
           {!dataKeys.includes('value') ? <Legend /> : null}
           {dataKeys.map((dataKey, indexGroup) =>
             <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} >
