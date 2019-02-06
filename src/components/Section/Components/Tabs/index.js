@@ -68,8 +68,10 @@ class Tabs extends Component {
           {data.map((item, index) => (
             index === this.state.activeTabIndex &&
             <div className='tab-content' key={item + index}>
+              <div className='tab-content-content'>{item.content}</div>
               {this.getComponent(item)}
-              <p>{item.description}</p>
+              <div className='tab-content-caption'>{item.caption}</div>
+              <div className='tab-content-description'>{item.description}</div>
             </div>
           ))
           }

@@ -6,37 +6,21 @@ import historic_charts from './historic-charts';
 export default [
     { // category
         title: 'Introducción',
-        data: [
-            { // sub-category
-                title: '',
-                data: [
-                    {  // section
-                        title: '',
-                        data: [
-                            {  // tab
-                                props: { data: [] },
-                                description: (
-                                    <div>
-                                        <p>
-                                            Desde 2014 SysArmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
-                                            Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través de <a href="https://sysarmy.com.ar/blog/" target="_blank">el blog de SysArmy</a>.
-                                        </p>
-                                        <p>
-                                            En esta oportunidad, desde OpenQube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
-                                        </p>
-                                        <p>
-                                            Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
-                                            Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado <a href="#Metodologia">Metodología</a>.
-                                        </p>
-                                    </div>
-                                )
-                            },
-                        ],
-                    },
-                ],
-            },
-            
-        ],
+        content: (
+            <div>
+                <p>
+                    Desde 2014 SysArmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
+                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través de el <a href="https://sysarmy.com.ar/blog/" target="_blank">blog de SysArmy</a>.
+                </p>
+                <p>
+                    En esta oportunidad, desde OpenQube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
+                </p>
+                <p>
+                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
+                    Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
+                </p>
+            </div>
+        )
     },
     { // category
         title: 'Perfil de los Encuestados',
@@ -51,13 +35,15 @@ export default [
                                 title: 'Geografía',
                                 component: 'MapArgentina', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true },
-                                description: 'Vista rápida del nivel de participación en la encuesta por regiones del país.',
+                                caption: 'Mapa de participación en la encuesta por regiones del país.',
+                                description: 'La intensidad del color es solo representativa.',
                             },
                             {  // tab
                                 title: 'Nivel de participación',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001 },
-                                description: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
+                                caption: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
+                                description: <p>La <a href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a> permite resaltar las diferencias entre provincias, incluso cuando esta sea muy amplia.  Nótese que las líneas verticales de la cuadrícula no son equidistantes, tampoco los valores de la escala.</p>,
                             },
                         ],
                     },
@@ -194,7 +180,7 @@ export default [
                             { // tab
                                 title: 'Universidades y estado de las carreras',
                                 component: 'Barh',
-                                props: { ...charts['universities_stacked_percent'], isPercentual: true, isLogScale: false, cutoff: 10 },
+                                props: { ...charts['universities_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 10 },
                                 description: 'datos porcentuales',
                             },
                         ],
@@ -765,91 +751,76 @@ export default [
     },
     {
         title: 'Metodología',
-        data: [
-            { // sub-category
-                title: '',
-                data: [
-                    {  // section
-                        title: '',
-                        data: [
-                            {  // tab
-                                props: { data: [] },
-                                description: (
-                                    <div>
-                                        <p>
-                                            Para poder comprender mejor los resultados aquí expuestos, es importante hacer ciertas aclaraciones respecto del enfoque y la metodología utilizada.
-                                        </p>
-                                        <p>
-                                            <blockquote>- ¿Quieren decir que existe subjetividad en este reporte?</blockquote>
-                                            <blockquote>- Así es.  Aunque hicimos todo lo posible para minimizarla.</blockquote>
-                                            Si bien los resultados aquí expuestos son números, hay ciertos procedimientos manuales que ayudaron a seleccionarlos, agruparlos y haberles dado relevancia respecto de otros.  Más abajo mencionamos los más importantes:
-                                        </p>
-                                        <h4>Salarios</h4>
-                                        <p>
-                                            Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
-                                            Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso.  La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
-                                        </p>
-                                        <p>
-                                            La mediana de los salarios, para los datos de la encuesta, suele estar levemente por debajo del valor promedio.
-                                        </p>
-                                        <h5>Valores atípicos</h5>
-                                        <p>
-                                            Muchos salarios ingresados por los encuestados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
-                                            Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
-                                        </p>
-                                        <p>
-                                            Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
-                                        </p>
-                                        <h4>Experiencia</h4>
-                                        <p>
-                                            Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos:
-                                            <ol>
-                                                <li><strong>Junior</strong>: de 0 hasta 2 años.</li>
-                                                <li><strong>Semi-Senior</strong>: de 2 años inclusive hasta 5 años.</li>
-                                                <li><strong>Senior</strong>: desde 5 años inclusive.</li>
-                                            </ol>
-                                            Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.
-                                        </p>
-                                        <h4>Normalización de entradas de texto libre</h4>
-                                        <p>
-                                            En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, son de texto libre.
-                                            Esto conlleva a una mayor dispersión de valores, dado que cada encuestado contesta de maneras distintas:
-                                            <ul>
-                                                <li>en mayúsculas</li>
-                                                <li>en minúsculas</li>
-                                                <li>con abreviaciones</li>
-                                                <li>sin abreviaciones</li>
-                                                <li>con errores de ortografía</li>
-                                                <li>sin errores de ortografía</li>
-                                                <li>con increíbles errores de ortografía</li>
-                                                <li>todas las combinaciones posibles de las anteriores</li>
-                                                <li>etc.</li>
-                                            </ul>
-                                        </p>
-                                        <p>
-                                            De existir esta dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
-                                        </p>
-                                        <p>
-                                            Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
-                                        </p>
-                                        <h4>Series temporales</h4>
-                                        <h5>Salarios</h5>
-                                        <p>
-                                            Para los valores presentados de Progresión Histórica, tanto en el apartado de <a href="#Salarios-Progresion-historica">Salarios</a> como de <a href="#Genero-Progresion-historica">Género</a>,
-                                            también hemos aplicado reglas de normalización de valores y remoción de valores atípicos.
-                                        </p>
-                                        <p>
-                                            Por ejemplo, para los datasets de entre <i>2016</i> a <i>2018</i>, los salarios podrían estar dados en valores brutos o netos según cada respuesta.
-                                            En ese caso, lo que se hizo fue convertir los valores netos a brutos, sumándoles el procentaje correspondiente a las cargas sociales.
-                                            Por supuesto que existe cierto grado de error, puesto que no consideramos el distorsivo Impuesto a las Ganancias, ya que sería impracticable dado la complijidad de su cálculo y la falta de información sobre posibles deducciones.
-                                        </p>
-                                    </div>
-                                )
-                            },
-                        ],
-                    },
-                ],
-            },
-        ]
+        content: (
+            <div>
+                <p>
+                    Para poder comprender mejor los resultados aquí expuestos, es importante hacer ciertas aclaraciones respecto del enfoque y la metodología utilizada.
+                </p>
+                <p>
+                    <blockquote>- ¿Quieren decir que existe subjetividad en este reporte?</blockquote>
+                    <blockquote>- Así es.  Aunque hicimos todo lo posible para minimizarla.</blockquote>
+                    Si bien los resultados aquí expuestos son números, hay ciertos procedimientos manuales que ayudaron a seleccionarlos, agruparlos y haberles dado relevancia respecto de otros.  Más abajo mencionamos los más importantes:
+                </p>
+                <h4>Salarios</h4>
+                <p>
+                    Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
+                    Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso.  La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
+                </p>
+                <p>
+                    La mediana de los salarios, para los datos de la encuesta, suele estar levemente por debajo del valor promedio.
+                </p>
+                <h5>Valores atípicos</h5>
+                <p>
+                    Muchos salarios ingresados por los encuestados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
+                    Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
+                </p>
+                <p>
+                    Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
+                </p>
+                <h4>Experiencia</h4>
+                <p>
+                    Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos:
+                    <ol>
+                        <li><strong>Junior</strong>: de 0 hasta 2 años.</li>
+                        <li><strong>Semi-Senior</strong>: de 2 años inclusive hasta 5 años.</li>
+                        <li><strong>Senior</strong>: desde 5 años inclusive.</li>
+                    </ol>
+                    Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.
+                </p>
+                <h4>Normalización de entradas de texto libre</h4>
+                <p>
+                    En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, son de texto libre.
+                    Esto conlleva a una mayor dispersión de valores, dado que cada encuestado contesta de maneras distintas:
+                    <ul>
+                        <li>en mayúsculas</li>
+                        <li>en minúsculas</li>
+                        <li>con abreviaciones</li>
+                        <li>sin abreviaciones</li>
+                        <li>con errores de ortografía</li>
+                        <li>sin errores de ortografía</li>
+                        <li>con increíbles errores de ortografía</li>
+                        <li>todas las combinaciones posibles de las anteriores</li>
+                        <li>etc.</li>
+                    </ul>
+                </p>
+                <p>
+                    De existir esta dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
+                </p>
+                <p>
+                    Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
+                </p>
+                <h4>Series temporales</h4>
+                <h5>Salarios</h5>
+                <p>
+                    Para los valores presentados de Progresión Histórica, tanto en el apartado de <a href="#Salarios-Progresion-historica">Salarios</a> como de <a href="#Genero-Progresion-historica">Género</a>,
+                    también hemos aplicado reglas de normalización de valores y remoción de valores atípicos.
+                </p>
+                <p>
+                    Por ejemplo, para los datasets de entre <i>2016</i> a <i>2018</i>, los salarios podrían estar dados en valores brutos o netos según cada respuesta.
+                    En ese caso, lo que se hizo fue convertir los valores netos a brutos, sumándoles el procentaje correspondiente a las cargas sociales.
+                    Por supuesto que existe cierto grado de error, puesto que no consideramos el distorsivo Impuesto a las Ganancias, ya que sería impracticable dado la complijidad de su cálculo y la falta de información sobre posibles deducciones.
+                </p>
+            </div>
+        )
     }
 ];

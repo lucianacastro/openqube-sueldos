@@ -9,3 +9,16 @@
 .tab-content {
     text-align: left;
 }
+
+.tab-content-caption {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;
+}
+
+.tab-content-description {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #444;
+    text-align: center;
+}

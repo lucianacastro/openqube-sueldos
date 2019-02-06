@@ -23,14 +23,16 @@ class Landing extends Component {
               key={categoryIndex}
               className='category-section'>
               <Title titleId={slugify(category.title)} title={category.title} type='category' />
-              {category.data.map((subcategory, subcategoryIndex) => (
+              {category.content && <div className='category-section-content'>{category.content}</div>}
+              {category.data && category.data.map((subcategory, subcategoryIndex) => (
                 <section
                   id={slugify(`${category.title} ${subcategory.title}`)}
                   key={`${categoryIndex}-${subcategoryIndex}`}
                   className='subcategory-section'
                   >
                   <Title titleId={slugify(`${category.title} ${subcategory.title}`)} title={subcategory.title} type='subcategory' />
-                  {subcategory.data.map((section, sectionIndex) => (
+                  {subcategory.content && <div className='subcategory-section-content'>{subcategory.content}</div>}
+                  {subcategory.data && subcategory.data.map((section, sectionIndex) => (
                     <Section 
                       id={slugify(`${subcategory.title} ${subcategory.title} ${section.title}`)}
                       key={`${categoryIndex}-${subcategoryIndex}-${sectionIndex}`}

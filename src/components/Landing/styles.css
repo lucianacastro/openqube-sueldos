@@ -1,10 +1,18 @@
 .category-section {
     padding-top: 20px;
-    margin-bottom: 150px;
+    margin-bottom: 60px;
+}
+
+.category-section-content {
+    text-align: left;
 }
 
 .subcategory-section {
     padding-top: 10px;
+}
+
+.subcategory-section-content {
+    text-align: left;
 }
 
 .right-wrapper {
@@ -13,11 +21,13 @@
     padding: 0 20px;
     box-sizing: border-box;
     overflow: hidden;
+    margin-top: -20px; /* this is to correct the sections' padding top duw to the scrollspy navigation positioning */
 }
 
 @media (max-width: 768px) {
     .right-wrapper {
         width: 100%;
         padding: 0;
+        margin-top: 0; /* this is to correct the sections' padding top duw to the scrollspy navigation positioning */
     }
 }
