@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 
 import './styles.css';
-import { COLORS1 } from '../chartsUtils';
+import { COLORS1 as COLORS } from '../chartsUtils';
 import CustomizedTooltip from '../CustomizedTooltip';
 
 
@@ -62,7 +62,7 @@ class Barh extends Component {
   }
 
   getDataKeyColor(index) {
-    return COLORS1[index] || COLORS1[COLORS1.length - 1];
+    return COLORS[index] || COLORS[COLORS.length - 1];
   }
 
   toPercent(decimal, fixed = 0) {

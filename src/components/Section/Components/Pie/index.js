@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 
 import './styles.css';
-import { COLORS2 } from '../chartsUtils';
+import { COLORS2 as COLORS } from '../chartsUtils';
 import CustomizedTooltip from '../CustomizedTooltip';
 
 
@@ -38,7 +38,7 @@ class Pie extends Component {
   }
 
   getDataKeyColor(index) {
-    return COLORS2[index] || COLORS2[COLORS2.length - 1];
+    return COLORS[index] || COLORS[COLORS.length - 1];
   }
 
   toPercent(decimal, fixed = 0) {
@@ -55,11 +55,11 @@ class Pie extends Component {
     return (
       <PieChart width={400} height={250} className='pie-chart'>
         <_Pie
-          isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS2[0]}
+          isAnimationActive={false} data={data} cx={200} cy={110} outerRadius={75} fill={COLORS[0]}
           label={isPercentual ? this.toPercentLabel : null}
           dataKey="value">
           {
-            data.map((row, index) => <Cell fill={COLORS2[index % COLORS2.length]} key={index} />)
+            data.map((row, index) => <Cell fill={COLORS[index % COLORS.length]} key={index} />)
           }
         </_Pie>
         <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : null} />
