@@ -24,6 +24,14 @@ export default [
     },
     { // category
         title: 'Perfil de los Encuestados',
+        content: (
+            <div>
+                <center>
+                <p><strong>{charts['total_surveyed']}</strong> fueron los encuestados en total en la República Argentina.</p>
+                <p><strong>{charts['total_analyzed_surveyed']}</strong> respuestas fueron consideradas en el presente anális, es decir un <strong>{parseInt(charts['total_analyzed_surveyed']/charts['total_surveyed']*10000)/100}%</strong> del total.</p>
+                </center>
+            </div>
+        ),
         data: [
             { // sub-category
                 title: 'Regiones',
@@ -43,7 +51,7 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001 },
                                 caption: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
-                                description: <p>La <a href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a> permite resaltar las diferencias entre provincias, incluso cuando esta sea muy amplia.  Nótese que las líneas verticales de la cuadrícula no son equidistantes, tampoco los valores de la escala.</p>,
+                                description: <p>La <a href="#Metodologia">escala logarítmica</a> permite resaltar las diferencias entre provincias, incluso cuando esta sea muy amplia.  Nótese que las líneas verticales de la cuadrícula no son equidistantes, tampoco los valores de la escala son secuenciales.</p>,
                             },
                         ],
                     },
@@ -59,7 +67,7 @@ export default [
                                 title: 'Nivel de participación',
                                 component: 'Barh', // graph
                                 props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Porcentaje de encuestados por rol, presentados es escala logarítmica.',
+                                caption: <p>Porcentaje de encuestados por rol, presentados en <a href="#Metodologia">escala logarítmica</a>.</p>,
                             },
                         ],
                     },
@@ -70,14 +78,9 @@ export default [
                                 title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
-                                description: 'datos porcentuales',
-                            },/*
-                            { // tab
-                                title: 'Mediana salarial',
-                                component: 'Barh',
-                                props: { ...charts['opensource_salary_median'], isPercentual: false },
-                                description: 'Meddia salarial en [AR$]',
-                            },*/
+                                caption: <p>Quienes <strong>No</strong> contribuyen al Open Source, y quienes <strong>Sí</strong> lo hacen.</p>,
+                                description: <p>¿Alguien mencionó al <a target="_blank" href="https://es.wikipedia.org/wiki/Principio_de_Pareto">Principio de Pareto</a>?</p>
+                            },
                         ],
                     },
                     {
@@ -87,14 +90,9 @@ export default [
                                 title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
-                                description: 'datos porcentuales',
-                            },/*
-                            { // tab
-                                title: 'Mediana salarial',
-                                component: 'Barh',
-                                props: { ...charts['hobbie_salary_median'], isPercentual: false },
-                                description: 'Meddia salarial en [AR$]',
-                            },*/
+                                caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
+                                description: <p>Empate.</p>
+                            },
                         ],
                     },
                 ],
@@ -109,7 +107,8 @@ export default [
                                 title: 'Todos',
                                 component: 'Barh', // graph
                                 props: { ...charts['experience_years_percent'], isPercentual: true },
-                                description: 'Porcentaje de encuestados por años de experiencia en su profesión',
+                                caption: 'Porcentaje de encuestados por años de experiencia en la profesión.',
+                                description: <p>Los datos fueron agrupados por rangos de años, en conjuntos arbitrarios.</p>
                             },
                         ],
                     },
@@ -120,7 +119,8 @@ export default [
                                 title: 'Todos',
                                 component: 'Barh', // graph
                                 props: { ...charts['experience_years_in_company'], isPercentual: true },
-                                description: 'Porcentaje de encuestados por años de antigüedad en su compañía actual',
+                                caption: 'Porcentaje de encuestados por años de antigüedad en su compañía actual.',
+                                description: <p>Los datos fueron agrupados por rangos de años, en conjuntos arbitrarios.</p>
                             },
                         ],
                     },
@@ -131,7 +131,8 @@ export default [
                                 title: 'Todos',
                                 component: 'Barh', // graph
                                 props: { ...charts['experience_years_in_position'], isPercentual: true },
-                                description: 'Porcentaje de encuestados por años de antigüedad en su puesto actual',
+                                caption: 'Porcentaje de encuestados por años de antigüedad en su puesto actual.',
+                                description: <p>Los datos fueron agrupados por rangos de años, en conjuntos arbitrarios.</p>
                             },
                         ],
                     },
@@ -147,41 +148,62 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_stacked'], isPercentual: true, isStacked: true },
-                                description: 'datos en volúmen total',
+                                caption: 'Este gráfico nos permite ver para nuestra población, qué porcentaje de encuestados alcanzó cada nivel de estudios.  A su vez, por cada uno, podemos apreciar el grado de completitud o estado de sus carreras.',
+                                description: 'Con el objetivo de no distorsionar en análisis, aquí se utiliza la escala de representación lineal.'
                             },
                         ],
                     },
                     {
-                        title: '¿Cuales son las carreras más estudiadas?',
+                        title: '¿Cuáles son las carreras más estudiadas?',
                         data: [
                             { // tab
                                 title: 'Carreras',
                                 component: 'Barh',
                                 props: { ...charts['careeres_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 9 },
-                                description: 'datos porcentuales',
+                                caption: '',
+                                description: (<div>
+                                    <p>
+                                        Los nombres de las carreras fueron normalizados para la elaboración de este gráfico.<br /> Para más información, ver la <a href="#Metodologia">metodología</a>.<br />
+                                        En algunos casos no fue posible determinar las entradas con exactitud: por ejemplo, si "Sistemas" a secas se refiere a Licenciatura, Ingeniería, Analista o Tecnicatura.
+                                        Para estos casos solamente se normalizan, sin reagrupar.
+                                    </p>
+                                </div>),
                             },
                             { // tab
                                 title: 'Carreras y estado',
                                 component: 'Barh',
                                 props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 9, isStacked: false },
-                                description: 'datos porcentuales',
+                                caption: 'datos porcentuales',
+                                caption: <p>Aquí podemos ver de manera comparativa y en escala logarítmica,<br /> por cada carrera, cuál es el estado para la muestra.</p>,
+                                description: (<div>
+                                    <p>
+                                        Este gráfico podría ayudarnos a entender qué carreras suelen "completarse más que otras",<br /> o también ver el nivel de deserción en cada una, a grandes rasgos e independientemente de la casa de estudios.
+                                    </p>
+                                </div>),
                             },
                         ],
                     },
                     {
-                        title: '¿Y cuales las Universidades más concurridas?',
+                        title: '¿Cuáles son las Universidades más concurridas?',
                         data: [
                             { // tab
                                 title: 'Universidades',
                                 component: 'Barh',
                                 props: { ...charts['universities_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                caption: <p>Los nombres de las casas de estudio fueron normalizados para la elaboración de este gráfico.<br /> Para más información, ver la <a href="#Metodologia">metodología</a>.</p>,
+                                description: '',
                             },
                             { // tab
                                 title: 'Universidades y estado de las carreras',
                                 component: 'Barh',
                                 props: { ...charts['universities_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                caption: <p>Aquí se puede apreciar de manera comparativa y en escala logarítmica,<br /> por cada casa de estudio, cuál es el estado de sus carreras para la muestra.</p>,
+                                description: (<div>
+                                    <p>
+                                        Este gráfico podría darnos una idea del nivel de deserción en cada casa de estudio, a grandes rasgos.
+                                        Es importante aclarar que para muchas universidades, en especial cuanto más abajo estén listadas, la cantidad de muestras puede ser muy baja y no ser representativa de la realidad de dichas casas de estudio.
+                                    </p>
+                                </div>),
                             },
                         ],
                     },
@@ -192,7 +214,8 @@ export default [
                                 title: '',
                                 component: 'Pie',
                                 props: { ...charts['specialization_percent'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                caption: <p>Quienes <strong>Sí</strong> realizaron cursos de especialización alguna vez, y quienes <strong>No</strong> lo hicieron.</p>,
+                                description: '',
                             },
                         ],
                     },
@@ -203,7 +226,8 @@ export default [
                                 title: '',
                                 component: 'Pie',
                                 props: { ...charts['specialization_pays_percent'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                caption: <p>De qué forma, quienes realizaron cursos de especialización, financiaron los mismos.</p>,
+                                description: '',
                             },
                         ],
                     },
@@ -219,7 +243,8 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_gender_percent'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                caption: <p>Nivel de participación por género.</p>,
+                                description: <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>,
                             },
                         ],
                     },
@@ -230,7 +255,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true, cutoff: 3 },
-                                description: 'datos porcentuales',
+                                caption: <p>Tipos de orientaciones sexuales para la muestra.</p>,
                             },
                         ],
                     },
@@ -243,6 +268,13 @@ export default [
         data: [
             { // sub-category
                 title: 'Progresión histórica',
+                content: (
+                    <div>
+                        <p>Lo bueno de contar con resultados de encuestas anteriores, es poder medir la evolución de ciertos indicadores a través del tiempo.</p>
+                        <p>Para el caso de los salarios en Argentina, es de particular interés conocer su evolución, debido a las continuas fluctuaciones de la moneda y la inflación.</p>
+                        <p>En los siguientes gráficos podremos ver como fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización correspondiente a cada período.</p>
+                    </div>
+                ),
                 data: [
                     {  // section
                         title: 'Mediana salarial en Argentina',
@@ -250,14 +282,27 @@ export default [
                             {  // tab
                                 title: 'Salarios en AR$',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['salary'], currency: 'AR$' },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Pesos Argentinos'], currency: 'AR$' },
+                                caption: <p>Serie histórica de salarios basada en encuestas anteriores de SysArmy.</p>,
+                                description: <p>
+                                    Nótese, que para el período del <code>2016-02-01</code>, los salarios parecieran haber bajado respecto al período anterior.<br />
+                                    Sabemos que en general esto no sucede.  Probablemente esta anomalía tenga que ver, además de una diferencia de poblaciones, con un posible error en la normalización de sueldos netos pasados a bruto para dicho período.
+                                    Puesto que dicha conversión es impracticable, preferimos ajustarnos a la <a href="#Metodologia">metodología elegida</a> y no alterar dichos valores adrede.
+                                </p>,
                             },
                             {  // tab
                                 title: 'Salarios en US$',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['us_salary'] },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
+                                caption: <p>Serie histórica de salarios dividos por la cotización del dólar estadounidense en pesos.</p>,
+                                description: <div>
+                                    <p>
+                                        Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de poder medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
+                                    </p>
+                                    <p>
+                                        Sin hacer una análisis muy complejo del asunto, podemos decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generals, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
+                                    </p>
+                                </div>,
                             },
                         ],
                     },
@@ -322,7 +367,7 @@ export default [
                 ],
             },
             { // sub-category
-                title: 'Según Carrera',
+                title: 'Según Educación',
                 data: [
                     {  // section
                         title: '',
@@ -348,13 +393,22 @@ export default [
                                 description: 'Mediana salarial en [AR$] por región del país.',
                             },
                             {  // tab
-                                title: 'Por nivel de estudios alcanzado',
+                                title: 'Por nivel de estudios',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['nivel_estudios_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
                                 },
                                 description: 'Mediana salarial en [AR$] por región del país.',
+                            },
+                            {  // tab
+                                title: 'Por cursos',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['hizo_curso_salary_median'].data,
+                                },
+                                caption: 'Mediana salarial en [AR$] por región del país.',
+                                description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios.  O sí?',
                             },
                         ],
                     },
@@ -819,6 +873,12 @@ export default [
                     Por ejemplo, para los datasets de entre <i>2016</i> a <i>2018</i>, los salarios podrían estar dados en valores brutos o netos según cada respuesta.
                     En ese caso, lo que se hizo fue convertir los valores netos a brutos, sumándoles el procentaje correspondiente a las cargas sociales.
                     Por supuesto que existe cierto grado de error, puesto que no consideramos el distorsivo Impuesto a las Ganancias, ya que sería impracticable dado la complijidad de su cálculo y la falta de información sobre posibles deducciones.
+                </p>
+                <h4>Representaciones Gráficas</h4>
+                <h5>Escalas</h5>
+                <p>
+                    Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
+                    Este recurso nos permite apreciar las datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
                 </p>
             </div>
         )
