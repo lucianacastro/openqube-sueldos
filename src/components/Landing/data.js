@@ -300,7 +300,7 @@ export default [
                                         Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de poder medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
                                     </p>
                                     <p>
-                                        Sin hacer una análisis muy complejo del asunto, podemos decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generals, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
+                                        Podemos decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generales, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
                                     </p>
                                 </div>,
                             },
@@ -312,7 +312,7 @@ export default [
                 title: 'Según Región',
                 data: [
                     {  // section
-                        title: '',
+                        title: 'Salarios ajustes y nivel de conformidad',
                         data: [
                             {  // tab
                                 title: 'Mediana salarial',
@@ -321,7 +321,7 @@ export default [
                                 description: 'Mediana salarial en [AR$] por región del país.',
                             },
                             {  // tab
-                                title: '% de ajustes por inflación 2018',
+                                title: 'Acumulado de ajustes 2018',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false },
                                 description: 'Mediana de porcentaje de ajustes por región del país.',
@@ -340,7 +340,7 @@ export default [
                 title: 'Según Puesto',
                 data: [
                     {  // section
-                        title: '',
+                        title: 'Salarios según rol, experiencia e industrias',
                         data: [
                             {  // tab
                                 title: 'Por seniority y roles',
@@ -349,8 +349,9 @@ export default [
                                     data: charts['roles_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
                             },
                             {  // tab
                                 title: 'Por seniority y actividad principal de la empresa',
@@ -358,9 +359,9 @@ export default [
                                 props: {
                                     data: charts['actividad_principal_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
-                                    cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
                             },
                         ],
                     },
@@ -370,17 +371,18 @@ export default [
                 title: 'Según Educación',
                 data: [
                     {  // section
-                        title: '',
+                        title: 'Salarios según nivel de educación y experiencia',
                         data: [
                             {  // tab
-                                title: 'Por experiencia',
+                                title: 'Por carrera y exp.',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['carrera_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por carrera y años de experiencia.',
                             },
                             {  // tab
                                 title: 'Por estado de la carrera',
@@ -389,8 +391,9 @@ export default [
                                     data: charts['carrera_estado_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por carrera y estado de de la carrera.',
                             },
                             {  // tab
                                 title: 'Por nivel de estudios',
@@ -398,16 +401,18 @@ export default [
                                 props: {
                                     data: charts['nivel_estudios_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por nivel de estudios alcanzado.',
                             },
                             {  // tab
                                 title: 'Por cursos',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['hizo_curso_salary_median'].data,
+                                    currency: 'AR$',
                                 },
-                                caption: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial para quienes hicieron cursos de especialización y quienes no..',
                                 description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios.  O sí?',
                             },
                         ],
@@ -427,8 +432,9 @@ export default [
                                     data: charts['plataformas_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial según plataformas y años de experiencia.',
                             },
                         ],
                     },
@@ -442,8 +448,9 @@ export default [
                                     data: charts['lenguajes_de_programacion_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial según lenguaje de programación años de experiencia.',
                             },
                         ],
                     },
@@ -479,7 +486,8 @@ export default [
                                     yDataKeys: ['Mujer', 'Otros'],
                                     isPercentual: true,
                                 },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                caption: 'Serie de tiempo de salarios por género basada en encuestas anteriores (excluyendo mayoría).',
+                                description: 'Al excluir la parte mayoritario, es más notorio la relación de porcentajes para Mujeres y Otros.',
                             },
                             {  // tab
                                 title: 'Todos',
@@ -500,7 +508,7 @@ export default [
                                     yDataKeys: ['Mujer', 'Otros', 'Hombre'],
                                     isPercentual: true,
                                 },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                caption: 'Serie de tiempo de salarios por género basada en encuestas anteriores.',
                             },
                         ],
                     },
@@ -524,8 +532,10 @@ export default [
                                     ),
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    currency: 'AR$',
                                 },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                caption: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                description: 'Se han aplicado reglas de normalización.',
                             },
                         ],
                     },
@@ -541,7 +551,7 @@ export default [
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                 },
-                                description: 'Serie histórica de salarios basada en encuestas anteriores.',
+                                caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
                             },
                         ],
                     },
@@ -579,7 +589,7 @@ export default [
                 title: 'Salarios',
                 data: [
                     {  // section
-                        title: 'Por seniority y rol',
+                        title: 'Por rol y experiencia',
                         data: [
                             {  // tab
                                 title: 'Juniors',
@@ -588,8 +598,9 @@ export default [
                                     data: charts['roles_seniority_salary_junior_median'].data
                                         .sort((a, b) => b['Hombre'] - a['Hombre']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$].',
+                                caption: 'Mediana salarial por género según rol y hasta 2 años de experiencia.',
                             },
                             {  // tab
                                 title: 'Semi-Seniors',
@@ -598,8 +609,9 @@ export default [
                                     data: charts['roles_seniority_salary_semisenior_median'].data
                                         .sort((a, b) => b['Hombre'] - a['Hombre']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$].',
+                                caption: 'Mediana salarial por género según rol para 2 a 5 años de experiencia.',
                             },
                             {  // tab
                                 title: 'Seniors',
@@ -608,8 +620,9 @@ export default [
                                     data: charts['roles_seniority_salary_senior_median'].data
                                         .sort((a, b) => b['Hombre'] - a['Hombre']),
                                     cutoff: 15,
+                                    currency: 'AR$',
                                 },
-                                description: 'Mediana salarial en [AR$].',
+                                caption: 'Mediana salarial por género según rol para 5 años de experiencia o más.',
                             },
                         ],
                     },
@@ -620,7 +633,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
-                                description: 'Porcentaje de ajustes por región del país.',
+                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2018 por género.',
                             },
                         ],
                     },
