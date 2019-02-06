@@ -72,7 +72,7 @@ class Barh extends Component {
 
   toNumber(decimal, fixed = 2) {
     const { currency } = this.props;
-    return `${currency ? currency + ' ' : ''}${(decimal * 100).toFixed(fixed) / 100}`;
+    return `${currency ? currency + ' ' : ''}${(decimal).toFixed(fixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
 
   toggleCollapse(e) {

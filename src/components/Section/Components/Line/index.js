@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+import CustomizedTooltip from '../CustomizedTooltip';
 
 import './styles.css';
 
@@ -41,7 +42,7 @@ class Line extends Component {
 
   toNumber(decimal, fixed = 2) {
     const { currency } = this.props;
-    return `${currency ? currency + ' ' : ''}${(decimal * 100).toFixed(fixed) / 100}`;
+    return `${currency ? currency + ' ' : ''}${(decimal).toFixed(fixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
 
   getDataKeyColor(index) {
@@ -58,7 +59,7 @@ class Line extends Component {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={xDataKey} />
         <YAxis tickFormatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
-        <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
+        <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
         {!yDataKeys.includes('value') ? <Legend /> : null}
         {yDataKeys.map((dataKey, i) => (
           <_Line type='monotone' dataKey={dataKey} stroke={COLORS[i]} fill={COLORS[i + 1]} key={`${dataKey}-${i}`} />
