@@ -318,19 +318,19 @@ export default [
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$' },
-                                description: 'Mediana salarial en [AR$] por región del país.',
+                                caption: 'Mediana salarial por región del país.',
                             },
                             {  // tab
                                 title: 'Acumulado de ajustes 2018',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false },
-                                description: 'Mediana de porcentaje de ajustes por región del país.',
+                                caption: 'Mediana de porcentaje de ajustes por región del país.',
                             },
                             {  // tab
                                 title: 'Nivel de conformidad',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false },
-                                description: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 5.',
+                                caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4.',
                             },
                         ],
                     },
@@ -552,6 +552,8 @@ export default [
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                 },
                                 caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
+                                description: 'Escala de 1 - 4',
+                                
                             },
                         ],
                     },
