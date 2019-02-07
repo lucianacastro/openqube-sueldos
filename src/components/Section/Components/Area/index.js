@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 
 import './styles.css';
-import { COLORS2 as COLORS } from '../chartsUtils';
+import { COLORS1 as COLORS } from '../chartsUtils';
 
 class CustomizedLabel extends Component {
   render() {
