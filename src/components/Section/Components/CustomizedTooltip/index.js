@@ -26,7 +26,7 @@ class CustomizedTooltip extends Component {
         {dimensions.map((payload, idx) =>
           <li className='tooltip-item' key={idx} style={{ color: payload.color }}>
             <span className='name'>{`${payload.dataKey}`}</span>
-            <span className='value'>{`${formatter(payload.value)}`}</span>
+            <span className='value'>{payload.value ? formatter(payload.value) : <span class="no-data">datos insuficientes</span>}</span>
           </li>)}
       </ul>
     );

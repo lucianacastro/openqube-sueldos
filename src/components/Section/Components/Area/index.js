@@ -48,12 +48,12 @@ class Area extends Component {
 
   render() {
     const { data, xDataKey, yDataKeys, isPercentual } = this.props;
-
-    return (
-      <AreaChart width={620} height={400} data={data}
-        margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
-        className='area-chart'>
-        <CartesianGrid strokeDasharray="3 3" />
+  
+  	return (
+    	<AreaChart width={620} height={400} data={data}
+      margin={{ top: 10, right: 0, left: 5, bottom: 10 }}
+      className='area-chart'>
+        <CartesianGrid strokeDasharray="3 3"/>
         <XAxis dataKey={xDataKey} />
         <YAxis tickFormatter={isPercentual ? this.toPercent : this.toNumber} />
         <Tooltip formatter={isPercentual ? this.toPercent : this.toNumber} />
