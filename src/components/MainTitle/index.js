@@ -16,12 +16,12 @@ class MainTitle extends Component {
     return (
       <div className='main-title-wrapper'>
         <h1 className='main-title'>
-          <span>Resultados de la</span><br/>
+          <span className='first-line'>Resultados de la</span><br />
           <span>Encuesta de Sueldos 2019.01</span>
         </h1>
       </div>
-        )
-      }
-    }
-    
+    )
+  }
+}
+
 export default MainTitle;

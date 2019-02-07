@@ -16,13 +16,18 @@
     color: #f7f7f7;
     font-family: 'Open Sans', sans-serif;
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 300;
     box-sizing: border-box;
+    text-transform: uppercase;
 }
 
 .main-title span {
     margin: 0;
-    line-height: 34px;
+    line-height: 40px;
+}
+
+.main-title .first-line {
+    font-size: 22px;
 }
 
 @media (min-width: 340px) and (max-width: 768px) {
