@@ -10,7 +10,7 @@ export default [
             <div>
                 <p>
                     Desde 2014 SysArmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
-                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través de el <a href="https://sysarmy.com.ar/blog/" target="_blank">blog de SysArmy</a>.
+                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank">blog de SysArmy</a>.
                 </p>
                 <p>
                     En esta oportunidad, desde OpenQube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
@@ -27,8 +27,8 @@ export default [
         content: (
             <div>
                 <center>
-                <p><strong>{charts['total_surveyed']}</strong> fueron los encuestados en total en la República Argentina.</p>
-                <p><strong>{charts['total_analyzed_surveyed']}</strong> respuestas fueron consideradas en el presente anális, es decir un <strong>{parseInt(charts['total_analyzed_surveyed']/charts['total_surveyed']*10000)/100}%</strong> del total.</p>
+                    <p><strong>{charts['total_surveyed']}</strong> fueron los encuestados en total en la República Argentina.</p>
+                    <p><strong>{charts['total_analyzed_surveyed']}</strong> respuestas fueron consideradas en el presente análisis, es decir un <strong>{parseInt(charts['total_analyzed_surveyed'] / charts['total_surveyed'] * 10000) / 100}%</strong> del total.</p>
                 </center>
             </div>
         ),
@@ -149,7 +149,7 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['education_stacked'], isPercentual: true, isStacked: true },
                                 caption: 'Este gráfico nos permite ver para nuestra población, qué porcentaje de encuestados alcanzó cada nivel de estudios.  A su vez, por cada uno, podemos apreciar el grado de completitud o estado de sus carreras.',
-                                description: 'Con el objetivo de no distorsionar en análisis, aquí se utiliza la escala de representación lineal.'
+                                description: 'Con el objetivo de no distorsionar el análisis, aquí se utiliza la escala de representación lineal.'
                             },
                         ],
                     },
@@ -272,7 +272,7 @@ export default [
                     <div>
                         <p>Lo bueno de contar con resultados de encuestas anteriores, es poder medir la evolución de ciertos indicadores a través del tiempo.</p>
                         <p>Para el caso de los salarios en Argentina, es de particular interés conocer su evolución, debido a las continuas fluctuaciones de la moneda y la inflación.</p>
-                        <p>En los siguientes gráficos podremos ver como fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización correspondiente a cada período.</p>
+                        <p>En los siguientes gráficos podremos ver cómo fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización correspondiente a cada período.</p>
                     </div>
                 ),
                 data: [
@@ -553,7 +553,7 @@ export default [
                                 },
                                 caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
                                 description: 'Escala de 1 - 4',
-                                
+
                             },
                         ],
                     },
@@ -893,7 +893,7 @@ export default [
                 <h5>Escalas</h5>
                 <p>
                     Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
-                    Este recurso nos permite apreciar las datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
+                    Este recurso nos permite apreciar los datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
                 </p>
             </div>
         )
