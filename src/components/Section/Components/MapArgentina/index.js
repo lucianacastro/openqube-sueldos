@@ -74,18 +74,18 @@ class MapArgentina extends Component {
           <g>
             {Object.keys(PROVINCES).map(region => (
               <path key={region} id={region} title={region} d={PROVINCES[region]} fill={this.getRegionFillColor(region)}
-                onMouseOver={() => this.handleMouseOver(region)} />
+                onMouseOver={() => this.handleMouseOver(region)} onClick={() => this.handleMouseOver(region)} />
             ))}
           </g>
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2200 2200" width={100} height={100} className='caba'>
           <g>
-            <path title={'CABA'} d={CABA} onMouseOver={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} fill={this.getRegionFillColor('Ciudad Autónoma de Buenos Aires')} />
+            <path title={'CABA'} d={CABA} onMouseOver={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} onMouseClick={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} fill={this.getRegionFillColor('Ciudad Autónoma de Buenos Aires')} />
           </g>
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 500" width={40} height={20} className='malvinas'>
           <g>
-            <path title={'MALVINAS'} d={MALVINAS} onMouseOver={() => this.handleMouseOver('Islas Malvinas')} fill={this.getRegionFillColor('Islas Malvinas')} />
+            <path title={'MALVINAS'} d={MALVINAS} onMouseOver={() => this.handleMouseOver('Islas Malvinas')} onClick={() => this.handleMouseOver('Islas Malvinas')} fill={this.getRegionFillColor('Islas Malvinas')} />
           </g>
         </svg>
         <div className='description'>
