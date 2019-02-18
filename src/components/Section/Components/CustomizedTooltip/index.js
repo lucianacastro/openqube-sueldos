@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 
 import './styles.css';
 
 class CustomizedTooltip extends Component {
   static displayName = "CustomizedTooltip";
+  static propTypes = {
+    payload: PropTypes.array,
+    active: PropTypes.bool,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    formatter: PropTypes.func
+  }
   render() {
     const { payload: dimensions, active, label, name, formatter } = this.props;
     if (!active) {
@@ -26,7 +32,7 @@ class CustomizedTooltip extends Component {
         {dimensions.map((payload, idx) =>
           <li className='tooltip-item' key={idx} style={{ color: payload.color }}>
             <span className='name'>{`${payload.dataKey}`}</span>
-            <span className='value'>{payload.value ? formatter(payload.value) : <span class="no-data">datos insuficientes</span>}</span>
+            <span className='value'>{payload.value ? formatter(payload.value) : <span className="no-data">datos insuficientes</span>}</span>
           </li>)}
       </ul>
     );

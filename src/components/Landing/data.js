@@ -10,7 +10,7 @@ export default [
             <div>
                 <p>
                     Desde 2014 SysArmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
-                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank">blog de SysArmy</a>.
+                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de SysArmy</a>.
                 </p>
                 <p>
                     En esta oportunidad, desde OpenQube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
@@ -825,11 +825,11 @@ export default [
                 <p>
                     Para poder comprender mejor los resultados aquí expuestos, es importante hacer ciertas aclaraciones respecto del enfoque y la metodología utilizada.
                 </p>
-                <p>
-                    <blockquote>- ¿Quieren decir que existe subjetividad en este reporte?</blockquote>
-                    <blockquote>- Así es.  Aunque hicimos todo lo posible para minimizarla.</blockquote>
-                    Si bien los resultados aquí expuestos son números, hay ciertos procedimientos manuales que ayudaron a seleccionarlos, agruparlos y haberles dado relevancia respecto de otros.  Más abajo mencionamos los más importantes:
-                </p>
+
+                <blockquote>- ¿Quieren decir que existe subjetividad en este reporte?</blockquote>
+                <blockquote>- Así es.  Aunque hicimos todo lo posible para minimizarla.</blockquote>
+                Si bien los resultados aquí expuestos son números, hay ciertos procedimientos manuales que ayudaron a seleccionarlos, agruparlos y haberles dado relevancia respecto de otros.  Más abajo mencionamos los más importantes:
+
                 <h4>Salarios</h4>
                 <p>
                     Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
@@ -847,36 +847,35 @@ export default [
                     Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
                 </p>
                 <h4>Experiencia</h4>
-                <p>
-                    Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos:
-                    <ol>
-                        <li><strong>Junior</strong>: de 0 hasta 2 años.</li>
-                        <li><strong>Semi-Senior</strong>: de 2 años inclusive hasta 5 años.</li>
-                        <li><strong>Senior</strong>: desde 5 años inclusive.</li>
-                    </ol>
-                    Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.
-                </p>
+                <p>Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos: </p>
+                <ol>
+                    <li><strong>Junior</strong>: de 0 hasta 2 años.</li>
+                    <li><strong>Semi-Senior</strong>: de 2 años inclusive hasta 5 años.</li>
+                    <li><strong>Senior</strong>: desde 5 años inclusive.</li>
+                </ol>
+                <p>Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.</p>
                 <h4>Normalización de entradas de texto libre</h4>
                 <p>
                     En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, son de texto libre.
                     Esto conlleva a una mayor dispersión de valores, dado que cada encuestado contesta de maneras distintas:
-                    <ul>
-                        <li>en mayúsculas</li>
-                        <li>en minúsculas</li>
-                        <li>con abreviaciones</li>
-                        <li>sin abreviaciones</li>
-                        <li>con errores de ortografía</li>
-                        <li>sin errores de ortografía</li>
-                        <li>con increíbles errores de ortografía</li>
-                        <li>todas las combinaciones posibles de las anteriores</li>
-                        <li>etc.</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>en mayúsculas</li>
+                    <li>en minúsculas</li>
+                    <li>con abreviaciones</li>
+                    <li>sin abreviaciones</li>
+                    <li>con errores de ortografía</li>
+                    <li>sin errores de ortografía</li>
+                    <li>con increíbles errores de ortografía</li>
+                    <li>todas las combinaciones posibles de las anteriores</li>
+                    <li>etc.</li>
+                </ul>
+
                 <p>
                     De existir esta dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
                 </p>
                 <p>
-                    Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
+                    Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
                 </p>
                 <h4>Series temporales</h4>
                 <h5>Salarios</h5>

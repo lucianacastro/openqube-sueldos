@@ -67,7 +67,6 @@ class MapArgentina extends Component {
   render() {
     const { data, isPercentual = false } = this.props;
     const value = this.state.active.value;
-    console.log('DATA', data);
     return (
       <div className='map-argentina-container'>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 800" width={300} height={500} className='continent'>
