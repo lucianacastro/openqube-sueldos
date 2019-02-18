@@ -22,7 +22,7 @@ export default [
                 <br />
                 <div className='authors-wrapper'>
                     <small>
-                        El presente informe fue realizado para SysArmy
+                        El presente informe fue realizado para OpenQube
                     </small>
                     <small>
                         por <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a> y <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a>.
