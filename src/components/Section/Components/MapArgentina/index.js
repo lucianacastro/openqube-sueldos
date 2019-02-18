@@ -80,7 +80,7 @@ class MapArgentina extends Component {
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2200 2200" width={100} height={100} className='caba'>
           <g>
-            <path title={'CABA'} d={CABA} onMouseOver={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} onMouseClick={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} fill={this.getRegionFillColor('Ciudad Autónoma de Buenos Aires')} />
+            <path title={'CABA'} d={CABA} onMouseOver={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} onClick={() => this.handleMouseOver('Ciudad Autónoma de Buenos Aires')} fill={this.getRegionFillColor('Ciudad Autónoma de Buenos Aires')} />
           </g>
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 500" width={40} height={20} className='malvinas'>
