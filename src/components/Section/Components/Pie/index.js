@@ -5,23 +5,11 @@ import {
   Pie as _Pie,
   Cell,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 import './styles.css';
 import { COLORS2 as COLORS } from '../chartsUtils';
 import CustomizedTooltip from '../CustomizedTooltip';
-
-
-
-
-class CustomizedLabel extends Component {
-  render() {
-    const { x, y, stroke, value } = this.props;
-    const formattedValue = parseInt(value * 100 * 100, 10) / 100;
-    return <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">{formattedValue}%</text>
-  }
-}
 
 class Pie extends Component {
   static propTypes = {
@@ -45,12 +33,12 @@ class Pie extends Component {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
-  toPercentLabel({ percent: decimal, name: name }, fixed = 0) {
+  toPercentLabel({ percent: decimal, name }, fixed = 0) {
     return `${name}: ${(decimal * 100).toFixed(fixed)}%`;
   };
 
   render() {
-    const { data, isPercentual = false, isLogScale = false } = this.props;
+    const { data, isPercentual = false } = this.props;
 
     return (
       <PieChart width={400} height={250} className='pie-chart'>

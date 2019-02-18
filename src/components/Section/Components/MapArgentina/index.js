@@ -57,7 +57,7 @@ class MapArgentina extends Component {
 
 
   getRegionFillColor(regionId) {
-    const { data, isPercentual = false } = this.props;
+    const { data } = this.props;
     const ratio = (data.find(row => row.name === regionId) || { value: 0 }).value * 15 + 0.05;
     const opacity = ratio > 1 ? 1 : ratio;
 
@@ -65,7 +65,7 @@ class MapArgentina extends Component {
   }
 
   render() {
-    const { data, isPercentual = false } = this.props;
+    //const { data, isPercentual = false } = this.props;
     const value = this.state.active.value;
     return (
       <div className='map-argentina-container'>
