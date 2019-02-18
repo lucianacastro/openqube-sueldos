@@ -16,15 +16,6 @@ import './styles.css';
 import { COLORS1 as COLORS } from '../chartsUtils';
 import CustomizedTooltip from '../CustomizedTooltip';
 
-
-class CustomizedLabel extends Component {
-  render() {
-    const { x, y, stroke, value } = this.props;
-    const formattedValue = parseInt(value * 100 * 100, 10) / 100;
-    return <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">{formattedValue}%</text>
-  }
-}
-
 class Barh extends Component {
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.object),
@@ -40,7 +31,7 @@ class Barh extends Component {
   }
 
   getData() {
-    const { data = [], cutoff = 0, isPercentual = false } = this.props;
+    const { data = [], cutoff = 0 } = this.props;
 
     if (this.state.collapsed && cutoff) {
       const visibleRows = data.filter((v, i) => i < cutoff);

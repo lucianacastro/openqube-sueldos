@@ -15,14 +15,6 @@ import './styles.css';
 
 import { COLORS1 as COLORS } from '../chartsUtils';
 
-class CustomizedLabel extends Component {
-  render() {
-    const { x, y, stroke, value } = this.props;
-    const formattedValue = parseInt(value * 100 * 100, 10) / 100;
-    return <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">{formattedValue}%</text>
-  }
-}
-
 class Line extends Component {
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.object),

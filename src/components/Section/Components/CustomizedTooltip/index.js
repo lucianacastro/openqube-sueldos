@@ -9,11 +9,10 @@ class CustomizedTooltip extends Component {
     payload: PropTypes.array,
     active: PropTypes.bool,
     label: PropTypes.string,
-    name: PropTypes.string,
     formatter: PropTypes.func
   }
   render() {
-    const { payload: dimensions, active, label, name, formatter } = this.props;
+    const { payload: dimensions, active, label, formatter } = this.props;
     if (!active) {
       return null;
     }

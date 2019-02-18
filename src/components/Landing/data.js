@@ -79,7 +79,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> contribuyen al Open Source, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>¿Alguien mencionó al <a target="_blank" href="https://es.wikipedia.org/wiki/Principio_de_Pareto">Principio de Pareto</a>?</p>
+                                description: <p>¿Alguien mencionó al <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Principio_de_Pareto">Principio de Pareto</a>?</p>
                             },
                         ],
                     },
@@ -173,7 +173,6 @@ export default [
                                 title: 'Carreras y estado',
                                 component: 'Barh',
                                 props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 9, isStacked: false },
-                                caption: 'datos porcentuales',
                                 caption: <p>Aquí podemos ver de manera comparativa y en escala logarítmica,<br /> por cada carrera, cuál es el estado para la muestra.</p>,
                                 description: (<div>
                                     <p>
@@ -832,7 +831,7 @@ export default [
 
                 <h4>Salarios</h4>
                 <p>
-                    Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
+                    Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
                     Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso.  La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
                 </p>
                 <p>
@@ -841,10 +840,10 @@ export default [
                 <h5>Valores atípicos</h5>
                 <p>
                     Muchos salarios ingresados por los encuestados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
-                    Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
+                    Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
                 </p>
                 <p>
-                    Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
+                    Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
                 </p>
                 <h4>Experiencia</h4>
                 <p>Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos: </p>
@@ -891,7 +890,7 @@ export default [
                 <h4>Representaciones Gráficas</h4>
                 <h5>Escalas</h5>
                 <p>
-                    Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
+                    Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
                     Este recurso nos permite apreciar los datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
                 </p>
             </div>
