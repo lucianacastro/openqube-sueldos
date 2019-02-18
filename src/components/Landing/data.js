@@ -100,7 +100,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>Empate.</p>
+                                description: <p>Parece que estamos frente a un empate.</p>
                             },
                         ],
                     },
@@ -264,6 +264,17 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true, cutoff: 3 },
                                 caption: <p>Tipos de orientaciones sexuales para la muestra.</p>,
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Discapacidad',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: { ...charts['discapacidad_percent'], isPercentual: true },
+                                caption: <p>Tipos de discapacidades.</p>,
                             },
                         ],
                     },
