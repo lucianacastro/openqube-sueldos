@@ -19,6 +19,15 @@ export default [
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
                     Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
+                <br />
+                <div className='authors-wrapper'>
+                    <small>
+                        El presente informe fue realizado para SysArmy
+                    </small>
+                    <small>
+                        por <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a> y <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a>.
+                    </small>
+                </div>
             </div>
         )
     },

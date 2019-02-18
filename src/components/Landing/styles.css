@@ -31,3 +31,15 @@
         margin-top: 0; /* this is to correct the sections' padding top duw to the scrollspy navigation positioning */
     }
 }
+
+.authors-wrapper {
+    text-align: right;
+}
+
+.authors-wrapper small {
+    display: block;
+}
+
+.author-name {
+    color: #623296;
+}
