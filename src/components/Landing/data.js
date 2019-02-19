@@ -975,9 +975,9 @@ export default [
                 </p>
                 <h4>Repositorios</h4>
                 <ul>
-                    <li><a target="_blank" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
-                    <li><a target="_blank" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og">Notebook de análisis período 2019.01</a></li>
-                    <li><a target="_blank" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas Sysarmy 2014.02 - 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og">Notebook de análisis período 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas Sysarmy 2014.02 - 2019.01</a></li>
                 </ul>
             </div>
         )
