@@ -287,6 +287,11 @@ export default [
     },
     { // category
         title: 'Salarios',
+        content: (
+            <div>
+                <p>Todos los valrores de salarios aquí expresados tanto en moneda local, como en dólares, refieren a <strong>salario bruto</strong>: previo a <i>cargas sociales</i> e <i>impuestos</i>.</p>
+            </div>
+        ),
         data: [
             { // sub-category
                 title: 'Progresión histórica',
@@ -343,7 +348,7 @@ export default [
                                 caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a groso modo y sin contemplar otras variables.</p>,
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
@@ -353,7 +358,7 @@ export default [
                                 caption: '¿Cual fue porcentaje de ajuste por inflación acumulado típico en cada región?',
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
@@ -363,7 +368,7 @@ export default [
                                 caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4, de poco a muy conforme.',
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                         ],
@@ -893,9 +898,20 @@ export default [
                 <blockquote>- Así es.  Aunque hicimos todo lo posible para minimizarla.</blockquote>
                 Si bien los resultados aquí expuestos son números, hay ciertos procedimientos manuales que ayudaron a seleccionarlos, agruparlos y haberles dado relevancia respecto de otros.  Más abajo mencionamos los más importantes:
 
+                <h4>Representatividad de la muestra</h4>
+                <p>
+                    Para todos los segmentos sobre los cuales se ha hecho rankings de algún tipo (de salarios, conformidad, etc.), hemos tenido en cuenta principalmente el <strong>tamaño de la muestra</strong> por sobre otros factores.
+                    Debido a la multidimensionalidad de los datos, no creímos conveniente utilizar la <i>homogeneidad</i> para determinar la representatividad, ya que por ejemplo, para una misma región la dispersión de selarios puede ser muy grande debido a otros factores tales como la antiguedad, el nivel de estudios o la tecnología.
+                </p>
+                <p>
+                    En el caso de los <a href="#Salarios-Segun-Region">salarios por región</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
+                </p>
+                <p>
+                    Para otros segmentos, simplemente tomamos las valores más frecuentes para las variables con que se hizo rankings.  Con esto, aseguramos también que los datos presentados sean relevantes para el lector.
+                </p>
                 <h4>Salarios</h4>
                 <p>
-                    Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizaremos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a>.
+                    Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizamos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a> del salario bruto.
                     Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso.  La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
                 </p>
                 <p>
@@ -957,6 +973,12 @@ export default [
                     Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
                     Este recurso nos permite apreciar los datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
                 </p>
+                <h4>Repositorios</h4>
+                <ul>
+                    <li><a target="_blank" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
+                    <li><a target="_blank" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og">Notebook de análisis período 2019.01</a></li>
+                    <li><a target="_blank" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas Sysarmy 2014.02 - 2019.01</a></li>
+                </ul>
             </div>
         )
     }
