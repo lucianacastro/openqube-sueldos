@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { MEMES } from '../chartsUtils';
 import './styles.css';
 
 class CustomizedTooltip extends Component {
@@ -11,6 +12,7 @@ class CustomizedTooltip extends Component {
     label: PropTypes.string,
     formatter: PropTypes.func
   }
+
   render() {
     const { payload: dimensions, active, label, formatter } = this.props;
     if (!active) {
@@ -22,6 +24,7 @@ class CustomizedTooltip extends Component {
           <li className='tooltip-item' style={{ color: dimensions[0].color || dimensions[0].payload.fill }}>
             <span className='name'>{label || dimensions[0].name}</span>
             <span className='value'>{`${formatter(dimensions[0].value)}`}</span>
+            {label && MEMES[label] ? <img className='meme' src={MEMES[label]} /> : false}
           </li>
         </ul>
       )

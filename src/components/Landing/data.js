@@ -313,7 +313,7 @@ export default [
                                 title: 'Salarios en US$',
                                 component: 'Line', // graph
                                 props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
-                                caption: <p>Serie histórica de salarios dividos por la cotización del dólar estadounidense en pesos.</p>,
+                                caption: <p>Serie histórica de salarios sobre cotización del dólar estadounidense, en pesos.</p>,
                                 description: <div>
                                     <p>
                                         Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de poder medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
@@ -331,7 +331,7 @@ export default [
                 title: 'Según Región',
                 data: [
                     {  // section
-                        title: 'Salarios ajustes y nivel de conformidad',
+                        title: 'Salarios, ajustes y nivel de conformidad',
                         data: [
                             {  // tab
                                 title: 'Mediana salarial',
@@ -370,7 +370,10 @@ export default [
                                     cutoff: 15,
                                     currency: 'AR$',
                                 },
-                                caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
+                                caption: <div>
+                                    <p>Mediana salarial por años de experiencia en el puesto y rol.</p>
+                                    <p> La seniority aquí mencionada refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
+                                </div>,
                             },
                             {  // tab
                                 title: 'Por seniority y actividad principal de la empresa',
@@ -588,19 +591,19 @@ export default [
                                 title: 'Hombres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_hombre_stacked'], isPercentual: true, isStacked: true },
-                                description: 'datos en volúmen total',
+                                description: 'Datos en volúmen total',
                             },
                             {  // tab
                                 title: 'Mujeres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_mujer_stacked'], isPercentual: true, isStacked: true },
-                                description: 'datos en volúmen total',
+                                description: 'Datos en volúmen total',
                             },
                             {  // tab
                                 title: 'Otros',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_otros_stacked'], isPercentual: true, isStacked: true },
-                                description: 'datos en volúmen total',
+                                description: 'Datos en volúmen total',
                             },
                         ],
                     },
@@ -675,7 +678,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['plataformas'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -686,7 +689,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['lenguajes_de_programacion'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -697,7 +700,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['frameworksherramientas_y_librerias'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -708,7 +711,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['bases_de_datos'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -719,7 +722,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['qa_testing'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -730,7 +733,10 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['ides'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: <div>
+                                    <p>Datos porcentuales</p>
+                                    <p>Para quienes no estén familiarizados con el término, un <a href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitarle al desarrollador o programador el desarrollo de software.</p>
+                                </div>,
                             },
                         ],
                     },
@@ -751,7 +757,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['tipo_de_contrato_percent'], isLogScale: true, isPercentual: true },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -767,7 +773,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true, isPercentual: true },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -778,7 +784,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['beneficios_extra'], isPercentual: true, cutoff: 10 },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -789,7 +795,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['de_que_fue_el_ajuste'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -805,7 +811,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['cantidad_de_empleados'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -816,7 +822,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['actividad_principal'], isPercentual: true },
-                                description: 'datos porcentuales',
+                                description: 'Datos porcentuales',
                             },
                         ],
                     },
@@ -828,7 +834,7 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['la_recomendas_como_un_buen_lugar_para_trabajar'], isPercentual: true },
                                 description: (<span>
-                                    datos porcentuales, por clase según indicador&nbsp;<a target='_blank' href='https://es.wikipedia.org/wiki/Net_Promoter_Score' rel="noopener noreferrer">Net Promoter Score</a>
+                                    Datos porcentuales, por clase según indicador&nbsp;<a target='_blank' href='https://es.wikipedia.org/wiki/Net_Promoter_Score' rel="noopener noreferrer">Net Promoter Score</a>
                                 </span>),
                             },
                         ],

@@ -34,3 +34,8 @@
     font-style: italic;
     font-size: 0.75em;
 }
+
+.meme {
+    width: 100px;
+    margin-top: 15px;
+}
