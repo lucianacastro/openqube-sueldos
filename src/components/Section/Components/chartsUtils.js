@@ -55,6 +55,8 @@ export const MEMES = {
   'Visual Studio': 'https://thumbs.gfycat.com/CanineImpracticalAmurminnow-size_restricted.gif',
   'Ethereum': 'https://news.bitcoin.com/wp-content/uploads/2017/12/satoshis-vision-696x611.png',
   'Jira': 'http://elestimulo.com/ub/wp-content/uploads/sites/8/2018/05/Haroldfeature-1100x618.jpg',
+  'Detractores': 'http://66.media.tumblr.com/7ff797400ae3a8272cbf10d5c694f6e9/tumblr_inline_nq44uvQcyF1r4j8j1_500.gif',
+  '(0, 10]': 'https://media.giphy.com/media/3o6UB5RrlQuMfZp82Y/giphy.gif'
 }
 
 

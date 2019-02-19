@@ -795,7 +795,10 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['de_que_fue_el_ajuste'], isPercentual: true },
-                                description: 'Datos porcentuales',
+                                description: <div>
+                                    <p>'Datos porcentuales'</p>
+                                    <p>Los rangos representan el porcentaje de ajuste o aumento por inflación recibido. Las barras representan el porcentaje de encuestados que recibieron ajustes dentro de ese rango.</p>
+                                </div>,
                             },
                         ],
                     },
