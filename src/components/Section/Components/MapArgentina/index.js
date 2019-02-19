@@ -89,7 +89,7 @@ class MapArgentina extends Component {
         </svg>
         <div className='description'>
           <p className='province-name'>{this.state.active.name}</p>
-          <p className='province-value'>{value != 0 ? Math.round(value * 10000) / 100 : value} %</p>
+          <p className='province-value'>{value !== 0 ? Math.round(value * 10000) / 100 : value} %</p>
         </div>
       </div>
     );

@@ -26,7 +26,7 @@ class CustomizedTooltip extends Component {
             <span className='name'>{label || dimensions[0].name}</span>
             <span className='value'>{`${formatter(dimensions[0].value)}`}</span>
             <span className='value'>{dimensions[0].payload.invalid && <span className="invalid">datos insuficientes</span>}</span>
-            {label && MEMES[label] ? <img className='meme' src={MEMES[label]} /> : false}
+            {label && MEMES[label] ? <img className='meme' src={MEMES[label]} alt="meme" /> : false}
           </li>
         </ul>
       )

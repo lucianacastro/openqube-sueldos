@@ -252,7 +252,10 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_gender_percent'], isPercentual: true },
                                 caption: <p>Nivel de participación por género.</p>,
-                                description: <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>,
+                                description: <div>
+                                    <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>
+                                    <p>Si te preguntás dónde están mujeres, tal véz este <a target="_blank" rel="noopener noreferrer" href="http://www.fundacionsadosky.org.ar/wp-content/uploads/2015/05/resumen-mujeres-y-computacion-2013.pdf">informe de la Fundación Sadosky</a> te pueda dar una respuesta.</p>
+                                </div>,
                             },
                         ],
                     },
@@ -337,33 +340,30 @@ export default [
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$', markNegativeValues: true, },
-                                caption: 'Mediana salarial por región del país.',
+                                caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a groso modo y sin contemplar otras variables.</p>,
                                 description: <div>
-                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
-                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
                                 </div>,
                             },
                             {  // tab
                                 title: 'Acumulado de ajustes 2018',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
-                                caption: 'Mediana de porcentaje de ajustes por región del país.',
+                                caption: '¿Cual fue porcentaje de ajuste por inflación acumulado típico en cada región?',
                                 description: <div>
-                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
-                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
                                 </div>,
                             },
                             {  // tab
                                 title: 'Nivel de conformidad',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false, markNegativeValues: true, },
-                                caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4.',
+                                caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4, de poco a muy conforme.',
                                 description: <div>
-                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
-                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.  Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
                                 </div>,
                             },
                         ],
@@ -385,8 +385,8 @@ export default [
                                     cutoff: 15,
                                     currency: 'AR$',
                                 },
-                                caption: <div>
-                                    <p>Mediana salarial por años de experiencia en el puesto y rol.</p>
+                                caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
+                                description: <div>
                                     <p> La seniority aquí mencionada refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
                                 </div>,
                             },
@@ -399,6 +399,10 @@ export default [
                                     currency: 'AR$',
                                 },
                                 caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
+                                description: <div>
+                                    <p>Aquí puede notarse una diferencia en los niveles de salarios que manejan las empresas de Producto basado en software, respecto de las otras.</p>
+                                    <p>En segundo lugar, y muy cercano al siguiente, siguen quienes trabajan en áreas de Sistemas dando soporte a Otras Industrias. Por último, Servicios / Consultoría deSoftware / Digital.</p>
+                                </div>,
                             },
                         ],
                     },
@@ -524,7 +528,7 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: 'Serie de tiempo de salarios por género basada en encuestas anteriores (excluyendo mayoría).',
-                                description: 'Al excluir la parte mayoritario, es más notorio la relación de porcentajes para Mujeres y Otros.',
+                                description: 'Al excluir la parte mayoritaria, puede apreciarse mejor la relación de porcentajes para Mujeres y Otros.',
                             },
                             {  // tab
                                 title: 'Todos',
@@ -598,6 +602,17 @@ export default [
             },
             { // sub-category
                 title: 'Preparación',
+                content: <div>
+                    <p>
+                        En este apartado, segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
+                        Cabe aclarar que en el caso de Otros, tal como se puede ver en el apartado <a href="#Perfil-de-los-Encuestados-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
+                    </p>
+                    <p>
+                        Como se puede apreciar en el <a href="#Genero-Preparacion-Nivel-de-estudios-alcanzados-y-completitud">siguente gráfico</a>, queda muy claro que las mujeres mejoran todos los índices respecto a los hombres.
+                        De esto puede hacerse múltiples interpretaciones. Quizás, una explicación a este fenómeno, sea la reacción frente a la <a target="_blank" rel="noopener noreferrer" href="http://www.medallia.com.ar/inclusion/posts/las-desventajas-que-no-vemos/">desigualdad de oportunidades</a> en nuestra Industria.
+                        Si bien, la conscientización sobre las problemáticas de género en el sector hayan tomado relevancia en los últimos años, estamos lejos de cerrar <a href="#Genero-Progresion-historica-Salarios">esta brecha</a>. 
+                    </p>
+                </div>,
                 data: [
                     {  // section
                         title: 'Nivel de estudios alcanzados y completitud',
@@ -606,19 +621,22 @@ export default [
                                 title: 'Hombres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_hombre_stacked'], isPercentual: true, isStacked: true },
-                                description: 'Datos en volúmen total',
+                                caption: '¿Cual es el mayor nivel de estudios alcanzado de los hombres, y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de los hombres encuestados.'
                             },
                             {  // tab
                                 title: 'Mujeres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_mujer_stacked'], isPercentual: true, isStacked: true },
-                                description: 'Datos en volúmen total',
+                                caption: '¿Cual es el mayor nivel de estudios alcanzado de las mujeres, y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de los mujeres encuestadas.'
                             },
                             {  // tab
                                 title: 'Otros',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_otros_stacked'], isPercentual: true, isStacked: true },
-                                description: 'Datos en volúmen total',
+                                caption: '¿Cual es el mayor nivel de estudios alcanzado de Otros, y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de Otros encuestados.'
                             },
                         ],
                     },
@@ -673,6 +691,9 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
                                 caption: 'Porcentaje de ajustes por inflación acumulados en el año 2018 por género.',
+                                description: <div>
+                                    <p>Sería aventurado sacar conclusiones de este gráfico, ya que requiere de un estudio más minusioso respecto de la variable de género y como esto repercute en el cálculo de la Inflación (?).</p>
+                                </div>,
                             },
                         ],
                     },
@@ -772,7 +793,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['tipo_de_contrato_percent'], isLogScale: true, isPercentual: true },
-                                description: 'Datos porcentuales',
+                                caption: 'Porcentaje de tipos de contrato de trabajo en escala logarítimica.',
                             },
                         ],
                     },
@@ -788,7 +809,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true, isPercentual: true },
-                                description: 'Datos porcentuales',
+                                caption: 'Porcentaje de encuestado que han recibido o no, bonos como parte de la compensación, en escala logarítimica.',
                             },
                         ],
                     },
@@ -799,7 +820,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['beneficios_extra'], isPercentual: true, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                caption: 'Aquí se enumera los beneficios más comunes entre los reportados.',
                             },
                         ],
                     },
@@ -811,8 +832,7 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['de_que_fue_el_ajuste'], isPercentual: true },
                                 description: <div>
-                                    <p>'Datos porcentuales'</p>
-                                    <p>Los rangos representan el porcentaje de ajuste o aumento por inflación recibido. Las barras representan el porcentaje de encuestados que recibieron ajustes dentro de ese rango.</p>
+                                    <p>Los rangos (eje vertical) representan el porcentaje de ajuste o aumento por inflación recibido en el año. La longitud de las barras representa el porcentaje de encuestados que recibieron ajustes dentro de ese rango.</p>
                                 </div>,
                             },
                         ],
