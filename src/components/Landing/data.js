@@ -9,11 +9,11 @@ export default [
         content: (
             <div>
                 <p>
-                    Desde 2014 SysArmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
-                    Ya desde 2016 nuestras encuestas se relevan de forma semestral, y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de SysArmy</a>.
+                    Desde 2014 sysarmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
+                    Ya desde 2016 nuestras encuestas se relevan de forma semestral y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
                 </p>
                 <p>
-                    En esta oportunidad, desde OpenQube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
+                    En esta oportunidad, desde openqube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
                 </p>
                 <p>
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
@@ -32,11 +32,11 @@ export default [
         )
     },
     { // category
-        title: 'Perfil de los Encuestados',
+        title: 'Perfil de participantes',
         content: (
             <div>
                 <center>
-                    <p><strong>{charts['total_surveyed']}</strong> fueron los encuestados en total en la República Argentina.</p>
+                    <p><strong>{charts['total_surveyed']}</strong> fueron las respuestas totales en la República Argentina.</p>
                     <p><strong>{charts['total_analyzed_surveyed']}</strong> respuestas fueron consideradas en el presente análisis, es decir un <strong>{parseInt(charts['total_analyzed_surveyed'] / charts['total_surveyed'] * 10000) / 100}%</strong> del total.</p>
                 </center>
             </div>
@@ -81,7 +81,7 @@ export default [
                         ],
                     },
                     {
-                        title: '¿Cuántos contribuyen al Open Source?',
+                        title: '¿Cuánta gente contribuye al Open Source?',
                         data: [
                             { // tab
                                 title: 'Nivel de participación',
@@ -93,7 +93,7 @@ export default [
                         ],
                     },
                     {
-                        title: '¿Cuántos programan por hobbie?',
+                        title: '¿Cuánta gente programa por hobbie?',
                         data: [
                             { // tab
                                 title: 'Nivel de participación',
@@ -254,7 +254,7 @@ export default [
                                 caption: <p>Nivel de participación por género.</p>,
                                 description: <div>
                                     <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>
-                                    <p>Si te preguntás dónde están mujeres, tal véz este <a target="_blank" rel="noopener noreferrer" href="http://www.fundacionsadosky.org.ar/wp-content/uploads/2015/05/resumen-mujeres-y-computacion-2013.pdf">informe de la Fundación Sadosky</a> te pueda dar una respuesta.</p>
+                                    <p>Si te preguntás por qué no hay tantas mujeres, tal vez esta <a target="_blank" rel="noopener noreferrer" href="http://www.mujeresprogramadoras.com.ar">investigación de Chicas En Tecnología</a> te pueda dar una respuesta.</p>
                                 </div>,
                             },
                         ],
@@ -289,7 +289,7 @@ export default [
         title: 'Salarios',
         content: (
             <div>
-                <p>Todos los valrores de salarios aquí expresados tanto en moneda local, como en dólares, refieren a <strong>salario bruto</strong>: previo a <i>cargas sociales</i> e <i>impuestos</i>.</p>
+                <p>Todos los valores de salarios aquí expresados tanto en moneda local, como en dólares, refieren a <strong>salario bruto</strong>: previo a <i>cargas sociales</i> e <i>impuestos</i>.</p>
             </div>
         ),
         data: [
@@ -299,7 +299,7 @@ export default [
                     <div>
                         <p>Lo bueno de contar con resultados de encuestas anteriores, es poder medir la evolución de ciertos indicadores a través del tiempo.</p>
                         <p>Para el caso de los salarios en Argentina, es de particular interés conocer su evolución, debido a las continuas fluctuaciones de la moneda y la inflación.</p>
-                        <p>En los siguientes gráficos podremos ver cómo fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización correspondiente a cada período.</p>
+                        <p>En los siguientes gráficos podremos ver cómo fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización a cada período.</p>
                     </div>
                 ),
                 data: [
@@ -310,7 +310,7 @@ export default [
                                 title: 'Salarios en AR$',
                                 component: 'Line', // graph
                                 props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Pesos Argentinos'], currency: 'AR$' },
-                                caption: <p>Serie histórica de salarios basada en encuestas anteriores de SysArmy.</p>,
+                                caption: <p>Serie histórica de salarios basada en encuestas anteriores de sysarmy.</p>,
                                 description: <p>
                                     Nótese, que para el período del <code>2016-02-01</code>, los salarios parecieran haber bajado respecto al período anterior.<br />
                                     Sabemos que en general esto no sucede.  Probablemente esta anomalía tenga que ver, además de una diferencia de poblaciones, con un posible error en la normalización de sueldos netos pasados a bruto para dicho período.
@@ -345,7 +345,7 @@ export default [
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$', markNegativeValues: true, },
-                                caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a groso modo y sin contemplar otras variables.</p>,
+                                caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a grosso modo y sin contemplar otras variables.</p>,
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-los-Encuestados-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
                                     <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
@@ -406,7 +406,7 @@ export default [
                                 caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
                                 description: <div>
                                     <p>Aquí puede notarse una diferencia en los niveles de salarios que manejan las empresas de Producto basado en software, respecto de las otras.</p>
-                                    <p>En segundo lugar, y muy cercano al siguiente, siguen quienes trabajan en áreas de Sistemas dando soporte a Otras Industrias. Por último, Servicios / Consultoría deSoftware / Digital.</p>
+                                    <p>En segundo lugar, y muy cercano al siguiente, quienes trabajan en áreas de Sistemas dando soporte a Otras Industrias. Por último, Servicios / Consultoría de Software / Digital.</p>
                                 </div>,
                             },
                         ],
@@ -776,7 +776,7 @@ export default [
                                 props: { ...charts['ides'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
                                 description: <div>
                                     <p>Datos porcentuales</p>
-                                    <p>Para quienes no estén familiarizados con el término, un <a href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitarle al desarrollador o programador el desarrollo de software.</p>
+                                    <p>Para quienes no conozcan el término, un <a href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitar el desarrollo de software.</p>
                                 </div>,
                             },
                         ],
@@ -814,7 +814,7 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true, isPercentual: true },
-                                caption: 'Porcentaje de encuestado que han recibido o no, bonos como parte de la compensación, en escala logarítimica.',
+                                caption: 'Porcentaje de participantes que han recibido o no, bonos como parte de la compensación, en escala logarítimica.',
                             },
                         ],
                     },
@@ -870,14 +870,14 @@ export default [
                         ],
                     },
                     {  // section
-                        title: '¿Cuántos recomendarían su lugar de Trabajo a otros?',
+                        title: '¿Cuánta gente recomienda su lugar de Trabajo?',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['la_recomendas_como_un_buen_lugar_para_trabajar'], isPercentual: true },
                                 description: (<span>
-                                    Datos porcentuales, por clase según indicador&nbsp;<a target='_blank' href='https://es.wikipedia.org/wiki/Net_Promoter_Score' rel="noopener noreferrer">Net Promoter Score</a>
+                                    Datos porcentuales, por clase según indicador&nbsp;<a target='_blank' href='https://es.wikipedia.org/wiki/Net_Promoter_Score' rel="noopener noreferrer">Net Promoter Score</a>.
                                 </span>),
                             },
                         ],
@@ -919,7 +919,7 @@ export default [
                 </p>
                 <h5>Valores atípicos</h5>
                 <p>
-                    Muchos salarios ingresados por los encuestados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
+                    Muchos salarios ingresados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
                     Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
                 </p>
                 <p>
@@ -977,7 +977,7 @@ export default [
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og">Notebook de análisis período 2019.01</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas Sysarmy 2014.02 - 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2019.01</a></li>
                 </ul>
             </div>
         )
