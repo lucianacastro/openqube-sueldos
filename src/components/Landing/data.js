@@ -336,20 +336,35 @@ export default [
                             {  // tab
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$' },
+                                props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$', markNegativeValues: true, },
                                 caption: 'Mediana salarial por región del país.',
+                                description: <div>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
+                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                </div>,
                             },
                             {  // tab
                                 title: 'Acumulado de ajustes 2018',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false },
+                                props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
                                 caption: 'Mediana de porcentaje de ajustes por región del país.',
+                                description: <div>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
+                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                </div>,
                             },
                             {  // tab
                                 title: 'Nivel de conformidad',
                                 component: 'Barh', // graph
-                                props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false },
+                                props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false, markNegativeValues: true, },
                                 caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4.',
+                                description: <div>
+                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen datos insuficientes y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>La razón detrás de este ajuste es evitar que interfieran en el ranking aquellas regiones cuyos datos no sean lo suficientemente representativos de la realidad.</p>
+                                    <p>Si bien podría haberse utilizado otro criterio tal como el Coeficiente de Variación o IQR, dada la la naturaleza de los datos y las múltiples dimensiones en juego, entendemos que la homogeneidad no garantiza la representatividad de la muestra.</p>
+                                </div>,
                             },
                         ],
                     },

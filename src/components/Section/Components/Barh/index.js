@@ -31,29 +31,43 @@ class Barh extends Component {
   }
 
   getData() {
-    const { data = [], cutoff = 0 } = this.props;
+    const { data = [], cutoff = 0, markNegativeValues = false } = this.props;
+    const isOneDimensional = data[0] && data[0].value !== undefined;
+    let _data = [ ...data ];
+
+    if (markNegativeValues && isOneDimensional) {
+      _data = _data.map(row => ({ ...row, value: Math.abs(row.value), invalid: row.value < 0 })).sort((row1, row2) => row2.value - row1.value);
+    }
 
     if (this.state.collapsed && cutoff) {
-      const visibleRows = data.filter((v, i) => i < cutoff);
-      const hiddenRows = data.filter((v, i) => i >= cutoff);
+      const visibleRows = _data.filter((row, i) => i < cutoff);
+      const hiddenRows = _data.filter((row, i) => i >= cutoff);
 
-      return data[0].value !== undefined ? visibleRows.concat({
+      return isOneDimensional ? visibleRows.concat({
         name: 'Otros',
         value: hiddenRows.reduce((val, row) => val + row.value, 0),
       }) : visibleRows;
     }
 
-    return data;
+    if (this.state.collapsed && markNegativeValues && isOneDimensional) {
+      return _data.filter((row, i) => !row.invalid);
+    }
+
+    return _data;
   }
 
   getDataKeys() {
     return this.getData()
       .reduce((dataKeys, row) => [...dataKeys, ...Object.keys(row)], [])
       .filter((value, index, self) => self.indexOf(value) === index) // unique keys
-      .filter(value => value !== 'name');
+      .filter(value => !['name', 'invalid'].includes(value));
   }
 
-  getDataKeyColor(index) {
+  getDataKeyColor(index, row = null) {
+    if (this.props.markNegativeValues && row && row.invalid) {
+      return '#eee';
+    }
+
     return COLORS[index] || COLORS[COLORS.length - 1];
   }
 
@@ -71,18 +85,30 @@ class Barh extends Component {
     this.setState(({ collapsed }) => ({ collapsed: !collapsed }));
   }
 
+  getRowsCount() {
+    if (this.state.collapsed && this.props.cutoff) {
+      return this.props.cutoff;
+    }
+
+    if (this.state.collapsed && this.props.markNegativeValues) {
+      return this.getData().filter((row, i) => !row.invalid).length;
+    }
+
+    return this.getData().length;
+  }
+
   render() {
-    const { isPercentual = false, isLogScale = false, cutoff = 0, minLogScale = 0.01, isStacked = false } = this.props;
+    const { isPercentual = false, isLogScale = false, cutoff = 0, minLogScale = 0.01, isStacked = false, markNegativeValues = false } = this.props;
     const { collapsed } = this.state;
     const data = this.getData();
     const dataKeys = this.getDataKeys();
-    const rowCount = this.state.collapsed && cutoff ? cutoff : data.length;
+    const rowCount = this.getRowsCount();
     const logScaleProps = isLogScale ? { scale: 'log', domain: [minLogScale, 'auto'], allowDataOverflow: true } : null;
     const height = 31 * (rowCount + 2) + 20;
 
     return (
       <div>
-        {cutoff ? <div className='more-info-wrapper'><a className={cn('more-info-link', collapsed && 'collapsed')} href='#' onClick={(e) => this.toggleCollapse(e)} >{collapsed ? 'ver más' : 'ver menos'}</a></div> : null}
+        {cutoff || markNegativeValues ? <div className='more-info-wrapper'><a className={cn('more-info-link', collapsed && 'collapsed')} href='#' onClick={(e) => this.toggleCollapse(e)} >{collapsed ? 'ver más' : 'ver menos'}</a></div> : null}
         <BarChart width={620} height={height} data={data}
           margin={{ top: 5, right: 50, left: 0, bottom: 5 }} layout="vertical"
           maxBarSize={25}
@@ -96,7 +122,7 @@ class Barh extends Component {
             <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} >
               {
                 data.map((entry, indexRow) => (
-                  <Cell cursor="pointer" fill={entry.name === 'Otros' && data[0].value !== undefined ? '#82ca9d' : this.getDataKeyColor(indexGroup)} key={`cell-${indexRow}`} />
+                  <Cell cursor="pointer" fill={entry.name === 'Otros' && data[0].value !== undefined ? '#82ca9d' : this.getDataKeyColor(indexGroup, entry)} key={`cell-${indexRow}`} />
                 ))
               }
             </Bar>
