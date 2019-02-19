@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/gerardobort/openqube-3",
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.7.0",

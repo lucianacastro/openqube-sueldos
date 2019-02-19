@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.0564323b.chunk.css",
-  "main.js": "/static/js/main.2c13ab02.chunk.js",
-  "main.js.map": "/static/js/main.2c13ab02.chunk.js.map",
-  "static/js/1.5941cbc2.chunk.js": "/static/js/1.5941cbc2.chunk.js",
-  "static/js/1.5941cbc2.chunk.js.map": "/static/js/1.5941cbc2.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.0564323b.chunk.css.map": "/static/css/main.0564323b.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.74c1b64a8cff21befdc7b501ac68555c.js": "/precache-manifest.74c1b64a8cff21befdc7b501ac68555c.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/gerardobort/openqube-3/static/css/main.81cdcc3f.chunk.css",
+  "main.js": "/gerardobort/openqube-3/static/js/main.a69ae79c.chunk.js",
+  "main.js.map": "/gerardobort/openqube-3/static/js/main.a69ae79c.chunk.js.map",
+  "static/js/1.aacd98fb.chunk.js": "/gerardobort/openqube-3/static/js/1.aacd98fb.chunk.js",
+  "static/js/1.aacd98fb.chunk.js.map": "/gerardobort/openqube-3/static/js/1.aacd98fb.chunk.js.map",
+  "runtime~main.js": "/gerardobort/openqube-3/static/js/runtime~main.59dda566.js",
+  "runtime~main.js.map": "/gerardobort/openqube-3/static/js/runtime~main.59dda566.js.map",
+  "static/css/main.81cdcc3f.chunk.css.map": "/gerardobort/openqube-3/static/css/main.81cdcc3f.chunk.css.map",
+  "index.html": "/gerardobort/openqube-3/index.html",
+  "precache-manifest.bc64aada4a452d629eed72ec78dc70c1.js": "/gerardobort/openqube-3/precache-manifest.bc64aada4a452d629eed72ec78dc70c1.js",
+  "service-worker.js": "/gerardobort/openqube-3/service-worker.js"
 }
