@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "/gerardobort/openqube-3",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
