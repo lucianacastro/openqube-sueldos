@@ -31,7 +31,7 @@ class Barh extends Component {
   }
 
   getData() {
-    const { data = [], cutoff = 0, markNegativeValues = false } = this.props;
+    const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
     const isOneDimensional = data[0] && data[0].value !== undefined;
     let _data = [ ...data ];
 
@@ -45,7 +45,7 @@ class Barh extends Component {
 
       return isOneDimensional ? visibleRows.concat({
         name: 'Otros',
-        value: hiddenRows.reduce((val, row) => val + row.value, 0),
+        value: sumOthers ? hiddenRows.reduce((val, row) => val + row.value, 0) : Math.max(...hiddenRows.map(r => r.value)),
       }) : visibleRows;
     }
 

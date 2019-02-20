@@ -593,7 +593,7 @@ export default [
                                 component: 'Line', // graph
                                 props: {
                                     data: historic_charts['historic_acquiescence_means'].data
-                                        .map(row => ({ ...row, Otros: row.Otros || undefined })), // remove 0 values
+                                        .map(row => ({ ...row, Otros: row.Otros || undefined, publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] })), // remove 0 values
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                 },
@@ -606,7 +606,7 @@ export default [
                 ],
             },
             { // sub-category
-                title: 'Preparación',
+                title: 'Formación',
                 content: <div>
                     <p>
                         En este apartado, segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
@@ -718,8 +718,9 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['plataformas'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                props: { ...charts['plataformas'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                caption: 'Plataformas más utilizadas entre los participantes',
+                                description: 'Las plataformas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
                         ],
                     },
@@ -729,8 +730,9 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                caption: 'Lenguajes de programación más utilizadas entre los participantes',
+                                description: 'Los lenguajes de programación no son excluyentes, es decir puede haber más de uno por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
                         ],
                     },
@@ -740,8 +742,9 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['frameworksherramientas_y_librerias'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                props: { ...charts['frameworksherramientas_y_librerias'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                caption: 'Frameworks, Herramientas y Librerías más utilizadas entre los participantes',
+                                description: 'Los mismos no son excluyentes, es decir puede haber más de uno por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
                         ],
                     },
@@ -751,8 +754,9 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['bases_de_datos'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                props: { ...charts['bases_de_datos'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                caption: 'Bases de datos más utilizadas entre los participantes',
+                                description: 'Las bases de datos no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
                         ],
                     },
@@ -762,8 +766,12 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['qa_testing'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
-                                description: 'Datos porcentuales',
+                                props: { ...charts['qa_testing'], isPercentual: true, isLogScale: true, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
+                                caption: 'Herramientas de QA / Testing más utilizadas entre los participantes',
+                                description: <div>
+                                    <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
+                                    <p>En esta variable puede notarse que la cantidad de respondentes es mucho menor a las anteriores.  Si bien la calidad y sus herramientas conciernen a todas las áreas, quizás muchos hayan omitido responder dado que también existen roles asociados más específicos.</p>
+                                </div>,
                             },
                         ],
                     },
@@ -773,10 +781,11 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['ides'], isPercentual: true, minLogScale: 0.001, cutoff: 10 },
+                                props: { ...charts['ides'], isPercentual: true, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
+                                caption: 'IDEs más utilizadas entre los participantes',
                                 description: <div>
-                                    <p>Datos porcentuales</p>
-                                    <p>Para quienes no conozcan el término, un <a href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitar el desarrollo de software.</p>
+                                    <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
+                                    <p>Para quienes no estén familiarizados con el término, un <a target="_blank" rel="noopener noreferrer" href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitar el desarrollo de software.</p>
                                 </div>,
                             },
                         ],
@@ -824,8 +833,9 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['beneficios_extra'], isPercentual: true, cutoff: 10 },
+                                props: { ...charts['beneficios_extra'], isPercentual: true, cutoff: 10, sumOthers: false },
                                 caption: 'Aquí se enumera los beneficios más comunes entre los reportados.',
+                                description: 'Los beneficios no son excluyentes, por lo que los valores indican qué porcentajes de participantes cuentan con los mismos.'
                             },
                         ],
                     },
