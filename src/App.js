@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import MainTitle from './components/MainTitle';
+import SocialList from './components/SocialList';
 import Landing from './components/Landing';
 import Footer from './components/Footer';
 import MainContainer from './components/MainContainer';
@@ -12,6 +13,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <MainTitle />
+
+        {/*<SocialList />*/}
         <MainContainer>
           <Landing />
         </MainContainer>
