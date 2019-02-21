@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/encuesta-sueldos-2019.01/precache-manifest.7cfa4d024f110afd28df4ae79953db57.js"
+  "/encuesta-sueldos-2019.01/precache-manifest.6485b1cb0657d59b51e2d411e5e7c3ec.js"
 );
 
 workbox.clientsClaim();

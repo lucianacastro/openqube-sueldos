@@ -916,7 +916,7 @@ export default [
                 <h4>Representatividad de la muestra</h4>
                 <p>
                     Para todos los segmentos sobre los cuales se ha hecho rankings de algún tipo (de salarios, conformidad, etc.), hemos tenido en cuenta principalmente el <strong>tamaño de la muestra</strong> por sobre otros factores.
-                    Debido a la multidimensionalidad de los datos, no creímos conveniente utilizar la <i>homogeneidad</i> para determinar la representatividad, ya que por ejemplo, para una misma región la dispersión de selarios puede ser muy grande debido a otros factores tales como la antiguedad, el nivel de estudios o la tecnología.
+                    Debido a la multidimensionalidad de los datos, no creímos conveniente utilizar la <i>homogeneidad</i> para determinar la representatividad, ya que por ejemplo, para una misma región la dispersión de salarios puede ser muy grande debido a otros factores tales como la antiguedad, el nivel de estudios o la tecnología.
                 </p>
                 <p>
                     En el caso de los <a href="#Salarios-Segun-Region">salarios por región</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
