@@ -12,7 +12,7 @@ export default class SocialList extends Component {
     const url = window.location.href;
     const text = encodeURI(`Estos son los resultados de la última encuesta de sueldos de @sysarmy! ${url}`);
     const via = encodeURI('openqube');
-    const hashtags = encodeURI('encuentasIT');
+    const hashtags = encodeURI('encuestaIT');
     return (
       <ul className='social-list'>
         <li className='social-item twitter'>
@@ -20,14 +20,10 @@ export default class SocialList extends Component {
             className='sharing-twitter'
             target='_blank'
             rel='noopener noreferrer'
-
           >
             <FontAwesomeIcon icon={faTwitter} />
           </a>
-
         </li>
-
-
         <li className='social-item facebook'>
           <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} className='social-item-link' target='_blank' rel='noopener noreferrer'>
             <FontAwesomeIcon icon={faFacebookF} />
