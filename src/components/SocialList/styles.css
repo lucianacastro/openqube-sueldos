@@ -1,3 +1,37 @@
 .social-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 150px;
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+.social-item {
+    margin: 20px 0 0 30px;
+    font-size: 24px;
+    transition: all ease-in-out 0.3s;
+}
+.social-item a {
+    color: #623296;
+}
+
+.social-item:first-child {
+    margin-left: 0;
+}
+
+.social-item.twitter a:hover {
+    color: #1da1f2;
+    transition: all ease-in-out 0.3s;
+}
+
+.social-item.facebook a:hover {
+    color: #3b5998;
+    transition: all ease-in-out 0.3s;
+}
+
+.social-item.instagram a:hover {
+    color: #e4405f;
+    transition: all ease-in-out 0.3s;
 }

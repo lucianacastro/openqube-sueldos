@@ -5,6 +5,8 @@ header {
 }
 
 header .container {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;

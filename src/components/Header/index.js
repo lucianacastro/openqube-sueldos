@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import SocialList from '../SocialList';
 import './styles.css';
 
 class Header extends Component {
@@ -16,6 +18,7 @@ class Header extends Component {
               <span className="header-slogan-text">Lo que no te cuentan en la entrevista</span>
             </div>
           </div>
+          <SocialList />
         </div>
       </header>
     )

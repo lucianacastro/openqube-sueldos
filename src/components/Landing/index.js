@@ -5,6 +5,7 @@ import Container from '../Container';
 import Section from '../Section';
 import Title from '../Title';
 import SideNav from '../SideNav';
+import CTAButton from '../CTAButton';
 import './styles.css';
 
 import data from './data';
@@ -29,23 +30,24 @@ class Landing extends Component {
                   id={slugify(`${category.title} ${subcategory.title}`)}
                   key={`${categoryIndex}-${subcategoryIndex}`}
                   className='subcategory-section'
-                  >
+                >
                   <Title titleId={slugify(`${category.title} ${subcategory.title}`)} title={subcategory.title} type='subcategory' />
                   {subcategory.content && <div className='subcategory-section-content'>{subcategory.content}</div>}
                   {subcategory.data && subcategory.data.map((section, sectionIndex) => (
-                    <Section 
+                    <Section
                       id={slugify(`${subcategory.title} ${subcategory.title} ${section.title}`)}
                       key={`${categoryIndex}-${subcategoryIndex}-${sectionIndex}`}
                       data={section.data}
                       title={section.title}
                       titleId={slugify(`${category.title} ${subcategory.title} ${section.title}`)}
-                      />
+                    />
                   ))}
                 </section>
               ))}
             </section>
           ))
           }
+          <CTAButton />
         </div>
       </ Container>
     )
