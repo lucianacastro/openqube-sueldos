@@ -618,7 +618,7 @@ export default [
                         Cabe aclarar que en el caso de Otros, tal como se puede ver en el apartado <a href="#Perfil-de-los-Encuestados-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
                     </p>
                     <p>
-                        Como se puede apreciar en el <a href="#Genero-Preparacion-Nivel-de-estudios-alcanzados-y-completitud">siguente gráfico</a>, queda muy claro que las mujeres mejoran todos los índices respecto a los hombres.
+                        Como se puede apreciar en el <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">siguente gráfico</a>, queda muy claro que las mujeres mejoran todos los índices respecto a los hombres.
                         De esto puede hacerse múltiples interpretaciones. Quizás, una explicación a este fenómeno, sea la reacción frente a la <a target="_blank" rel="noopener noreferrer" href="http://www.medallia.com.ar/inclusion/posts/las-desventajas-que-no-vemos/">desigualdad de oportunidades</a> en nuestra Industria.
                         Si bien, la conscientización sobre las problemáticas de género en el sector hayan tomado relevancia en los últimos años, estamos lejos de cerrar <a href="#Genero-Progresion-historica-Salarios">esta brecha</a>. 
                     </p>
