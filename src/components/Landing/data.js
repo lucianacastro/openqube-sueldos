@@ -25,7 +25,7 @@ export default [
                         El presente informe fue realizado para OpenQube
                     </small>
                     <small>
-                        por <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a> y <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a>.
+                        por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>.
                     </small>
                 </div>
             </div>
@@ -75,7 +75,7 @@ export default [
                             {  // tab
                                 title: 'Nivel de participación',
                                 component: 'Barh', // graph
-                                props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10 },
+                                props: { ...charts['roles_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0004, cutoff: 10 },
                                 caption: <p>Porcentaje de encuestados por rol, presentados en <a href="#Metodologia">escala logarítmica</a>.</p>,
                             },
                         ],
@@ -417,10 +417,35 @@ export default [
                 title: 'Según Educación',
                 data: [
                     {  // section
-                        title: 'Salarios según nivel de educación y experiencia',
+                        title: 'Salarios según nivel de educación',
                         data: [
                             {  // tab
-                                title: 'Por carrera y exp.',
+                                title: 'Educación formal',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['nivel_estudios_salary_median'].data
+                                        .sort((a, b) => b['Completado'] - a['Completado']),
+                                    currency: 'AR$',
+                                },
+                                caption: 'Mediana salarial por nivel de educación formal alcanzado.',
+                            },
+                            {  // tab
+                                title: 'Cursos / Especializaciones',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['hizo_curso_salary_median'].data,
+                                    currency: 'AR$',
+                                },
+                                caption: 'Mediana salarial para quienes hicieron cursos de especialización y quienes no.',
+                                description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios.  O sí?',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Salarios según carrera y experiencia',
+                        data: [
+                            {  // tab
+                                title: 'Por carrera y experiencia',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['carrera_seniority_salary_median'].data
@@ -431,7 +456,7 @@ export default [
                                 caption: 'Mediana salarial por carrera y años de experiencia.',
                             },
                             {  // tab
-                                title: 'Por estado de la carrera',
+                                title: 'Por carrera y estado',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['carrera_estado_salary_median'].data
@@ -440,26 +465,6 @@ export default [
                                     currency: 'AR$',
                                 },
                                 caption: 'Mediana salarial por carrera y estado de de la carrera.',
-                            },
-                            {  // tab
-                                title: 'Por nivel de estudios',
-                                component: 'Barh', // graph
-                                props: {
-                                    data: charts['nivel_estudios_salary_median'].data
-                                        .sort((a, b) => b['Completado'] - a['Completado']),
-                                    currency: 'AR$',
-                                },
-                                caption: 'Mediana salarial por nivel de estudios alcanzado.',
-                            },
-                            {  // tab
-                                title: 'Por cursos',
-                                component: 'Barh', // graph
-                                props: {
-                                    data: charts['hizo_curso_salary_median'].data,
-                                    currency: 'AR$',
-                                },
-                                caption: 'Mediana salarial para quienes hicieron cursos de especialización y quienes no..',
-                                description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios.  O sí?',
                             },
                         ],
                     },
@@ -718,7 +723,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['plataformas'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                props: { ...charts['plataformas'], isPercentual: true, isLogScale: true, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
                                 caption: 'Plataformas más utilizadas entre los participantes',
                                 description: 'Las plataformas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
