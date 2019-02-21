@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/gerardobort/openqube-3/precache-manifest.bc64aada4a452d629eed72ec78dc70c1.js"
+  "/encuesta-sueldos-2019.01/precache-manifest.73582f6996200974758da287d2ca7882.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/gerardobort/openqube-3/index.html", {
+workbox.routing.registerNavigationRoute("/encuesta-sueldos-2019.01/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
