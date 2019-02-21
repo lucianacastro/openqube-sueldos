@@ -29,7 +29,7 @@ export default class SocialList extends Component {
 
 
         <li className='social-item facebook'>
-          <a href='https://www.facebook.com/openqube.io/' className='social-item-link' target='_blank' rel='noopener noreferrer'>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} className='social-item-link' target='_blank' rel='noopener noreferrer'>
             <FontAwesomeIcon icon={faFacebookF} />
           </a>
         </li>

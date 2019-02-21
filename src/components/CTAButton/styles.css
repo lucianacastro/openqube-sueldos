@@ -1,0 +1,18 @@
+button.cta {
+    padding: 10px 20px;
+    background-color: #623296; 
+    border-radius: 4px;
+    transition: all ease-in-out 0.3s;
+}
+
+button.cta:hover {
+    background-color: #562c83;
+    transition: all ease-in-out 0.3s;
+}
+
+.cta-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
