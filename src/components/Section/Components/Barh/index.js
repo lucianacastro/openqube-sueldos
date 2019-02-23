@@ -23,7 +23,8 @@ class Barh extends Component {
     isLogScale: PropTypes.bool,
     cutoff: PropTypes.number,
     isStacked: PropTypes.bool,
-    currency: PropTypes.string
+    currency: PropTypes.string,
+    markNegativeValues: PropTypes.oneOfType(PropTypes.bool, PropTypes.arrayOf(PropTypes.string)),
   }
 
   state = {
@@ -34,9 +35,16 @@ class Barh extends Component {
     const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
     const isOneDimensional = data[0] && data[0].value !== undefined;
     let _data = [ ...data ];
+    
+    if (markNegativeValues) {
+      const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
+      const mainKey = keys[0];
 
-    if (markNegativeValues && isOneDimensional) {
-      _data = _data.map(row => ({ ...row, value: Math.abs(row.value), invalid: row.value < 0 })).sort((row1, row2) => row2.value - row1.value);
+      _data = _data.map(row => ({
+        ...row,
+        ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key])}), row),
+        invalid: row[mainKey] < 0,
+      })).sort((row1, row2) => row2[mainKey] - row1[mainKey]);
     }
 
     if (this.state.collapsed && cutoff) {
@@ -49,7 +57,7 @@ class Barh extends Component {
       }) : visibleRows;
     }
 
-    if (this.state.collapsed && markNegativeValues && isOneDimensional) {
+    if (this.state.collapsed && markNegativeValues) {
       return _data.filter((row, i) => !row.invalid);
     }
 

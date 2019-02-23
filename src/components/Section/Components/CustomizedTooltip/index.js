@@ -37,6 +37,7 @@ class CustomizedTooltip extends Component {
           <li className='tooltip-item' key={idx} style={{ color: payload.color }}>
             <span className='name'>{`${payload.dataKey}`}</span>
             <span className='value'>{payload.value ? formatter(payload.value) : <span className="no-data">datos insuficientes</span>}</span>
+            <span className='value'>{payload.value && dimensions[0].payload.invalid ? <span className="no-data">datos insuficientes</span> : null}</span>
           </li>)}
       </ul>
     );
