@@ -265,7 +265,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true, cutoff: 3 },
+                                props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true },
                                 caption: <p>Tipos de orientaciones sexuales para la muestra.</p>,
                             },
                         ],
@@ -450,10 +450,14 @@ export default [
                                 props: {
                                     data: charts['carrera_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
-                                    cutoff: 15,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
                                 caption: 'Mediana salarial por carrera y años de experiencia.',
+                                description: <div>
+                                    <p>Para este ranking entre carreras solo contamos participantes que las hayan completado.  También hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                </div>,
                             },
                             {  // tab
                                 title: 'Por carrera y estado',
@@ -461,10 +465,14 @@ export default [
                                 props: {
                                     data: charts['carrera_estado_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
-                                    cutoff: 15,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Completado', 'En curso', 'Incompleto'],
                                 },
                                 caption: 'Mediana salarial por carrera y estado de de la carrera.',
+                                description: <div>
+                                    <p>Para este ranking entre carreras, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                </div>,
                             },
                         ],
                     },
@@ -919,7 +927,7 @@ export default [
                     Debido a la multidimensionalidad de los datos, no creímos conveniente utilizar la <i>homogeneidad</i> para determinar la representatividad, ya que por ejemplo, para una misma región la dispersión de salarios puede ser muy grande debido a otros factores tales como la antiguedad, el nivel de estudios o la tecnología.
                 </p>
                 <p>
-                    En el caso de los <a href="#Salarios-Segun-Region">salarios por región</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
+                    En el caso de los <a href="#Salarios-Segun-Region">salarios por región</a> y <a href="#Salarios-Segun-Educacion-Salarios-segun-carrera-y-experiencia">según carrera</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
                 </p>
                 <p>
                     Para otros segmentos, simplemente tomamos las valores más frecuentes para las variables con que se hizo rankings.  Con esto, aseguramos también que los datos presentados sean relevantes para el lector.
