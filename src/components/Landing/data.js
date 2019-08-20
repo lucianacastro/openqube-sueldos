@@ -9,15 +9,19 @@ export default [
         content: (
             <div>
                 <p>
-                    Desde 2014 sysarmy lleva a cabo las Encuestas de Sueldos en la región, abarcando a Argentina y el resto de Latinoamérica.
-                    Ya desde 2016 nuestras encuestas se relevan de forma semestral y los resultados son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
+                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.
+                    Con nuestra plataforma colaborativa podés calificar empresas en las que hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
-                    En esta oportunidad, desde openqube tenemos el agrado de acercar a la comunidad nuestro primer reporte para la Argentina con los resultados de la última encuesta.
+                    En febrero de este año publicamos nuestro primer <a href="https://twitter.com/openqube/status/1100097058856468480" target="_blank" rel="noopener noreferrer">análisis de resultados de Enero-Febrero 2019 para Argentina</a>.
+                    En esta nueva entrega, te mostramos los resultados del nuevo análisis para los datos relevados en Julio-Agosto de este mismo año.
                 </p>
                 <p>
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
                     Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
+                </p>
+                <p>
+                    Como lo hacemos ya desde 2014, los datos relevados de las encuestas son también publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
@@ -100,7 +104,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>Parece que estamos frente a un empate.</p>
+                                description: <p>Podemos apreciar 🤔 un leve crecimiento de hobbistas respecto al <a href="https://openqube.io/encuesta-sueldos-2019.01#Perfil-de-participantes-Roles-Cuanta-gente-programa-por-hobbie" target="_blank" rel="noopener noreferrer">relevamiento de principio de año</a>.</p>
                             },
                         ],
                     },
@@ -172,16 +176,14 @@ export default [
                                 caption: '',
                                 description: (<div>
                                     <p>
-                                        Los nombres de las carreras fueron normalizados para la elaboración de este gráfico.<br /> Para más información, ver la <a href="#Metodologia">metodología</a>.<br />
-                                        En algunos casos no fue posible determinar las entradas con exactitud: por ejemplo, si "Sistemas" a secas se refiere a Licenciatura, Ingeniería, Analista o Tecnicatura.
-                                        Para estos casos solamente se normalizan, sin reagrupar.
+                                        Algunos nombres de carreras fueron normalizados para la elaboración de este gráfico.<br /> Para más información, ver la <a href="#Metodologia">metodología</a>.
                                     </p>
                                 </div>),
                             },
                             { // tab
                                 title: 'Carreras y estado',
                                 component: 'Barh',
-                                props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 9, isStacked: false },
+                                props: { ...charts['careeres_stacked_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001, cutoff: 9, isStacked: false, markNegativeValues: ['Completado', 'En curso', 'Incompleto'], },
                                 caption: <p>Aquí podemos ver de manera comparativa y en escala logarítmica,<br /> por cada carrera, cuál es el estado para la muestra.</p>,
                                 description: (<div>
                                     <p>
@@ -324,10 +326,25 @@ export default [
                                 caption: <p>Serie histórica de salarios sobre cotización del dólar estadounidense, en pesos.</p>,
                                 description: <div>
                                     <p>
-                                        Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de poder medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
+                                        Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
                                     </p>
                                     <p>
-                                        Podemos decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generales, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
+                                        Como dato de color de estas últimas encuestas 2019.02, el período Julio-Agosto durante el cual fueron relevados los sueldos, nos trajo también una fuerte devaluación del peso.
+                                        Por nuestra metodología, siempre utilizamos la cotización del dólar de la fecha de publicación/cierre de los resultados.  En este caso del 15/8.
+                                    </p>
+                                </div>,
+                            },
+                            {  // tab
+                                title: 'Salarios en US$ (al 19/7 💸)',
+                                component: 'Line', // graph
+                                props: { ...historic_charts['historic_salary_medians_paso'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
+                                caption: <p>Solo por el #morbo de saber cómo eran los salarios en dólares hasta hace tan solo unos pocos días.</p>,
+                                description: <div>
+                                    <p>
+                                        Este gráfico es igual al anterior, sólo que utiliza la cotización del dólar a la fecha del 19 de Julio.
+                                    </p>
+                                    <p>
+                                        Aquí sí, podemos volver a decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generales, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
                                     </p>
                                 </div>,
                             },
@@ -352,7 +369,7 @@ export default [
                                 </div>,
                             },
                             {  // tab
-                                title: 'Acumulado de ajustes 2018',
+                                title: 'Acumulado de ajustes 2019',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
                                 caption: '¿Cual fue porcentaje de ajuste por inflación acumulado típico en cada región?',
@@ -387,8 +404,9 @@ export default [
                                 props: {
                                     data: charts['roles_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
-                                    cutoff: 15,
+                                    //cutoff: 15,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
                                 caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
                                 description: <div>
@@ -426,8 +444,10 @@ export default [
                                     data: charts['nivel_estudios_salary_median'].data
                                         .sort((a, b) => b['Completado'] - a['Completado']),
                                     currency: 'AR$',
+                                    markNegativeValues: true,
                                 },
                                 caption: 'Mediana salarial por nivel de educación formal alcanzado.',
+                                description: 'Se excluyen por defecto aquellos niveles de estudio que no cuentan con suficiente representación sobre la muestra.',
                             },
                             {  // tab
                                 title: 'Cursos / Especializaciones',
@@ -448,8 +468,7 @@ export default [
                                 title: 'Por carrera y experiencia',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['carrera_seniority_salary_median'].data
-                                        .sort((a, b) => b['Senior'] - a['Senior']),
+                                    data: charts['carrera_seniority_salary_median'].data,
                                     currency: 'AR$',
                                     markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
@@ -490,10 +509,12 @@ export default [
                                 props: {
                                     data: charts['plataformas_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
-                                    cutoff: 15,
+                                    //cutoff: 15,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
                                 caption: 'Mediana salarial según plataformas y años de experiencia.',
+                                description: 'Se muestra por defecto las plataformas más utilizadas, cuya cantidad de menciones pase el umbral de 0.05%.'
                             },
                         ],
                     },
@@ -506,19 +527,52 @@ export default [
                                 props: {
                                     data: charts['lenguajes_de_programacion_seniority_salary_median'].data
                                         .sort((a, b) => b['Senior'] - a['Senior']),
-                                    cutoff: 15,
+                                    //cutoff: 15,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
                                 caption: 'Mediana salarial según lenguaje de programación años de experiencia.',
+                                description: 'Se muestra por defecto los lenguajes de programación más utilizados, cuya cantidad de menciones esté por encima del umbral de 0.05%.'
                             },
                         ],
                     },
                 ],
             },
+            // { // sub-category
+            //     title: 'Trabajo Local vs. Remoto',
+            //     data: [
+            //         // {  // section
+            //         //     title: 'Plataformas',
+            //         //     data: [
+            //         //         {  // tab
+            //         //             title: 'Por experiencia',
+            //         //             component: 'Barh', // graph
+            //         //             props: {
+            //         //                 data: charts['plataformas_seniority_salary_median'].data
+            //         //                     .sort((a, b) => b['Senior'] - a['Senior']),
+            //         //                 cutoff: 15,
+            //         //                 currency: 'AR$',
+            //         //             },
+            //         //             caption: 'Mediana salarial según plataformas y años de experiencia.',
+            //         //         },
+            //         //     ],
+            //         // },
+            //     ],
+            // },
         ],
     },
     { // category
         title: 'Género',
+        content: (
+            <div>
+                <p>Respecto a diversidad, un dato positivo del resultado de esta última encuesta, tiene que ver con un máximo histórico de participación de mujeres.</p>
+                <p>
+                    Para el grupo Otros (no binarios), la participación se mantuvo constante.
+                    Dado que la muestra sigue siendo muy pequeña, los datos desagregados de salarios, formación, roles y experiencia no son suficientes como para ser considerados representativos, según la <a href="#Metodologia">metodología elegida</a>.
+                    De todos modos, como es de vital importancia dar visibilidad en cada caso, no haremos omisión de ningún dato en esta sección.
+                </p>
+            </div>
+        ),
         data: [
             { // sub-category
                 title: 'Progresión histórica',
@@ -575,7 +629,7 @@ export default [
                         title: 'Salarios',
                         data: [
                             {  // tab
-                                title: '',
+                                title: 'Salarios por género',
                                 component: 'Line', // graph
                                 props: {
                                     data: Object.values(
@@ -595,6 +649,42 @@ export default [
                                 },
                                 caption: 'Serie histórica de salarios basada en encuestas anteriores.',
                                 description: 'Se han aplicado reglas de normalización.',
+                            },
+                            {  // tab
+                                title: 'Brecha Salarial',
+                                component: 'Line', // graph
+                                props: {
+                                    data: Object.values(
+                                        // row: {"name": "(Timestamp(\'2016-02-01 00:00:00\'), \'Hombre\')", "salary": 9999}
+                                        // dates: { '2016-02-01': { publish_date: '2016-02-01', 'Hombre': 9999, 'Mujer': 9999, 'Otros': 9999 } }
+                                        historic_charts['historic_gender_salary_median'].data
+                                            .reduce((dates, row) => ({
+                                                ...dates,
+                                                [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
+                                                    publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
+                                                    ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
+                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.salary,
+                                                },
+                                            }), {})
+                                    )
+                                    // dates: [ { publish_date: '2016-02-01', 'Hombre': 9999, 'Mujer': 9999, 'Otros': 9999 } }, ...]
+                                    .map((date) => ({
+                                        publish_date: date.publish_date,
+                                        'Mujer-Hombre': (date['Hombre'] - date['Mujer'])/Math.min(date['Hombre'], date['Mujer']),
+                                        'Otros-Hombre': (date['Hombre'] - date['Otros'])/Math.min(date['Hombre'], date['Otros']),
+                                    })),
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Mujer-Hombre', 'Otros-Hombre'],
+                                    isPercentual: true,
+                                },
+                                caption: 'Serie histórica de brecha salarial de minoreias respecto del grupo mayoritario.',
+                                description: (<>
+                                    <p>Se han aplicado reglas de normalización.</p>
+                                    <p>
+                                        El cálculo de la brecha salarial se realiza obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
+                                        Esto representa el porcentaje de aumento que al aplicarse al grupo de menor salario, equipararía las condiciones.
+                                    </p>
+                                </>),
                             },
                         ],
                     },
@@ -670,10 +760,9 @@ export default [
                                 title: 'Juniors',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_junior_median'].data
-                                        .sort((a, b) => b['Hombre'] - a['Hombre']),
-                                    cutoff: 15,
+                                    data: charts['roles_seniority_salary_junior_median'].data,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
                                 },
                                 caption: 'Mediana salarial por género según rol y hasta 2 años de experiencia.',
                             },
@@ -681,10 +770,9 @@ export default [
                                 title: 'Semi-Seniors',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_semisenior_median'].data
-                                        .sort((a, b) => b['Hombre'] - a['Hombre']),
-                                    cutoff: 15,
+                                    data: charts['roles_seniority_salary_semisenior_median'].data,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
                                 },
                                 caption: 'Mediana salarial por género según rol para 2 a 5 años de experiencia.',
                             },
@@ -692,26 +780,29 @@ export default [
                                 title: 'Seniors',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_senior_median'].data
-                                        .sort((a, b) => b['Hombre'] - a['Hombre']),
-                                    cutoff: 15,
+                                    data: charts['roles_seniority_salary_senior_median'].data,
                                     currency: 'AR$',
+                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
                                 },
                                 caption: 'Mediana salarial por género según rol para 5 años de experiencia o más.',
                             },
                         ],
                     },
                     {  // section
-                        title: 'Ajustes por inflación 2018',
+                        title: 'Ajustes por inflación 2019',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
-                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2018 por género.',
-                                description: <div>
-                                    <p>Sería aventurado sacar conclusiones de este gráfico, ya que requiere de un estudio más minusioso respecto de la variable de género y como esto repercute en el cálculo de la Inflación (?).</p>
-                                </div>,
+                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2019 por género.',
+                                description: <>
+                                    <p>
+                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.01#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
+                                        Si bien, no podemos afirmar que exista una mala intencionalidad respeco a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
+                                        Una posible explicación sería la reciente inserción de las minorías, que tal vez por ser incipiente, queden excluídas de las empresas que presentan mejores condiciones.
+                                    </p>
+                                </>,
                             },
                         ],
                     },
@@ -731,7 +822,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['plataformas'], isPercentual: true, isLogScale: true, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
+                                props: { ...charts['plataformas'], isPercentual: true, isLogScale: true, minLogScale: 0.0003, cutoff: 10, sumOthers: false },
                                 caption: 'Plataformas más utilizadas entre los participantes',
                                 description: 'Las plataformas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
@@ -743,7 +834,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, isLogScale: true, minLogScale: 0.001, cutoff: 10, sumOthers: false },
+                                props: { ...charts['lenguajes_de_programacion'], isPercentual: true, isLogScale: true, minLogScale: 0.0006, cutoff: 10, sumOthers: false },
                                 caption: 'Lenguajes de programación más utilizadas entre los participantes',
                                 description: 'Los lenguajes de programación no son excluyentes, es decir puede haber más de uno por persona relevada. Los valores son porcentuales sobre el total de participantes.'
                             },
@@ -794,7 +885,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['ides'], isPercentual: true, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
+                                props: { ...charts['ides'], isPercentual: true, isLogScale: true, minLogScale: 0.0003, cutoff: 10, sumOthers: false },
                                 caption: 'IDEs más utilizadas entre los participantes',
                                 description: <div>
                                     <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
@@ -853,7 +944,7 @@ export default [
                         ],
                     },
                     {  // section
-                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2018)',
+                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2019)',
                         data: [
                             {  // tab
                                 title: '',
@@ -927,7 +1018,7 @@ export default [
                     Debido a la multidimensionalidad de los datos, no creímos conveniente utilizar la <i>homogeneidad</i> para determinar la representatividad, ya que por ejemplo, para una misma región la dispersión de salarios puede ser muy grande debido a otros factores tales como la antiguedad, el nivel de estudios o la tecnología.
                 </p>
                 <p>
-                    En el caso de los <a href="#Salarios-Segun-Region">salarios por región</a> y <a href="#Salarios-Segun-Educacion-Salarios-segun-carrera-y-experiencia">según carrera</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
+                    En el caso de <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">carrerad y estado</a>, <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-Universidades-mas-concurridas">universidades y estado de las carreras</a>, <a href="#Salarios-Segun-Region">salarios por región</a> y <a href="#Salarios-Segun-Educacion-Salarios-segun-carrera-y-experiencia">según carrera</a>, en particular, no quisimos dejar ninguna fuera del análisis. Pero para evitar inducir a interpretaciones erróneas, hemos marcado como con <i>datos insuficientes</i> a aquellas que no lleguen superar el umbral del 0.05% de muestras sobre el total.
                 </p>
                 <p>
                     Para otros segmentos, simplemente tomamos las valores más frecuentes para las variables con que se hizo rankings.  Con esto, aseguramos también que los datos presentados sean relevantes para el lector.
@@ -958,7 +1049,7 @@ export default [
                 <p>Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.</p>
                 <h4>Normalización de entradas de texto libre</h4>
                 <p>
-                    En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, son de texto libre.
+                    En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, además de presentar opciones predefinidas, también permiten texto libre (otros).
                     Esto conlleva a una mayor dispersión de valores, dado que cada encuestado contesta de maneras distintas:
                 </p>
                 <ul>
@@ -974,10 +1065,14 @@ export default [
                 </ul>
 
                 <p>
-                    De existir esta dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
+                    De existir amplia dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
                 </p>
                 <p>
-                    Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
+                    Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12wza039dl0UjCSypYZY3gtTqW6OWbFI9#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
+                </p>
+                <p>
+                    Como mejora al relevamiento anterior, hemos además provisto durante la encuesta 2019.02, todos los valores más relevantes normalizados como resultado del análisis 2019.01.
+                    De esta forma, no solo hemos facilitado el proceso de carga de datos, sino también hemos minimizado la necesidad de normalización, dando lugar a un análisis aún más preciso.
                 </p>
                 <h4>Series temporales</h4>
                 <h5>Salarios</h5>
@@ -999,8 +1094,12 @@ export default [
                 <h4>Repositorios</h4>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og">Notebook de análisis período 2019.01</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12wza039dl0UjCSypYZY3gtTqW6OWbFI9">Notebook de análisis período 2019.02</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/10IcHgqy-GahWjlKeWe4aPMpb1GljmC3l">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2019.02</a></li>
+                </ul>
+                <h4>Análisis previos</h4>
+                <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.01">Resultados de la encuesta de sueldos 2019.01</a></li>
                 </ul>
             </div>
         )

@@ -43,15 +43,13 @@
   height: 3px;
 }
 .color-bar-section-1 {
-  background-color: #623296;
+  background-color: #F4A04B;
 }
 .color-bar-section-2 {
-  background-color: #9c4dcc;
   background-color: #ED5C88;
 }
 .color-bar-section-3 {
-  background-color: #c158dc;
-  background-color: #F4A04B;
+  background-color: #623296;
 }
 
 @media (max-width: 460px) {
