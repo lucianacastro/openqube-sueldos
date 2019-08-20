@@ -665,7 +665,7 @@ export default [
                                 description: 'Se han aplicado reglas de normalización.',
                             },
                             {  // tab
-                                title: 'Brecha Salarial',
+                                title: 'Brecha salarial',
                                 component: 'Line', // graph
                                 props: {
                                     data: Object.values(
