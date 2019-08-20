@@ -465,7 +465,7 @@ export default [
                         title: 'Salarios según carrera y experiencia',
                         data: [
                             {  // tab
-                                title: 'Por carrera y experiencia',
+                                title: 'Recibidos por experiencia',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['carrera_seniority_salary_median'].data,
@@ -475,6 +475,20 @@ export default [
                                 caption: 'Mediana salarial por carrera y años de experiencia.',
                                 description: <div>
                                     <p>Para este ranking entre carreras solo contamos participantes que las hayan completado.  También hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                </div>,
+                            },
+                            {  // tab
+                                title: 'Estudiantes por experiencia',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['carrera_seniority_salary_median_encurso'].data,
+                                    currency: 'AR$',
+                                    markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
+                                },
+                                caption: 'Mediana salarial por carrera y años de experiencia.',
+                                description: <div>
+                                    <p>Para este ranking entre carreras solo contamos participantes que estén en curso.  También hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
                                     <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
