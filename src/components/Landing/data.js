@@ -813,7 +813,7 @@ export default [
                                 description: <>
                                     <p>
                                         Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.01#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
-                                        Si bien, no podemos afirmar que exista una mala intencionalidad respeco a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
+                                        Si bien, no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
                                         Una posible explicación sería la reciente inserción de las minorías, que tal vez por ser incipiente, queden excluídas de las empresas que presentan mejores condiciones.
                                     </p>
                                 </>,
@@ -1077,7 +1077,6 @@ export default [
                     <li>todas las combinaciones posibles de las anteriores</li>
                     <li>etc.</li>
                 </ul>
-
                 <p>
                     De existir amplia dispersión, es impracticable poder obtener por ejemplo, una noción del salario típico de un Analista Programador que no completó sus estudios.
                 </p>
