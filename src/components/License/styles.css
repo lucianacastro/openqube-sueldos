@@ -1,0 +1,12 @@
+p.license {
+    padding: 10px 20px;
+    color: #777;
+    font-size: 0.75em;
+    width: 50%;
+    margin: 0 auto;
+}
+
+p.license .license-image-container {
+    margin: 10px;
+    display: inline-block;
+}
