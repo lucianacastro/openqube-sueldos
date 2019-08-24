@@ -563,27 +563,32 @@ export default [
                     },
                 ],
             },
-            // { // sub-category
-            //     title: 'Trabajo Local vs. Remoto',
-            //     data: [
-            //         // {  // section
-            //         //     title: 'Plataformas',
-            //         //     data: [
-            //         //         {  // tab
-            //         //             title: 'Por experiencia',
-            //         //             component: 'Barh', // graph
-            //         //             props: {
-            //         //                 data: charts['plataformas_seniority_salary_median'].data
-            //         //                     .sort((a, b) => b['Senior'] - a['Senior']),
-            //         //                 cutoff: 15,
-            //         //                 currency: 'AR$',
-            //         //             },
-            //         //             caption: 'Mediana salarial según plataformas y años de experiencia.',
-            //         //         },
-            //         //     ],
-            //         // },
-            //     ],
-            // },
+            { // sub-category
+                title: 'Según Contrato',
+                data: [
+                    {  // section
+                        title: 'Sueldos dolarizados vs. en pesos',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['sueldo_dolarizado_salary_median'].data
+                                        .map(val => ({
+                                            ...val,
+                                            name: (val.name === 'True' ? 'Sueldo dolariazdo' : 'Sueldo no dolariazdo'),
+                                        })),
+                                    currency: 'AR$',
+                                },
+                                caption: 'Mediana salarial según sueldos dolarizados y experiencia.',
+                                description: <p>
+                                    En <a href="#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">este otro gráfico</a> puede verse el porcentaje de personas que gozan de este beneficio.
+                                </p>
+                            },
+                        ],
+                    },
+                ],
+            },
         ],
     },
     { // category
@@ -1034,6 +1039,24 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['tipo_de_contrato_percent'], isLogScale: true, isPercentual: true },
                                 caption: 'Porcentaje de tipos de contrato de trabajo en escala logarítimica.',
+                            },
+                        ],
+                    },
+                    {
+                        title: '¿Qué porcentaje tiene su sueldo dolarizado?',
+                        data: [
+                            { // tab
+                                title: 'Sueldos dolarizados',
+                                component: 'Pie',
+                                props: {
+                                    data: charts['sueldo_dolarizado_percent'].data
+                                        .map(val => ({
+                                            ...val,
+                                            name: (val.name === 'True' ? 'Sueldo dolariazdo' : 'Sueldo no dolariazdo'),
+                                        })),
+                                    isPercentual: true,
+                                },
+                                caption: <p>Porcentaje de personas que tienen su sueldo dolarizados, y quienes no lo tienen.</p>,
                             },
                         ],
                     },
