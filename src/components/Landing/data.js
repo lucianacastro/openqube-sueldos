@@ -399,7 +399,7 @@ export default [
                         title: 'Salarios según rol, experiencia e industrias',
                         data: [
                             {  // tab
-                                title: 'Por seniority y roles',
+                                title: 'Por rol y experiencia',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['roles_seniority_salary_median'].data
@@ -408,13 +408,24 @@ export default [
                                     currency: 'AR$',
                                     markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
                                 },
-                                caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
+                                caption: 'Mediana salarial por rol y años de experiencia en el puesto.',
                                 description: <div>
                                     <p> La seniority aquí mencionada refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
-                                title: 'Por seniority y actividad principal de la empresa',
+                                title: 'Por rol e industria',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['roles_actividad_principal_salary_median'].data,
+                                    //cutoff: 15,
+                                    currency: 'AR$',
+                                    markNegativeValues: ['Otras industrias', 'Producto basado en Software', 'Servicios / Consultoría de Software / Digital'],
+                                },
+                                caption: 'Mediana salarial por rol e industria.',
+                            },
+                            {  // tab
+                                title: 'Por industria y experiencia',
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['actividad_principal_seniority_salary_median'].data
@@ -579,11 +590,33 @@ export default [
         title: 'Género',
         content: (
             <div>
-                <p>Respecto a diversidad, un dato positivo del resultado de esta última encuesta, tiene que ver con un máximo histórico de participación de mujeres.</p>
                 <p>
-                    Para el grupo Otros (no binarios), la participación se mantuvo constante.
-                    Dado que la muestra sigue siendo muy pequeña, los datos desagregados de salarios, formación, roles y experiencia no son suficientes como para ser considerados representativos, según la <a href="#Metodologia">metodología elegida</a>.
-                    De todos modos, como es de vital importancia dar visibilidad en cada caso, no haremos omisión de ningún dato en esta sección.
+                    Respecto a cuestiones de género, nos encontramos con un escenario más que interesante:
+                    <ol>
+                        <li>El nivel de participación de mujeres está en su <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">máximo histórico</a> 💪, el grupo de Otros se mantuvo constante.</li>
+                        <li>Para la población muestreada, <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">la brecha salarial general para personas con hasta 8 años de experiencia es prácticamente nula</a> 💪.</li>
+                        <li>A partir de los 8 años de experiencia o más, aparece la grieta salarial 😱 (ver <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">mismo gráfico</a>).</li>
+                        <li>Los <a href="#Genero-Experiencia-Conformidad">niveles de conformidad con el salario en mujeres</a> se condicen con el ítem anterior 😱.</li>
+                        <li>Las <a href="#Genero-Experiencia-Participacion-en-las-industrias">mujeres en IT parecen inclinarse más por "Servicios / Consultoría deSoftware / Digital" ó "Producto basado enSoftware" que "Otras industrias"</a>.</li>
+                    </ol>
+
+                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">14.55%</a>. Pero este número solo se explica por las personas con +8 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">45% de la población censada</a> (8, 55] = 22,87% + 17,23% + 4,66% + 0,24%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se asentúa con respecto al 55% restante</a>.
+                </p>
+                <p>
+                    <h4>Datos alentadores</h4>
+                    <ol>
+                        <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas.</li>
+                        <li>El cnojunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes que sysarmy comenzara a relevar con encuestas.
+                            Aa partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">éste gráfico</a>, podemos interpretar que la diversidad en IT mejora lentamente año tras año.</li>
+                        <li>La <a href="#Genero-Progresion-historica-Historico-de-conformidad">brecha de conformidad salarial se cierra</a>, al menos en lo que va de 2019.</li>
+                        <li>Las mujeres siguen <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">a la cabeza del nerdismo</a>: mayor nivel de estudios, mayor grado de completitud.</li>
+                    </ol>
+                    <h4>Datos para mejorar</h4>
+                    <ol>
+                        <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019">no parecen ser equitatitvos</a> aún.</li>
+                        <li>La brecha salarial entre hombres y mujeres, para profesionales con +8 años de experiencia, <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, y es mucha.</li>
+                        <li>Los hombres siguen siendo un <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85.42% de los profesionales en IT</a>.</li>
+                    </ol>
                 </p>
             </div>
         ),
@@ -592,7 +625,7 @@ export default [
                 title: 'Progresión histórica',
                 data: [
                     {  // section
-                        title: 'Nivel de participación',
+                        title: 'Histórico de nivel de participación',
                         data: [
                             {  // tab
                                 title: 'Mujeres / Otros',
@@ -613,7 +646,7 @@ export default [
                                     yDataKeys: ['Mujer', 'Otros'],
                                     isPercentual: true,
                                 },
-                                caption: 'Serie de tiempo de salarios por género basada en encuestas anteriores (excluyendo mayoría).',
+                                caption: 'Serie de tiempo de porcentaje de participación por género basada en encuestas anteriores (excluyendo mayoría).',
                                 description: 'Al excluir la parte mayoritaria, puede apreciarse mejor la relación de porcentajes para Mujeres y Otros.',
                             },
                             {  // tab
@@ -635,12 +668,12 @@ export default [
                                     yDataKeys: ['Mujer', 'Otros', 'Hombre'],
                                     isPercentual: true,
                                 },
-                                caption: 'Serie de tiempo de salarios por género basada en encuestas anteriores.',
+                                caption: 'Serie de tiempo de porcentaje de participación por género basada en encuestas anteriores.',
                             },
                         ],
                     },
                     {  // section
-                        title: 'Salarios',
+                        title: 'Histórico de salarios',
                         data: [
                             {  // tab
                                 title: 'Salarios por género',
@@ -660,12 +693,13 @@ export default [
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                     currency: 'AR$',
+                                    customStroke: {'Otros': '#ccc'},
                                 },
                                 caption: 'Serie histórica de salarios basada en encuestas anteriores.',
-                                description: 'Se han aplicado reglas de normalización.',
+                                description: 'Se han aplicado reglas de normalización. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
                             },
                             {  // tab
-                                title: 'Brecha salarial',
+                                title: 'Histórico de brecha salarial',
                                 component: 'Line', // graph
                                 props: {
                                     data: Object.values(
@@ -690,20 +724,21 @@ export default [
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Mujer-Hombre', 'Otros-Hombre'],
                                     isPercentual: true,
+                                    customStroke: {'Otros-Hombre': '#ccc'},
                                 },
                                 caption: 'Serie histórica de brecha salarial de minoreias respecto del grupo mayoritario.',
                                 description: (<>
-                                    <p>Se han aplicado reglas de normalización.</p>
+                                    <p>Se han aplicado reglas de normalización. El segmento de "otros" está grisado, ya que no se cuenta con suficientes datos.</p>
                                     <p>
-                                        El cálculo de la brecha salarial se realiza obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
-                                        Esto representa el porcentaje de aumento que al aplicarse al grupo de menor salario, equipararía las condiciones.
+                                        El cálculo de la brecha salarial general aquí mostrado, se realizó obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
+                                        Esto representa el porcentaje de aumento que debería aplicarse al grupo de menor salario, para equiparar las condiciones.
                                     </p>
                                 </>),
                             },
                         ],
                     },
                     {  // section
-                        title: 'Conformidad',
+                        title: 'Histórico de conformidad',
                         data: [
                             {  // tab
                                 title: 'Conformidad con los salarios',
@@ -713,9 +748,10 @@ export default [
                                         .map(row => ({ ...row, Otros: row.Otros || undefined, publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] })), // remove 0 values
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    customStroke: {'Otros': '#ccc'},
                                 },
                                 caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
-                                description: 'Escala de 1 - 4',
+                                description: 'Escala de 1 - 4. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
 
                             },
                         ],
@@ -728,11 +764,6 @@ export default [
                     <p>
                         En este apartado, segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
                         Cabe aclarar que en el caso de Otros, tal como se puede ver en el apartado <a href="#Perfil-de-participantes-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
-                    </p>
-                    <p>
-                        Como se puede apreciar en el <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">siguente gráfico</a>, queda muy claro que las mujeres mejoran todos los índices respecto a los hombres.
-                        De esto puede hacerse múltiples interpretaciones. Quizás, una explicación a este fenómeno, sea la reacción frente a la <a target="_blank" rel="noopener noreferrer" href="http://www.medallia.com.ar/inclusion/posts/las-desventajas-que-no-vemos/">desigualdad de oportunidades</a> en nuestra Industria.
-                        Si bien, la conscientización sobre las problemáticas de género en el sector hayan tomado relevancia en los últimos años, estamos lejos de cerrar <a href="#Genero-Progresion-historica-Salarios">esta brecha</a>. 
                     </p>
                 </div>,
                 data: [
@@ -757,51 +788,128 @@ export default [
                                 title: 'Otros',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_otros_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cual es el mayor nivel de estudios alcanzado de Otros, y cual es su estado actual?',
-                                description: 'Los valores porcentuales de cada segmento son sobre el total de Otros encuestados.'
+                                caption: '¿Cual es el mayor nivel de estudios alcanzado de "otros", y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de "otros" encuestados.'
                             },
                         ],
                     },
                 ],
             },
             { // sub-category
-                title: 'Salarios',
+                title: 'Experiencia',
                 data: [
                     {  // section
-                        title: 'Por rol y experiencia',
+                        title: 'Salario por género según años de experiencia',
                         data: [
                             {  // tab
-                                title: 'Juniors',
-                                component: 'Barh', // graph
+                                title: 'Salarios por experiencia',
+                                component: 'Line', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_junior_median'].data,
+                                    data: charts['experience_gender_salary_median'].data,
+                                    xDataKey: 'name',
+                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                     currency: 'AR$',
-                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
+                                    customStroke: {'Otros': '#ccc'},
                                 },
-                                caption: 'Mediana salarial por género según rol y hasta 2 años de experiencia.',
-                            },
-                            {  // tab
-                                title: 'Semi-Seniors',
-                                component: 'Barh', // graph
-                                props: {
-                                    data: charts['roles_seniority_salary_semisenior_median'].data,
-                                    currency: 'AR$',
-                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
-                                },
-                                caption: 'Mediana salarial por género según rol para 2 a 5 años de experiencia.',
-                            },
-                            {  // tab
-                                title: 'Seniors',
-                                component: 'Barh', // graph
-                                props: {
-                                    data: charts['roles_seniority_salary_senior_median'].data,
-                                    currency: 'AR$',
-                                    markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
-                                },
-                                caption: 'Mediana salarial por género según rol para 5 años de experiencia o más.',
+                                caption: 'Mediana salarial por género, según años de experiencia.',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia..',
                             },
                         ],
                     },
+                    {  // section
+                        title: 'Participación por género según años de experiencia',
+                        data: [
+                            {  // tab
+                                title: 'Mujeres / Otros',
+                                component: 'Area', // graph
+                                props: {
+                                    data: charts['experience_gender_percent'].data,
+                                    xDataKey: 'name',
+                                    yDataKeys: ['Mujer', 'Otros'],
+                                    isPercentual: true,
+                                },
+                                caption: 'Nivel de participación por género, según años de experiencia. El porcentaje restante es de hombres.',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El grupo de hombres fue excluído por ser smplia mayoría.',
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Conformidad',
+                        data: [
+                            {  // tab
+                                title: 'Conformidad con los salarios',
+                                component: 'Line', // graph
+                                props: {
+                                    data: charts['experience_gender_conformidad_mean'].data,
+                                    xDataKey: 'name',
+                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    customStroke: {'Otros': '#ccc'},
+                                },
+                                caption: 'Conformidad con los salarios por género según años de experiencia.',
+                                description: 'Escala de 1 - 4.  Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci.  El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
+
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: 'Participación en las industrias',
+                        data: [
+                            {  // tab
+                                title: 'Actividad principal',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['actividad_principal_gender_percent'].data
+                                        .sort((a, b) => b['Mujer'] - a['Mujer']),
+                                    isPercentual: true,
+                                    isLogScale: true,
+                                },
+                                caption: 'Porcentaje de hombres, mujeres y otros en cada grupo de sectores de la industria.',
+                                description: <p>
+                                    También podés ver el <a href="#Trabajo-Caracteristicas-de-las-Empresas-Actividad-Principal-de-la-Empresa">porcentaje de insidencia de cada sector de la industria sobre el total de la poblaciones censada</a>.
+                                </p>,
+                            },
+                        ],
+                    },
+                ]
+            },
+            { // sub-category
+                title: 'Ajuste salarial',
+                data: [
+                    // {  // section
+                    //     title: 'Por rol y experiencia',
+                    //     data: [
+                    //         {  // tab
+                    //             title: 'Juniors',
+                    //             component: 'Barh', // graph
+                    //             props: {
+                    //                 data: charts['roles_seniority_salary_junior_median'].data,
+                    //                 currency: 'AR$',
+                    //                 markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
+                    //             },
+                    //             caption: 'Mediana salarial por género según rol y hasta 2 años de experiencia.',
+                    //         },
+                    //         {  // tab
+                    //             title: 'Semi-Seniors',
+                    //             component: 'Barh', // graph
+                    //             props: {
+                    //                 data: charts['roles_seniority_salary_semisenior_median'].data,
+                    //                 currency: 'AR$',
+                    //                 markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
+                    //             },
+                    //             caption: 'Mediana salarial por género según rol para 2 a 5 años de experiencia.',
+                    //         },
+                    //         {  // tab
+                    //             title: 'Seniors',
+                    //             component: 'Barh', // graph
+                    //             props: {
+                    //                 data: charts['roles_seniority_salary_senior_median'].data,
+                    //                 currency: 'AR$',
+                    //                 markNegativeValues: ['Hombre', 'Mujer', 'Otros'],
+                    //             },
+                    //             caption: 'Mediana salarial por género según rol para 5 años de experiencia o más.',
+                    //         },
+                    //     ],
+                    // },
                     {  // section
                         title: 'Ajustes por inflación 2019',
                         data: [
@@ -1036,7 +1144,7 @@ export default [
                     Por ejemplo, en <a href="#Salarios-Segun-Educacion-Salarios-segun-carrera-y-experiencia">salarios según carrera y experiencia</a>, Ingeniería Industrial rankea entre las primeras 3 carreras con mejores salarios.  Sin embargo, la cantidad de ingenieros industriales por sobre el total de la población encuestada es muy bajo como para afirmarlo.
                 </p>
                 <p>
-                    Para otros segmentos, simplemente tomamos las valores más frecuentes para las variables con que se hizo rankings.  Con esto, aseguramos también que los datos presentados sean relevantes para el lector.
+                    Para otros segmentos, simplemente hicimos un corte sobre los resultados más frecuentes (rankings).  Con esto, aseguramos también que los datos presentados sean relevantes para un análisis.
                 </p>
                 <h4>Salarios</h4>
                 <p>
@@ -1050,6 +1158,7 @@ export default [
                 <p>
                     Muchos salarios ingresados no se corresponden necesariamente con datos reales.  Esto puede ser debido a errores de tipeo, no entendimiento de la pregunta, o simplemente intencionales.
                     Para evitar que estos valores distorsionen los resultados, aplicamos el método del <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico">Rango Intercuartílico</a> con un coeficiente de <i>3.5</i>.
+                    Es muy posible que existan salarios reales que hayan quedado fuera del análisis, por ser estos realmente outliers.
                 </p>
                 <p>
                     Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
@@ -1104,6 +1213,11 @@ export default [
                 <p>
                     Para visualizaciones en las cuales el espectro de valores es demasiado amplio, y a veces distante entre valores de una misma muestra, utilizamos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Escala_logar%C3%ADtmica">escala logarítmica</a>.
                     Este recurso nos permite apreciar los datos de una manera más clara, por ejemplo cuando existen valores cercanos a cero y otros de uno o más órdenes de magnitud.
+                </p>
+                <h5>Datos insuficientes</h5>
+                <p>
+                    En muchas ocaciones, dado el nivel granularidad de ciertos gráficos, la cantidad escaza de datapoints en algunos segmentos, pueden inducir a conclusiones erróneas.
+                    Para advertir al lector de estos casos, hemos grisado en todos los gráficos posibles aquellos segmentos cuya representatividad no supere el umbral de 0.05%, tanto gráficos de barras horizontales como series históricas.
                 </p>
                 <h4>Repositorios</h4>
                 <ul>

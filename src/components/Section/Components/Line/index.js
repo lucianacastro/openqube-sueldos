@@ -41,7 +41,7 @@ class Line extends Component {
   }
 
   render() {
-    const { data, xDataKey, yDataKeys, isPercentual } = this.props;
+    const { data, xDataKey, yDataKeys, isPercentual, customStroke = { } } = this.props;
 
     return (
       <LineChart width={620} height={400} data={data}
@@ -53,7 +53,7 @@ class Line extends Component {
         <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
         {!yDataKeys.includes('value') ? <Legend /> : null}
         {yDataKeys.map((dataKey, i) => (
-          <_Line type='monotone' dataKey={dataKey} stroke={COLORS[i]} fill={COLORS[i + 1]} key={`${dataKey}-${i}`} />
+          <_Line type='monotone' dataKey={dataKey} stroke={customStroke[dataKey]||COLORS[i]} fill={COLORS[i + 1]} key={`${dataKey}-${i}`} />
         ))}
       </LineChart>
     );
