@@ -330,18 +330,18 @@ export default [
                                     </p>
                                     <p>
                                         Como dato de color de estas últimas encuestas 2019.02, el período Julio-Agosto durante el cual fueron relevados los sueldos, nos trajo también una fuerte devaluación del peso.
-                                        Por nuestra metodología, siempre utilizamos la cotización del dólar de la fecha de publicación/cierre de los resultados.  En este caso del 15/8.
+                                        Por nuestra metodología, utilizamos la mediana de cotización del dólar de la fecha de publicación/cierre de los resultados, con un delta de +/- 5 días.  En este caso del 15/8.
                                     </p>
                                 </div>,
                             },
                             {  // tab
-                                title: 'Salarios en US$ (al 19/7 💸)',
+                                title: 'Salarios en US$ (al 9 de Agosto 💸)',
                                 component: 'Line', // graph
                                 props: { ...historic_charts['historic_salary_medians_paso'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
                                 caption: <p>Solo por el #morbo de saber cómo eran los salarios en dólares hasta hace tan solo unos pocos días.</p>,
                                 description: <div>
                                     <p>
-                                        Este gráfico es igual al anterior, sólo que utiliza la cotización del dólar a la fecha del 19 de Julio.
+                                        Este gráfico es igual al anterior, sólo que utiliza la cotización del dólar a la fecha del 9 de Agosto.
                                     </p>
                                     <p>
                                         Aquí sí, podemos volver a decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generales, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
@@ -602,7 +602,7 @@ export default [
                         <li>Para la población muestreada, <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">la brecha salarial general para personas con hasta 8 años de experiencia es prácticamente nula</a> 💪.</li>
                         <li>A partir de los 8 años de experiencia o más, aparece la grieta salarial 😱 (ver <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">mismo gráfico</a>).</li>
                         <li>Los <a href="#Genero-Experiencia-Conformidad">niveles de conformidad con el salario en mujeres</a> se condicen con el ítem anterior 😱.</li>
-                        <li>Las <a href="#Genero-Experiencia-Participacion-en-las-industrias">mujeres en IT parecen inclinarse más por "Servicios / Consultoría deSoftware / Digital" ó "Producto basado enSoftware" que "Otras industrias"</a>.</li>
+                        <li>Las <a href="#Genero-Experiencia-Participacion-en-las-industrias">mujeres en IT parecen inclinarse más por "Servicios / Consultoría de Software / Digital" ó "Producto basado en Software" que "Otras industrias"</a>.</li>
                     </ol>
 
                     La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">14.55%</a>. Pero este número solo se explica por las personas con +8 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">45% de la población censada</a> (8, 55] = 22,87% + 17,23% + 4,66% + 0,24%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se asentúa con respecto al 55% restante</a>.
@@ -611,7 +611,7 @@ export default [
                     <h4>Datos alentadores</h4>
                     <ol>
                         <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas.</li>
-                        <li>El cnojunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes que sysarmy comenzara a relevar con encuestas.
+                        <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes que sysarmy comenzara a relevar con encuestas.
                             Aa partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">éste gráfico</a>, podemos interpretar que la diversidad en IT mejora lentamente año tras año.</li>
                         <li>La <a href="#Genero-Progresion-historica-Historico-de-conformidad">brecha de conformidad salarial se cierra</a>, al menos en lo que va de 2019.</li>
                         <li>Las mujeres siguen <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">a la cabeza del nerdismo</a>: mayor nivel de estudios, mayor grado de completitud.</li>
@@ -817,7 +817,7 @@ export default [
                                     customStroke: {'Otros': '#ccc'},
                                 },
                                 caption: 'Mediana salarial por género, según años de experiencia.',
-                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia..',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
                             },
                         ],
                     },
@@ -1185,6 +1185,10 @@ export default [
                 </p>
                 <p>
                     Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
+                </p>
+                <h5>Cotización del dólar</h5>
+                <p>
+                    Para el cálculo de salarios dolarizados, tomamos la cotización intradiaria promedio de Bloomberg, y tomamos la mediana del valor del día de publicación con un delta de 5 días.
                 </p>
                 <h4>Experiencia</h4>
                 <p>Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos: </p>
