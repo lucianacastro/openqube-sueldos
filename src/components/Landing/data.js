@@ -612,7 +612,7 @@ export default [
                     <ol>
                         <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas.</li>
                         <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes que sysarmy comenzara a relevar con encuestas.
-                            Aa partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">éste gráfico</a>, podemos interpretar que la diversidad en IT mejora lentamente año tras año.</li>
+                            A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">éste gráfico</a>, podemos interpretar que la diversidad en IT mejora lentamente año tras año.</li>
                         <li>La <a href="#Genero-Progresion-historica-Historico-de-conformidad">brecha de conformidad salarial se cierra</a>, al menos en lo que va de 2019.</li>
                         <li>Las mujeres siguen <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">a la cabeza del nerdismo</a>: mayor nivel de estudios, mayor grado de completitud.</li>
                     </ol>
