@@ -595,32 +595,28 @@ export default [
         title: 'Género',
         content: (
             <div>
-                <p>
-                    Respecto a cuestiones de género, nos encontramos con un escenario más que interesante:
-                    <ol>
-                        <li>El nivel de participación de mujeres está en su <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">máximo histórico</a> 💪, el grupo de Otros se mantuvo constante.</li>
-                        <li>Para la población muestreada, <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">la brecha salarial general para personas con hasta 8 años de experiencia es prácticamente nula</a> 💪.</li>
-                        <li>A partir de los 8 años de experiencia o más, aparece la grieta salarial 😱 (ver <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">mismo gráfico</a>).</li>
-                        <li>Los <a href="#Genero-Experiencia-Conformidad">niveles de conformidad con el salario en mujeres</a> se condicen con el ítem anterior 😱.</li>
-                        <li>Las <a href="#Genero-Experiencia-Participacion-en-las-industrias">mujeres en IT parecen inclinarse más por "Servicios / Consultoría de Software / Digital" ó "Producto basado en Software" que "Otras industrias"</a>.</li>
-                    </ol>
-
-                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">14.55%</a>. Pero este número solo se explica por las personas con +8 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">45% de la población censada</a> (8, 55] = 22,87% + 17,23% + 4,66% + 0,24%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se asentúa con respecto al 55% restante</a>.
+                <p>Respecto a cuestiones de género, nos encontramos con un escenario más que interesante:
+	                <ol>
+		                <li>El nivel de participación de mujeres está en su <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">máximo histórico</a> 💪, el grupo de Otros se mantuvo constante.</li>
+		                <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 8 años de experiencia 💪.</li>
+		                <li>Los <a href="#Genero-Experiencia-Conformidad">niveles de conformidad con el salario en mujeres</a> condicen con el ítem anterior 😱.</li>
+	                </ol>
+	                La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">14.55%</a> y según los datos recabados se acentúa en las personas con +8 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">45% de la población censada</a> (8, 55] = 22,87% + 17,23% + 4,66% + 0,24%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se hace más marcada con respecto al 55% restante</a>.
                 </p>
                 <p>
                     <h4>Datos alentadores</h4>
                     <ol>
                         <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas.</li>
                         <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes que sysarmy comenzara a relevar con encuestas.
-                            A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">éste gráfico</a>, podemos interpretar que la diversidad en IT mejora lentamente año tras año.</li>
-                        <li>La <a href="#Genero-Progresion-historica-Historico-de-conformidad">brecha de conformidad salarial se cierra</a>, al menos en lo que va de 2019.</li>
+                            A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año.</li>
+                        <li>2019 muestra una marcada mejora en la <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a>.</li>
                         <li>Las mujeres siguen <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">a la cabeza del nerdismo</a>: mayor nivel de estudios, mayor grado de completitud.</li>
                     </ol>
-                    <h4>Datos para mejorar</h4>
+                    <h4>Para seguir mejorando</h4>
                     <ol>
                         <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019">no parecen ser equitatitvos</a> aún.</li>
-                        <li>La brecha salarial entre hombres y mujeres, para profesionales con +8 años de experiencia, <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, y es mucha.</li>
-                        <li>Los hombres siguen siendo un <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85.42% de los profesionales en IT</a>.</li>
+                        <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, y es mucha. Especialmente para profesionales con +8 años de experiencia.</li>
+                        <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85%+ hombres</a>.</li>
                     </ol>
                 </p>
             </div>
