@@ -598,7 +598,7 @@ export default [
                 <p>Respecto a cuestiones de género, nos encontramos con un escenario más que interesante:
 	                <ol>
 		                <li>El nivel de participación de mujeres está en su <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">máximo histórico</a> 💪, el grupo de Otros se mantuvo constante.</li>
-		                <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 8 años de experiencia 💪.</li>
+		                <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 8 años de experiencia.</li>
 		                <li>Los <a href="#Genero-Experiencia-Conformidad">niveles de conformidad con el salario en mujeres</a> condicen con el ítem anterior 😱.</li>
 	                </ol>
 	                La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">14.55%</a> y según los datos recabados se acentúa en las personas con +8 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">45% de la población censada</a> (8, 55] = 22,87% + 17,23% + 4,66% + 0,24%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se hace más marcada con respecto al 55% restante</a>.
