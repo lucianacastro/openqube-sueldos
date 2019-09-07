@@ -1239,7 +1239,7 @@ export default [
                 </p>
                 <h5>Datos insuficientes</h5>
                 <p>
-                    En muchas ocaciones, dado el nivel granularidad de ciertos gráficos, la cantidad escaza de datapoints en algunos segmentos, pueden inducir a conclusiones erróneas.
+                    En muchas ocasiones, dado el nivel granularidad de ciertos gráficos, la cantidad escasa de datapoints en algunos segmentos, pueden inducir a conclusiones erróneas.
                     Para advertir al lector de estos casos, hemos grisado en todos los gráficos posibles aquellos segmentos cuya representatividad no supere el umbral de 0.05%, tanto gráficos de barras horizontales como series históricas.
                 </p>
                 <h4>Repositorios</h4>
