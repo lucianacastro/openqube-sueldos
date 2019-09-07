@@ -43,3 +43,11 @@
 .author-name {
     color: #623296;
 }
+
+hr {
+    border: 1px solid #e9e9e9;
+}
+
+a {
+    color: #2a0551;
+}

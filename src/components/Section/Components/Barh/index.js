@@ -35,17 +35,17 @@ class Barh extends Component {
     const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
     const isOneDimensional = data[0] && data[0].value !== undefined;
     let _data = [ ...data ];
-    
     if (markNegativeValues) {
       const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
-      const mainKey = keys[0];
 
       _data = _data.map(row => ({
         ...row,
         ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key])}), row),
-        invalid: row[mainKey] < 0,
-      })).sort((row1, row2) => row2[mainKey] - row1[mainKey]);
+        invalid: row[keys[0]] <= 0,
+      }))
+      .sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist+(row2[key] - row1[key]), 0));
     }
+
 
     if (this.state.collapsed && cutoff) {
       const visibleRows = _data.filter((row, i) => i < cutoff);

@@ -58,6 +58,7 @@ export const MEMES = {
   'Detractores': 'http://66.media.tumblr.com/7ff797400ae3a8272cbf10d5c694f6e9/tumblr_inline_nq44uvQcyF1r4j8j1_500.gif',
   '(0, 10]': 'https://media.giphy.com/media/3o6UB5RrlQuMfZp82Y/giphy.gif',
   'Elixir': 'https://i.ytimg.com/vi/Swws8plkjI0/hqdefault.jpg',
+  'jQuery': 'https://i.ytimg.com/vi/sWB7toeBk1A/hqdefault.jpg',
 }
 
 

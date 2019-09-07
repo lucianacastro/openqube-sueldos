@@ -5,6 +5,7 @@ import Container from '../Container';
 import Section from '../Section';
 import Title from '../Title';
 import SideNav from '../SideNav';
+import License from '../License';
 import CTAButton from '../CTAButton';
 import './styles.css';
 
@@ -47,6 +48,10 @@ class Landing extends Component {
             </section>
           ))
           }
+          
+          <hr />
+          <License />
+          <br />
           <CTAButton />
         </div>
       </ Container>
