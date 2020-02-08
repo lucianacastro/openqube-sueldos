@@ -912,13 +912,13 @@ export default [
                     //     ],
                     // },
                     {  // section
-                        title: 'Ajustes por inflación 2019',
+                        title: 'Ajustes por inflación 2019-2020',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
-                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2019 por género.',
+                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2019 a 2020 por género.',
                                 description: <>
                                     <p>
                                         Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2020.02#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
@@ -1085,7 +1085,7 @@ export default [
                         ],
                     },
                     {  // section
-                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2019)',
+                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2020)',
                         data: [
                             {  // tab
                                 title: '',
