@@ -1,12 +1,12 @@
-## Informe de la encuesta de sueldos 2019.01
+## Informe de la encuesta de sueldos 2020.02
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Notebooks
 
-* [Notebook de análisis período 2019.01](https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og)
+* [Notebook de análisis período 2020.02](https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og)
 
-* [Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2019.01](https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4)
+* [Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2020.02](https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4)
 
 ### Available Scripts
 

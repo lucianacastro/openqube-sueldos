@@ -14,7 +14,7 @@ export default [
                 </p>
                 <p>
                     En febrero de este año publicamos nuestro primer <a href="https://twitter.com/openqube/status/1100097058856468480" target="_blank" rel="noopener noreferrer">análisis de resultados de Enero-Febrero 2019 para Argentina</a>.
-                    En esta nueva entrega, te mostramos los resultados del nuevo análisis para los datos relevados en Julio-Agosto de este mismo año.
+                    En esta nueva entrega, te mostramos los resultados del nuevo análisis para los datos relevados en Diciembre-Enero últimos.
                 </p>
                 <p>
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
@@ -104,7 +104,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>Podemos apreciar 🤔 un leve crecimiento de hobbistas respecto al <a href="https://openqube.io/encuesta-sueldos-2019.01#Perfil-de-participantes-Roles-Cuanta-gente-programa-por-hobbie" target="_blank" rel="noopener noreferrer">relevamiento de principio de año</a>.</p>
+                                description: <p>Podemos apreciar 🤔 un leve crecimiento de hobbistas respecto al <a href="https://openqube.io/encuesta-sueldos-2020.02#Perfil-de-participantes-Roles-Cuanta-gente-programa-por-hobbie" target="_blank" rel="noopener noreferrer">relevamiento de principio de año</a>.</p>
                             },
                         ],
                     },
@@ -329,7 +329,7 @@ export default [
                                         Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
                                     </p>
                                     <p>
-                                        Como dato de color de estas últimas encuestas 2019.02, el período Julio-Agosto durante el cual fueron relevados los sueldos, nos trajo también una fuerte devaluación del peso.
+                                        Como dato de color de estas últimas encuestas 2020.01, el período Julio-Agosto durante el cual fueron relevados los sueldos, nos trajo también una fuerte devaluación del peso.
                                         Por nuestra metodología, utilizamos la mediana de cotización del dólar de la fecha de publicación/cierre de los resultados, con un delta de +/- 5 días.  En este caso del 15/8.
                                     </p>
                                 </div>,
@@ -921,7 +921,7 @@ export default [
                                 caption: 'Porcentaje de ajustes por inflación acumulados en el año 2019 por género.',
                                 description: <>
                                     <p>
-                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.01#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
+                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2020.02#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
                                         Si bien, no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
                                         Una posible explicación sería la reciente inserción de las minorías, que tal vez por ser incipiente, queden excluídas de las empresas que presentan mejores condiciones.
                                     </p>
@@ -1217,7 +1217,7 @@ export default [
                     Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12wza039dl0UjCSypYZY3gtTqW6OWbFI9#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
                 </p>
                 <p>
-                    Como mejora al relevamiento anterior, hemos además provisto durante la encuesta 2019.02, todos los valores más relevantes normalizados como resultado del análisis 2019.01.
+                    Como mejora al relevamiento anterior, hemos además provisto durante la encuesta 2020.01, todos los valores más relevantes normalizados como resultado del análisis 2020.02.
                     De esta forma, no solo hemos facilitado el proceso de carga de datos, sino también hemos minimizado la necesidad de normalización, dando lugar a un análisis aún más preciso.
                 </p>
                 <h4>Series temporales</h4>
@@ -1245,12 +1245,12 @@ export default [
                 <h4>Repositorios</h4>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12wza039dl0UjCSypYZY3gtTqW6OWbFI9">Notebook de análisis período 2019.02</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/10IcHgqy-GahWjlKeWe4aPMpb1GljmC3l">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2019.02</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/1int9ytV6WfLoVtBJprXNW547AVMQjRkr">Notebook de análisis período 2020.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/124l41_dW4wvrNjpxABcxzMQmfY-qAqkq">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2020.01</a></li>
                 </ul>
                 <h4>Análisis previos</h4>
                 <ul>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.01">Resultados de la encuesta de sueldos 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.02">Resultados de la encuesta de sueldos 2020.02</a></li>
                 </ul>
             </div>
         )

@@ -8,7 +8,7 @@ class MainTitle extends Component {
     title: PropTypes.string,
   }
   static defaultProps = {
-    title: 'Resultados de la encuesta de sueldos 2019.02',
+    title: 'Resultados de la encuesta de sueldos 2020.01',
   }
 
   render() {
@@ -16,8 +16,8 @@ class MainTitle extends Component {
       <div className='main-title-wrapper'>
         <h1 className='main-title'>
           <span className='first-line'>Resultados de la</span><br />
-          <span>Encuesta de Sueldos 2019.02</span><br />
-          <span alt="Segundo Semestre &trade;">Julio - Agosto</span>
+          <span>Encuesta de Sueldos 2020.01</span><br />
+          <span alt="Primer Semestre &trade;">Diciembre - Enero</span>
         </h1>
       </div>
     )
