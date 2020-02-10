@@ -382,7 +382,7 @@ export default [
                                 </div>,
                             },
                             {  // tab
-                                title: 'Acumulado de ajustes 2019',
+                                title: 'Acumulado de ajustes 2019 - 2020',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
                                 caption: '¿Cual fue porcentaje de ajuste por inflación acumulado típico en cada región?',
