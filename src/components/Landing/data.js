@@ -92,7 +92,10 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> contribuyen al Open Source, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>¿Alguien mencionó al <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Principio_de_Pareto">Principio de Pareto</a>?</p>
+                                description: <p>
+                                    A diferencia de las dos últimas encuestas de sueldos, por primera vez se observa una baja de gente que contribuye al Open Source: del 17% al 14%.
+                                    ¿Será que la crisis le pega al Open Source local 🤔?
+                                </p>
                             },
                         ],
                     },
@@ -104,7 +107,9 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
-                                description: <p>Podemos apreciar 🤔 un leve crecimiento de hobbistas respecto al <a href="https://openqube.io/encuesta-sueldos-2020.02#Perfil-de-participantes-Roles-Cuanta-gente-programa-por-hobbie" target="_blank" rel="noopener noreferrer">relevamiento de principio de año</a>.</p>
+                                description: <p>
+                                    Con tan solo un punto de diferencia respecto al período anterior (a la baja), podemos decir que igualmente el número de hobbistas se mantuvo estable.
+                                </p>
                             },
                         ],
                     },
@@ -278,8 +283,8 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['discapacidad_percent'], isPercentual: true },
-                                caption: <p>Tipos de discapacidades.</p>,
+                                props: { ...charts['discapacidad_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0003, },
+                                caption: <p>Porcentajes de personas que reportaron tener alguna discapacidad.</p>,
                             },
                         ],
                     },
@@ -320,7 +325,7 @@ export default [
                                 </p>,
                             },
                             {  // tab
-                                title: 'Salarios en US$',
+                                title: 'Salarios en US$ (oficial)',
                                 component: 'Line', // graph
                                 props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
                                 caption: <p>Serie histórica de salarios sobre cotización del dólar estadounidense, en pesos.</p>,
@@ -328,23 +333,28 @@ export default [
                                     <p>
                                         Si bien los salarios en Argentina son mayormente en pesos, una forma fácil de medir el poder adquisitivo independientemente del momento, es a través de una moneda con mayor estabilidad.
                                     </p>
-                                    <p>
-                                        Como dato de color de estas últimas encuestas 2020.01, el período Julio-Agosto durante el cual fueron relevados los sueldos, nos trajo también una fuerte devaluación del peso.
-                                        Por nuestra metodología, utilizamos la mediana de cotización del dólar de la fecha de publicación/cierre de los resultados, con un delta de +/- 5 días.  En este caso del 15/8.
-                                    </p>
                                 </div>,
                             },
                             {  // tab
-                                title: 'Salarios en US$ (al 9 de Agosto 💸)',
+                                title: 'Salarios en US$ (ahorro)',
                                 component: 'Line', // graph
-                                props: { ...historic_charts['historic_salary_medians_paso'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses'], currency: 'US$' },
-                                caption: <p>Solo por el #morbo de saber cómo eran los salarios en dólares hasta hace tan solo unos pocos días.</p>,
+                                props: {
+                                    // {"name": "0", "year": 2014, "part": 2, "publish_date": "2015-01-01", "Pesos Argentinos": 14000.0, "D\\u00f3lares Estadounidenses": 1637.0343952619544}
+                                    data: historic_charts['historic_salary_medians'].data
+                                        .reduce((acc, dp) => acc.concat([{ ...dp, 'Dólares Estadounidenses': (dp.publish_date === '2020-02-02' ? 0.7 : 1 ) * dp['Dólares Estadounidenses'] }]), []),
+                                    xDataKey: 'publish_date',
+                                    yDataKeys: ['Dólares Estadounidenses'],
+                                    currency: 'US$'
+                                },
+                                caption: <p>Serie histórica de salarios sobre cotización del dólar ahorro, en pesos.</p>,
                                 description: <div>
                                     <p>
-                                        Este gráfico es igual al anterior, sólo que utiliza la cotización del dólar a la fecha del 9 de Agosto.
+                                        Un dato importante a tener en cuenta a la hora de evaluar nuestro sueldo es considerar la capacidad de ahorro.
                                     </p>
                                     <p>
-                                        Aquí sí, podemos volver a decir que tenemos una <a href="https://es.wikipedia.org/wiki/Serie_temporal">serie temporal</a>, de la cual se hace notoria su componente estacional.  Podríamos explicar la estacionalidad, en términos generales, por los períodos inflacionarios (ascenso), y devaluaciones (descenso).
+                                        Como en cada entrega de nuestros informes, siempre aparece alguna variación inesperada que puede resultar de interés para el lector.
+                                        En esta oportunidad, el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particulariadd que a diferencia de años anteriores
+                                        no solo existe un cepo, sino también un precio único (mínimo al día de hoy) para ahorrar en dólares.
                                     </p>
                                 </div>,
                             },
@@ -917,11 +927,19 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['gender_salary_adjustment'], isPercentual: true, isLogScale: false },
-                                caption: 'Porcentaje de ajustes por inflación acumulados en el año 2019 a 2020 por género.',
+                                props: {
+                                    data: charts['gender_salary_adjustment'].data
+                                        .map(dp => ({ ...dp, name: dp.name + '\n' })), // hack to not highlight Otros (Barh default behavior for non-gender data)
+                                    isPercentual: true,
+                                    isLogScale: false,
+                                },
+                                caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el año 2019 a 2020 por género.',
                                 description: <>
                                     <p>
-                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2020.02#Genero-Salarios-Ajustes-por-inflacion-2018" target="_blank" rel="noopener noreferrer">período anterior</a>.
+                                        Como contraste, la <a href="http://www.bcra.gov.ar/PublicacionesEstadisticas/Principales_variables.asp" target="_blank" rel="noopener noreferrer">inflación interanual publicada por el Banco Central al 31 de diciembre de 2019</a> fue de <strong>53,8%</strong>.
+                                    </p>
+                                    <p>
+                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.02#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019" target="_blank" rel="noopener noreferrer">período anterior</a>.
                                         Si bien, no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
                                         Una posible explicación sería la reciente inserción de las minorías, que tal vez por ser incipiente, queden excluídas de las empresas que presentan mejores condiciones.
                                     </p>
@@ -1053,6 +1071,7 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: <p>Porcentaje de personas que tienen su sueldo dolarizados, y quienes no lo tienen.</p>,
+                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer"  href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado" >respecto al reporte pasado</a>.</p>,
                             },
                         ],
                     },

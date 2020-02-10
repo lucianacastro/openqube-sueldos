@@ -6,7 +6,7 @@
     margin: 0 auto;
     background-image: url('https://openqube.io/img/slider_bg.jpg'); 
     background-position: 0;
-    filter: hue-rotate(-30deg);
+    /* filter: hue-rotate(-30deg); */
 }
 
 .main-title {
