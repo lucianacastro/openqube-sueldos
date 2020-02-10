@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "openqube-sueldos",
+  "version": "2020.1",
   "private": true,
-  "homepage": "/encuesta-sueldos-2020.01",
+  "_homepage": "/encuesta-sueldos-2020.01",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",

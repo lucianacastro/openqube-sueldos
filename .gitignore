@@ -5,3 +5,5 @@ build-*.zip
 .DS_Store
 .*.swo
 .*.swp
+
+.now
