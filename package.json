@@ -1,6 +1,6 @@
 {
   "name": "openqube-sueldos",
-  "version": "2020.1",
+  "version": "2020.01.1",
   "private": true,
   "_homepage": "/encuesta-sueldos-2020.01",
   "dependencies": {
