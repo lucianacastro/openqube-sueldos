@@ -9,19 +9,22 @@ export default [
         content: (
             <div>
                 <p>
-                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.
-                    Con nuestra plataforma colaborativa podés calificar empresas en las que hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
+                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.  
+                    ¿Cómo lo hacemos? Por medio de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
-                    En febrero de este año publicamos nuestro primer <a href="https://twitter.com/openqube/status/1100097058856468480" target="_blank" rel="noopener noreferrer">análisis de resultados de Enero-Febrero 2019 para Argentina</a>.
-                    En esta nueva entrega, te mostramos los resultados del nuevo análisis para los datos relevados en Diciembre-Enero últimos.
+                    Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
                 </p>
                 <p>
-                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia.
-                    Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
+                    En el 2019 comenzamos a realizar análisis sobre lo relevado en las encuestas. Podés acceder a los mismos a través de estos links: &nbsp; 
+                        <a href="https://openqube.io/encuesta-sueldos-2019.01" target="_blank" rel="noopener noreferrer">2019.01</a>
+                        &nbsp;y <a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a>.
                 </p>
                 <p>
-                    Como lo hacemos ya desde 2014, los datos relevados de las encuestas son también publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
+                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de metodología.
+                </p>
+                <p>
+                    A continuación, te mostramos los resultados del nuevo análisis para Diciembre 2019 - Enero 2020.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
