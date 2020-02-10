@@ -611,7 +611,9 @@ export default [
 		                <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a>  a partir de los 5 - 8 años de experiencia.</li>
 		                <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
 	                </ol>
-                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,97%</a> y se puede observar un aumento de la misma 😐.  Según los datos recabados se acentúa en las personas a partir de los 5 años de experiencia (<a href="#Perfil-de-participantes-Experiencia-Anos-de-experiencia">65,86%</a> de la población censada (5, 55] = 12,92% + 29,42% + 17,78% + 5,17% + 0,57%), donde <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">la minoría de mujeres se hace más marcada con respecto al 44,14% restante</a>.
+                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,97%</a> y se puede observar un aumento de la misma respecto del período anterior 😐.
+                    Según los datos recabados, la brecha se acentúa en mujeres con más de 5 años de experiencia,
+                    donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a> (65,86%).
                 </p>
                 <p>
                     <h4>Algunos datos</h4>
@@ -620,7 +622,7 @@ export default [
                         <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes del comienzo del relevamiento de encuestas de sysarmy.
                             A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año 👩‍💻💪.</li>
                         <li>A pesar de que en el año 2019 se veía equiparado el nivel de <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a> entre hombres y mujeres, nuevamente se observa una diferencia en el de las mujeres (2,49%) con respecto al de hombres (2,55%) 😐.</li>
-                        <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a>🤓: mayor nivel de estudios, mayor grado de completitud 💅.</li>
+                        <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud 💅.</li>
                     </ol>
                     <h4>Para seguir mejorando</h4>
                     <ol>
