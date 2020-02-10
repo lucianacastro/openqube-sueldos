@@ -24,7 +24,7 @@ class Barh extends Component {
     cutoff: PropTypes.number,
     isStacked: PropTypes.bool,
     currency: PropTypes.string,
-    markNegativeValues: PropTypes.oneOfType(PropTypes.bool, PropTypes.arrayOf(PropTypes.string)),
+    markNegativeValues: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.string)]),
   }
 
   state = {

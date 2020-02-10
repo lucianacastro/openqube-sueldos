@@ -608,32 +608,31 @@ export default [
         title: 'Género',
         content: (
             <div>
-                <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:
-	                <ol>
-		                <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,22%)</a> creció pero muy poco respecto al período anterior (14,08%). El grupo de Otros presenta una pequeña disminución.</li>
-		                <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a>  a partir de los 5 - 8 años de experiencia.</li>
-		                <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
-	                </ol>
+                <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:</p>
+                <ol>
+                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,22%)</a> creció pero muy poco respecto al período anterior (14,08%). El grupo de Otros presenta una pequeña disminución.</li>
+                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a>  a partir de los 5 - 8 años de experiencia.</li>
+                    <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
+                </ol>
+                <p>
                     La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,97%</a> y se puede observar un aumento de la misma respecto del período anterior 😐.
                     Según los datos recabados, la brecha se acentúa en mujeres con más de 5 años de experiencia,
                     donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a> (65,86%).
                 </p>
-                <p>
-                    <h4>Algunos datos</h4>
-                    <ol>
-                        <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas 👩‍💻💪.</li>
-                        <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes del comienzo del relevamiento de encuestas de sysarmy.
-                            A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año 👩‍💻💪.</li>
-                        <li>A pesar de que en el año 2019 se veía equiparado el nivel de <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a> entre hombres y mujeres, nuevamente se observa una diferencia en el de las mujeres (2,49%) con respecto al de hombres (2,55%) 😐.</li>
-                        <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud 💅.</li>
-                    </ol>
-                    <h4>Para seguir mejorando</h4>
-                    <ol>
-                        <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019-2020">están lejos de ser equitatitvos</a> aún.</li>
-                        <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es mucha y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con +5 años de experiencia.</li>
-                        <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85%+ hombres</a>.</li>
-                    </ol>
-                </p>
+                <h4>Algunos datos</h4>
+                <ol>
+                    <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas 👩‍💻💪.</li>
+                    <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes del comienzo del relevamiento de encuestas de sysarmy.
+                        A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año 👩‍💻💪.</li>
+                    <li>A pesar de que en el año 2019 se veía equiparado el nivel de <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a> entre hombres y mujeres, nuevamente se observa una diferencia en el de las mujeres (2,49%) con respecto al de hombres (2,55%) 😐.</li>
+                    <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud 💅.</li>
+                </ol>
+                <h4>Para seguir mejorando</h4>
+                <ol>
+                    <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019-2020">están lejos de ser equitatitvos</a> aún.</li>
+                    <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es mucha y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con +5 años de experiencia.</li>
+                    <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85%+ hombres</a>.</li>
+                </ol>
             </div>
         ),
         data: [
@@ -1274,7 +1273,8 @@ export default [
                 </ul>
                 <h4>Análisis previos</h4>
                 <ul>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.02">Resultados de la encuesta de sueldos 2020.02</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02">Resultados de la encuesta de sueldos 2019.02</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.01">Resultados de la encuesta de sueldos 2019.01</a></li>
                 </ul>
             </div>
         )
