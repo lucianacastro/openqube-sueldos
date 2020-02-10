@@ -21,7 +21,7 @@ export default [
                         &nbsp;y <a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a>.
                 </p>
                 <p>
-                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de metodología.
+                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
                 <p>
                     A continuación, te mostramos los resultados del nuevo análisis para Diciembre 2019 - Enero 2020.
