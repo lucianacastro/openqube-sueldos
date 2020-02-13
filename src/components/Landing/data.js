@@ -13,7 +13,7 @@ export default [
                     ¿Cómo lo hacemos? Por medio de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
-                    Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados en formato CSV a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
+                    Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
                 </p>
                 <p>
                     En el 2019 comenzamos a realizar análisis sobre lo relevado en las encuestas. Podés acceder a los mismos a través de estos links: &nbsp; 
@@ -21,10 +21,10 @@ export default [
                         &nbsp;y <a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a>.
                 </p>
                 <p>
-                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos resultados, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
+                    Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
                 <p>
-                    A continuación, te mostramos los resultados del nuevo análisis para Diciembre 2019 - Enero 2020.
+                    A continuación te mostramos los resultados del nuevo análisis para diciembre 2019 - enero 2020.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
@@ -67,7 +67,7 @@ export default [
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0001 },
                                 caption: 'Porcentaje de participantes de la encuesta por región del país, en escala logarítmica.',
-                                description: <p>La <a href="#Metodologia">escala logarítmica</a> permite resaltar las diferencias entre provincias, incluso cuando esta sea muy amplia.  Nótese que las líneas verticales de la cuadrícula no son equidistantes, tampoco los valores de la escala son secuenciales.</p>,
+                                description: <p>La <a href="#Metodologia">escala logarítmica</a> permite resaltar las diferencias entre provincias, incluso cuando ésta sea muy amplia.  Nótese que las líneas verticales de la cuadrícula no son equidistantes, tampoco los valores de la escala son secuenciales.</p>,
                             },
                         ],
                     },
@@ -97,7 +97,7 @@ export default [
                                 caption: <p>Quienes <strong>No</strong> contribuyen al Open Source, y quienes <strong>Sí</strong> lo hacen.</p>,
                                 description: <p>
                                     A diferencia de las dos últimas encuestas de sueldos, por primera vez se observa una baja de gente que contribuye al Open Source: del 17% al 14%.
-                                    ¿Será que la crisis le pega al Open Source local 🤔?
+                                    ¿Será que la situación económica le pega al Open Source local 🤔?
                                 </p>
                             },
                         ],
@@ -163,13 +163,13 @@ export default [
                 title: 'Educación',
                 data: [
                     {  // section
-                        title: 'Nivel de estudios alcanzado y estado acutual',
+                        title: 'Nivel de estudios alcanzado y estado actual',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_stacked'], isPercentual: true, isStacked: true },
-                                caption: 'Este gráfico nos permite ver para nuestra población, qué porcentaje de encuestados alcanzó cada nivel de estudios.  A su vez, por cada uno, podemos apreciar el grado de completitud o estado de sus carreras.',
+                                caption: 'Este gráfico nos permite ver para nuestra población qué porcentaje de encuestados alcanzó cada nivel de estudios.  A su vez, por cada uno, podemos apreciar el grado de completitud o estado de sus carreras.',
                                 description: 'Con el objetivo de no distorsionar el análisis, aquí se utiliza la escala de representación lineal.'
                             },
                         ],
@@ -219,14 +219,14 @@ export default [
                                 description: (<div>
                                     <p>
                                         Este gráfico podría darnos una idea del nivel de deserción en cada casa de estudio, a grandes rasgos.
-                                        Es importante aclarar que para muchas universidades, en especial cuanto más abajo estén listadas, la cantidad de muestras puede ser muy baja y no ser representativa de la realidad de dichas casas de estudio.
+                                        Es importante aclarar que para muchas universidades, en especial cuanto más abajo estén listadas, la cantidad de muestras puede ser muy baja y no ser representativa de la realidad de dichas instituciones.
                                     </p>
                                 </div>),
                             },
                         ],
                     },
                     {
-                        title: '¿Cuántos realizaron cursos de especialización?',
+                        title: '¿Cuánta gente realizó cursos de especialización?',
                         data: [
                             { // tab
                                 title: '',
@@ -307,9 +307,9 @@ export default [
                 title: 'Progresión histórica',
                 content: (
                     <div>
-                        <p>Lo bueno de contar con resultados de encuestas anteriores, es poder medir la evolución de ciertos indicadores a través del tiempo.</p>
+                        <p>Lo bueno de contar con resultados de encuestas anteriores es poder medir la evolución de ciertos indicadores a través del tiempo.</p>
                         <p>Para el caso de los salarios en Argentina, es de particular interés conocer su evolución, debido a las continuas fluctuaciones de la moneda y la inflación.</p>
-                        <p>En los siguientes gráficos podremos ver cómo fueron cambiando las medianas salariales, y contrastarlas a su vez con su correspondiente valor en dólares según la cotización a cada período.</p>
+                        <p>En los siguientes gráficos podremos ver cómo fueron cambiando las medianas salariales y contrastarlas a su vez con su correspondiente valor en dólares según la cotización a cada período.</p>
                     </div>
                 ),
                 data: [
@@ -322,8 +322,8 @@ export default [
                                 props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Pesos Argentinos'], currency: 'AR$' },
                                 caption: <p>Serie histórica de salarios basada en encuestas anteriores de sysarmy.</p>,
                                 description: <p>
-                                    Nótese, que para el período del <code>2016-02-01</code>, los salarios parecieran haber bajado respecto al período anterior.<br />
-                                    Sabemos que en general esto no sucede.  Probablemente esta anomalía tenga que ver, además de una diferencia de poblaciones, con un posible error en la normalización de sueldos netos pasados a bruto para dicho período.
+                                    Nótese que para el período del <code>2016-02-01</code>, los salarios parecieran haber bajado respecto al período anterior.<br />
+                                    Sabemos que en general esto no sucede. Probablemente esta anomalía tenga que ver, además de una diferencia de poblaciones, con un posible error en la normalización de sueldos netos pasados a bruto para dicho período.
                                     Puesto que dicha conversión es impracticable, preferimos ajustarnos a la <a href="#Metodologia">metodología elegida</a> y no alterar dichos valores adrede.
                                 </p>,
                             },
@@ -356,7 +356,7 @@ export default [
                                     </p>
                                     <p>
                                         Como en cada entrega de nuestros informes, siempre aparece alguna variación inesperada que puede resultar de interés para el lector.
-                                        En esta oportunidad, el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particulariadd que a diferencia de años anteriores
+                                        En esta oportunidad el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particulariadd que a diferencia de años anteriores
                                         no solo existe un cepo, sino también un precio único (mínimo al día de hoy) para ahorrar en dólares.
                                     </p>
                                 </div>,
@@ -378,17 +378,17 @@ export default [
                                 caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a grosso modo y sin contemplar otras variables.</p>,
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                    <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
                                 title: 'Acumulado de ajustes 2019 - 2020',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
-                                caption: '¿Cual fue porcentaje de ajuste por inflación acumulado típico en cada región?',
+                                caption: '¿Cuál fue porcentaje de ajuste por inflación acumulado típico en cada región?',
                                 description: <div>
-                                    <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                    <p>Para este ranking entre regiones hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
@@ -398,7 +398,7 @@ export default [
                                 caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4, de poco a muy conforme.',
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                    <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                         ],
@@ -423,7 +423,7 @@ export default [
                                 },
                                 caption: 'Mediana salarial por rol y años de experiencia en el puesto.',
                                 description: <div>
-                                    <p> La seniority aquí mencionada refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
+                                    <p>El seniority aquí mencionado refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
                                 </div>,
                             },
                             {  // tab
@@ -447,7 +447,7 @@ export default [
                                 },
                                 caption: 'Mediana salarial por años de experiencia en el puesto y rol.',
                                 description: <div>
-                                    <p>Aquí puede notarse una diferencia en los niveles de salarios que manejan las empresas de Producto basado en software, respecto de las otras.</p>
+                                    <p>Aquí puede notarse una diferencia en los niveles de salarios que manejan las empresas de Producto basado en software respecto de las otras.</p>
                                     <p>En segundo lugar, y muy cercano al siguiente, quienes trabajan en áreas de Sistemas dando soporte a Otras Industrias. Por último, Servicios / Consultoría de Software / Digital.</p>
                                 </div>,
                             },
@@ -481,7 +481,7 @@ export default [
                                     currency: 'AR$',
                                 },
                                 caption: 'Mediana salarial para quienes hicieron cursos de especialización y quienes no.',
-                                description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios.  O sí?',
+                                description: 'Pareciera ser que los cursos de especialización no influyen mucho en los salarios. ¿O sí?',
                             },
                         ],
                     },
@@ -498,8 +498,8 @@ export default [
                                 },
                                 caption: 'Mediana salarial por carrera y años de experiencia.',
                                 description: <div>
-                                    <p>Para este ranking entre carreras solo contamos participantes que las hayan completado.  También hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                    <p>Para este ranking entre carreras solo contamos participantes que las hayan completado. También hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes. Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
+                                    <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                             // {  // tab
@@ -528,7 +528,7 @@ export default [
                                 caption: 'Mediana salarial por carrera y estado de de la carrera.',
                                 description: <div>
                                     <p>Para este ranking entre carreras, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre las 30 más frecuentes.  Aquellas carreas que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Educacion-Cuales-son-las-carreras-mas-estudiadas">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
-                                    <p>Ver más en sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
+                                    <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
                                 </div>,
                             },
                         ],
@@ -611,7 +611,7 @@ export default [
                 <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:</p>
                 <ol>
                     <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,22%)</a> creció pero muy poco respecto al período anterior (14,08%). El grupo de Otros presenta una pequeña disminución.</li>
-                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a>  a partir de los 5 - 8 años de experiencia.</li>
+                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 5 - 8 años de experiencia.</li>
                     <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
                 </ol>
                 <p>
@@ -625,7 +625,7 @@ export default [
                     <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes del comienzo del relevamiento de encuestas de sysarmy.
                         A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año 👩‍💻💪.</li>
                     <li>A pesar de que en el año 2019 se veía equiparado el nivel de <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a> entre hombres y mujeres, nuevamente se observa una diferencia en el de las mujeres (2,49%) con respecto al de hombres (2,55%) 😐.</li>
-                    <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud 💅.</li>
+                    <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud.</li>
                 </ol>
                 <h4>Para seguir mejorando</h4>
                 <ol>
@@ -741,11 +741,11 @@ export default [
                                     isPercentual: true,
                                     customStroke: {'Otros-Hombre': '#ccc'},
                                 },
-                                caption: 'Serie histórica de brecha salarial de minoreias respecto del grupo mayoritario.',
+                                caption: 'Serie histórica de brecha salarial de minorías respecto del grupo mayoritario.',
                                 description: (<>
                                     <p>Se han aplicado reglas de normalización. El segmento de "otros" está grisado, ya que no se cuenta con suficientes datos.</p>
                                     <p>
-                                        El cálculo de la brecha salarial general aquí mostrado, se realizó obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
+                                        El cálculo de la brecha salarial general aquí mostrado se realizó obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
                                         Esto representa el porcentaje de aumento que debería aplicarse al grupo de menor salario, para equiparar las condiciones.
                                     </p>
                                 </>),
@@ -777,7 +777,7 @@ export default [
                 title: 'Formación',
                 content: <div>
                     <p>
-                        En este apartado, segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
+                        En este apartado segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
                         Cabe aclarar que en el caso de Otros, tal como se puede ver en el apartado <a href="#Perfil-de-participantes-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
                     </p>
                 </div>,
@@ -789,22 +789,22 @@ export default [
                                 title: 'Hombres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_hombre_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cual es el mayor nivel de estudios alcanzado de los hombres, y cual es su estado actual?',
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de los hombres, y cuál es su estado actual?',
                                 description: 'Los valores porcentuales de cada segmento son sobre el total de los hombres encuestados.'
                             },
                             {  // tab
                                 title: 'Mujeres',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_mujer_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cual es el mayor nivel de estudios alcanzado de las mujeres, y cual es su estado actual?',
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de las mujeres, y cuál es su estado actual?',
                                 description: 'Los valores porcentuales de cada segmento son sobre el total de los mujeres encuestadas.'
                             },
                             {  // tab
                                 title: 'Otros',
                                 component: 'Barh', // graph
                                 props: { ...charts['education_otros_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cual es el mayor nivel de estudios alcanzado de "otros", y cual es su estado actual?',
-                                description: 'Los valores porcentuales de cada segmento son sobre el total de "otros" encuestados.'
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de otros géneros, y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de otros géneros encuestados.'
                             },
                         ],
                     },
@@ -844,7 +844,7 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: 'Nivel de participación por género, según años de experiencia. El porcentaje restante es de hombres.',
-                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El grupo de hombres fue excluído por ser amplia mayoría.',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El grupo de hombres fue excluido por ser amplia mayoría.',
                             },
                         ],
                     },
@@ -944,8 +944,8 @@ export default [
                                     </p>
                                     <p>
                                         Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.02#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019" target="_blank" rel="noopener noreferrer">período anterior</a>.
-                                        Si bien, no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género. Sí podemos observar que, debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
-                                        Una posible explicación sería la reciente inserción de las minorías, que tal vez por ser incipiente, queden excluídas de las empresas que presentan mejores condiciones.
+                                        Si bien no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género, sí podemos observar que debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
+                                        Una posible explicación sería la inserción de algunos grupos minoritarios, que tal vez por ser reciente, queden excluidas de las empresas que presentan condiciones laborales más favorables.
                                     </p>
                                 </>,
                             },
@@ -1019,7 +1019,7 @@ export default [
                                 caption: 'Herramientas de QA / Testing más utilizadas entre los participantes',
                                 description: <div>
                                     <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
-                                    <p>En esta variable puede notarse que la cantidad de respondentes es mucho menor a las anteriores.  Si bien la calidad y sus herramientas conciernen a todas las áreas, quizás muchos hayan omitido responder dado que también existen roles asociados más específicos.</p>
+                                    <p>En esta variable puede notarse que la cantidad de respondentes es mucho menor a las anteriores. Si bien la calidad y sus herramientas conciernen a todas las áreas, quizás muchas personas hayan omitido responder dado que también existen roles asociados más específicos.</p>
                                 </div>,
                             },
                         ],
@@ -1075,7 +1075,7 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: <p>Porcentaje de personas que tienen su sueldo dolarizados, y quienes no lo tienen.</p>,
-                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer"  href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado" >respecto al reporte pasado</a>.</p>,
+                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer"  href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
                             },
                         ],
                     },
@@ -1186,12 +1186,12 @@ export default [
                     Por ejemplo, en <a href="#Salarios-Segun-Educacion-Salarios-segun-carrera-y-experiencia">salarios según carrera y experiencia</a>, Ingeniería Industrial rankea entre las primeras 3 carreras con mejores salarios.  Sin embargo, la cantidad de ingenieros industriales por sobre el total de la población encuestada es muy bajo como para afirmarlo.
                 </p>
                 <p>
-                    Para otros segmentos, simplemente hicimos un corte sobre los resultados más frecuentes (rankings).  Con esto, aseguramos también que los datos presentados sean relevantes para un análisis.
+                    Para otros segmentos, simplemente hicimos un corte sobre los resultados más frecuentes (rankings).  Con esto aseguramos también que los datos presentados sean relevantes para un análisis.
                 </p>
                 <h4>Salarios</h4>
                 <p>
                     Para los valores de los salarios aquí expuestos, ya sea por período, por género, experiencia, etc. utilizamos la <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a> del salario bruto.
-                    Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso.  La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
+                    Este valor, si bien se aproxima al promedio de una muestra, no es exactamente eso. La mediana salarial, nos sirve mejor para entender mejor cual es el valor típico de una muestra.
                 </p>
                 <p>
                     La mediana de los salarios, para los datos de la encuesta, suele estar levemente por debajo del valor promedio.
@@ -1203,11 +1203,11 @@ export default [
                     Es muy posible que existan salarios reales que hayan quedado fuera del análisis, por ser estos realmente outliers.
                 </p>
                 <p>
-                    Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>.  Tanto para la más reciente encuesta como para las anteriores.
+                    Adicionalmente, y dado que el método anteriormente mencionado resulta en cotas inferiores negativas, para evitar distorsiones debido a valores demasiado bajos, hemos eliminado todas aquellas entradas cuyo salario sea menor a medio <a target="_blank" rel="noopener noreferrer" href="https://es.wikipedia.org/wiki/Anexo:Salario_m%C3%ADnimo_en_Argentina">salario mínimo</a>. Tanto para la más reciente encuesta como para las anteriores.
                 </p>
                 <h5>Cotización del dólar</h5>
                 <p>
-                    Para el cálculo de salarios dolarizados, tomamos la cotización intradiaria promedio de Bloomberg, y tomamos la mediana del valor del día de publicación con un delta de 5 días.
+                    Para el cálculo de salarios dolarizados, tomamos la cotización intradiaria promedio de Bloomberg y tomamos la mediana del valor del día de publicación con un delta de 5 días.
                 </p>
                 <h4>Experiencia</h4>
                 <p>Para los gráficos en los cuales mencionamos experiencia o seniority, hemos agrupado los datos relevados en tres grandes grupos: </p>
@@ -1219,8 +1219,8 @@ export default [
                 <p>Si bien esta forma de agrupar puede ser discutible, ayuda mucho a la hora de visualizar los datos y reducir la dimensionalidad.</p>
                 <h4>Normalización de entradas de texto libre</h4>
                 <p>
-                    En la encuesta, algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, además de presentar opciones predefinidas, también permiten texto libre (otros).
-                    Esto conlleva a una mayor dispersión de valores, dado que cada encuestado contesta de maneras distintas:
+                    En la encuesta algunos campos tales como <i>nombre de la carrera universitaria</i>, <i>nombre de la Universidad</i> y <i>rol</i>, además de presentar opciones predefinidas, también permiten texto libre (otros).
+                    Esto conlleva a una mayor dispersión de valores, dado que cada participante contesta de maneras distintas:
                 </p>
                 <ul>
                     <li>en mayúsculas</li>
@@ -1280,3 +1280,4 @@ export default [
         )
     }
 ];
+
