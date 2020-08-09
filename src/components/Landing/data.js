@@ -9,30 +9,33 @@ export default [
         content: (
             <div>
                 <p>
-                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.  
+                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.
                     ¿Cómo lo hacemos? Por medio de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
                     Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
                 </p>
                 <p>
-                    En el 2019 comenzamos a realizar análisis sobre lo relevado en las encuestas. Podés acceder a los mismos a través de estos links: &nbsp; 
-                        <a href="https://openqube.io/encuesta-sueldos-2019.01" target="_blank" rel="noopener noreferrer">2019.01</a>
-                        &nbsp;y <a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a>.
+                    En el 2019 comenzamos a realizar análisis sobre lo relevado en las encuestas. Podés acceder a las ediciones anteriores aquí:
+                    <ul>
+                        <li><a href="https://openqube.io/encuesta-sueldos-2019.01" target="_blank" rel="noopener noreferrer">2019.01</a></li>
+                        <li><a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a></li>
+                        <li><a href="https://openqube.io/encuesta-sueldos-2020.01" target="_blank" rel="noopener noreferrer">2020.01</a></li>
+                    </ul>
                 </p>
                 <p>
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
                 <p>
-                    A continuación te mostramos los resultados del nuevo análisis para diciembre 2019 - enero 2020.
+                    A continuación te mostramos los resultados del nuevo análisis para Julio 2020 - Agosto 2020.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
                     <small>
-                        El presente informe fue realizado para OpenQube
+                        El presente informe fue realizado para openqube por <a className='author-name' href='https://twitter.com/enekaz' target="_blank" rel="noopener noreferrer">Nadia Kazlauskas</a> y <a className='author-name' href='https://twitter.com/fernandezpablo' target="_blank" rel="noopener noreferrer">Pablo Fernandez</a>
                     </small>
                     <small>
-                        por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>.
+                        (basado en el trabajo previo realizado por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>)
                     </small>
                 </div>
             </div>
@@ -344,7 +347,7 @@ export default [
                                 props: {
                                     // {"name": "0", "year": 2014, "part": 2, "publish_date": "2015-01-01", "Pesos Argentinos": 14000.0, "D\\u00f3lares Estadounidenses": 1637.0343952619544}
                                     data: historic_charts['historic_salary_medians'].data
-                                        .reduce((acc, dp) => acc.concat([{ ...dp, 'Dólares Estadounidenses': (dp.publish_date === '2020-02-02' ? 0.7 : 1 ) * dp['Dólares Estadounidenses'] }]), []),
+                                        .reduce((acc, dp) => acc.concat([{ ...dp, 'Dólares Estadounidenses': (dp.publish_date === '2020-02-02' ? 0.7 : 1) * dp['Dólares Estadounidenses'] }]), []),
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Dólares Estadounidenses'],
                                     currency: 'US$'
@@ -375,7 +378,7 @@ export default [
                                 title: 'Mediana salarial',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_median'], isPercentual: false, isLogScale: false, currency: 'AR$', markNegativeValues: true, },
-                                caption: <p>¿Cómo es un salario típico en cada región?<br/>Esto, a nivel comparativo, a grosso modo y sin contemplar otras variables.</p>,
+                                caption: <p>¿Cómo es un salario típico en cada región?<br />Esto, a nivel comparativo, a grosso modo y sin contemplar otras variables.</p>,
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
                                     <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
@@ -610,7 +613,7 @@ export default [
             <div>
                 <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:</p>
                 <ol>
-                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,22%)</a> creció pero muy poco respecto al período anterior (14,08%). El grupo de Otros presenta una pequeña disminución.</li>
+                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(15,22%)</a> creció un punto respecto al período anterior (14,22%). El grupo de Otros presenta un pequeño incremento.</li>
                     <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 5 - 8 años de experiencia.</li>
                     <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
                 </ol>
@@ -631,7 +634,7 @@ export default [
                 <ol>
                     <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019-2020">están lejos de ser equitatitvos</a> aún.</li>
                     <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es mucha y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con +5 años de experiencia.</li>
-                    <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">85%+ hombres</a>.</li>
+                    <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">~85% hombres</a>.</li>
                 </ol>
             </div>
         ),
@@ -708,7 +711,7 @@ export default [
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                     currency: 'AR$',
-                                    customStroke: {'Otros': '#ccc'},
+                                    customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Serie histórica de salarios basada en encuestas anteriores.',
                                 description: 'Se han aplicado reglas de normalización. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
@@ -730,16 +733,16 @@ export default [
                                                 },
                                             }), {})
                                     )
-                                    // dates: [ { publish_date: '2016-02-01', 'Hombre': 9999, 'Mujer': 9999, 'Otros': 9999 } }, ...]
-                                    .map((date) => ({
-                                        publish_date: date.publish_date,
-                                        'Mujer-Hombre': (date['Hombre'] - date['Mujer'])/Math.min(date['Hombre'], date['Mujer']),
-                                        'Otros-Hombre': (date['Hombre'] - date['Otros'])/Math.min(date['Hombre'], date['Otros']),
-                                    })),
+                                        // dates: [ { publish_date: '2016-02-01', 'Hombre': 9999, 'Mujer': 9999, 'Otros': 9999 } }, ...]
+                                        .map((date) => ({
+                                            publish_date: date.publish_date,
+                                            'Mujer-Hombre': (date['Hombre'] - date['Mujer']) / Math.min(date['Hombre'], date['Mujer']),
+                                            'Otros-Hombre': (date['Hombre'] - date['Otros']) / Math.min(date['Hombre'], date['Otros']),
+                                        })),
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Mujer-Hombre', 'Otros-Hombre'],
                                     isPercentual: true,
-                                    customStroke: {'Otros-Hombre': '#ccc'},
+                                    customStroke: { 'Otros-Hombre': '#ccc' },
                                 },
                                 caption: 'Serie histórica de brecha salarial de minorías respecto del grupo mayoritario.',
                                 description: (<>
@@ -763,7 +766,7 @@ export default [
                                         .map(row => ({ ...row, Otros: row.Otros || undefined, publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] })), // remove 0 values
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
-                                    customStroke: {'Otros': '#ccc'},
+                                    customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
                                 description: 'Escala de 1 - 4. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
@@ -824,7 +827,7 @@ export default [
                                     xDataKey: 'name',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
                                     currency: 'AR$',
-                                    customStroke: {'Otros': '#ccc'},
+                                    customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Mediana salarial por género, según años de experiencia.',
                                 description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
@@ -858,7 +861,7 @@ export default [
                                     data: charts['experience_gender_conformidad_mean'].data,
                                     xDataKey: 'name',
                                     yDataKeys: ['Hombre', 'Mujer', 'Otros'],
-                                    customStroke: {'Otros': '#ccc'},
+                                    customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Conformidad con los salarios por género según años de experiencia.',
                                 description: 'Escala de 1 - 4.  Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci.  El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
@@ -940,12 +943,10 @@ export default [
                                 caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el año 2019 a 2020 por género.',
                                 description: <>
                                     <p>
-                                        Como contraste, la <a href="http://www.bcra.gov.ar/PublicacionesEstadisticas/Principales_variables.asp" target="_blank" rel="noopener noreferrer">inflación interanual publicada por el Banco Central al 31 de diciembre de 2019</a> fue de <strong>53,8%</strong>.
+                                        Como contraste, la <a href="https://www.indec.gob.ar/uploads/informesdeprensa/ipc_07_20C7061172A2.pdf" target="_blank" rel="noopener noreferrer">inflación Enero-Junio publicada por el INDEC en su último reporte</a> fue de <strong>13,6%</strong>.
                                     </p>
                                     <p>
-                                        Es muy llamativo que el fenómeno se repite al igual que en el <a href="https://openqube.io/encuesta-sueldos-2019.02#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019" target="_blank" rel="noopener noreferrer">período anterior</a>.
-                                        Si bien no podemos afirmar que exista una mala intencionalidad respecto a la aplicación de aumentos por inflación según género, sí podemos observar que debido a la no diversidad del sector, los grupos minoritarios no tienen igualdad de condiciones.
-                                        Una posible explicación sería la inserción de algunos grupos minoritarios, que tal vez por ser reciente, queden excluidas de las empresas que presentan condiciones laborales más favorables.
+                                        No se observan diferencias de ajustes en cuanto a género como <a href="https://openqube.io/encuesta-sueldos-2020.01#Genero-Ajuste-salarial" _target="blank">ocurría en el informe anterior.</a>
                                     </p>
                                 </>,
                             },
@@ -1019,7 +1020,6 @@ export default [
                                 caption: 'Herramientas de QA / Testing más utilizadas entre los participantes',
                                 description: <div>
                                     <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
-                                    <p>En esta variable puede notarse que la cantidad de respondentes es mucho menor a las anteriores. Si bien la calidad y sus herramientas conciernen a todas las áreas, quizás muchas personas hayan omitido responder dado que también existen roles asociados más específicos.</p>
                                 </div>,
                             },
                         ],
@@ -1034,7 +1034,6 @@ export default [
                                 caption: 'IDEs más utilizadas entre los participantes',
                                 description: <div>
                                     <p>Las mismas no son excluyentes, es decir puede haber más de una por persona relevada. Los valores son porcentuales sobre el total de participantes.</p>
-                                    <p>Para quienes no estén familiarizados con el término, un <a target="_blank" rel="noopener noreferrer" href='https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado'>IDE</a> (Integrated Development Environment) es es una aplicación informática que proporciona servicios integrales para facilitar el desarrollo de software.</p>
                                 </div>,
                             },
                         ],
@@ -1075,7 +1074,7 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: <p>Porcentaje de personas que tienen su sueldo dolarizados, y quienes no lo tienen.</p>,
-                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer"  href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
+                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
                             },
                         ],
                     },
@@ -1267,14 +1266,14 @@ export default [
                 </p>
                 <h4>Repositorios</h4>
                 <ul>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/lucianacastro/openqube-sueldos">Código fuente de esta publicación (interfaz web)</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/1int9ytV6WfLoVtBJprXNW547AVMQjRkr">Notebook de análisis período 2020.01</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/124l41_dW4wvrNjpxABcxzMQmfY-qAqkq">Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2020.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/openqube/openqube-sueldos">Código fuente de esta publicación (sitio web)</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/openqube/openqube-sueldos/tree/master/pipeline">Notebooks de análisis y procesamiento de datos</a></li>
                 </ul>
                 <h4>Análisis previos</h4>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02">Resultados de la encuesta de sueldos 2019.02</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.01">Resultados de la encuesta de sueldos 2019.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.01">Resultados de la encuesta de sueldos 2020.01</a></li>
                 </ul>
             </div>
         )
