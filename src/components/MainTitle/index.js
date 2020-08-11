@@ -16,8 +16,8 @@ class MainTitle extends Component {
       <div className='main-title-wrapper'>
         <h1 className='main-title'>
           <span className='first-line'>Resultados de la</span><br />
-          <span>Encuesta de Sueldos 2020.01</span><br />
-          <span alt="Primer Semestre &trade;">Diciembre - Enero</span>
+          <span>Encuesta de Sueldos 2020.02</span><br />
+          <span alt="Segundo Semestre &trade;">Julio - Agosto</span>
         </h1>
       </div>
     )
