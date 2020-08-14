@@ -31,9 +31,12 @@ class Barh extends Component {
     collapsed: true,
   }
 
+  isOneDimensional(data) {
+    return data[0] && data[0].value !== undefined;
+  }
+
   getData() {
     const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
-    const isOneDimensional = data[0] && data[0].value !== undefined;
     let _data = [...data];
     if (markNegativeValues) {
       const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
@@ -51,7 +54,7 @@ class Barh extends Component {
       const visibleRows = _data.filter((row, i) => i < cutoff);
       const hiddenRows = _data.filter((row, i) => i >= cutoff);
 
-      return isOneDimensional ? visibleRows.concat({
+      return this.isOneDimensional(data) ? visibleRows.concat({
         name: 'Otros',
         value: sumOthers ? hiddenRows.reduce((val, row) => val + row.value, 0) : Math.max(...hiddenRows.map(r => r.value)),
       }) : visibleRows;
@@ -128,7 +131,7 @@ class Barh extends Component {
           <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
           {!dataKeys.includes('value') ? <Legend /> : null}
           {dataKeys.map((dataKey, indexGroup) =>
-            <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} >
+            <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} barSize={this.isOneDimensional(data) || isStacked ? 15 : 3}>
               {
                 data.map((entry, indexRow) => (
                   <Cell cursor="pointer" fill={entry.name === 'Otros' && data[0].value !== undefined ? '#82ca9d' : this.getDataKeyColor(indexGroup, entry)} key={`cell-${indexRow}`} />
