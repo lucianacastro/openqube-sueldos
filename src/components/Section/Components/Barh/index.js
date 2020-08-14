@@ -34,16 +34,16 @@ class Barh extends Component {
   getData() {
     const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
     const isOneDimensional = data[0] && data[0].value !== undefined;
-    let _data = [ ...data ];
+    let _data = [...data];
     if (markNegativeValues) {
       const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
 
       _data = _data.map(row => ({
         ...row,
-        ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key])}), row),
+        ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key]) }), row),
         invalid: row[keys[0]] <= 0,
       }))
-      .sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist+(row2[key] - row1[key]), 0));
+        .sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist + (row2[key] - row1[key]), 0));
     }
 
 
@@ -84,7 +84,8 @@ class Barh extends Component {
   }
 
   toNumber(decimal, fixed = 2) {
-    const { currency } = this.props;
+    let { currency } = this.props;
+    currency = currency === 'AR$' ? '$' : currency;
     return `${currency ? currency + ' ' : ''}${(decimal).toFixed(fixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
 
