@@ -15,7 +15,7 @@ class CustomizedTooltip extends Component {
 
   render() {
     const { payload: dimensions, active, label, formatter } = this.props;
-    
+
     if (!active) {
       return null;
     }
@@ -23,10 +23,8 @@ class CustomizedTooltip extends Component {
       return (
         <ul className='tooltip'>
           <li className='tooltip-item' style={{ color: dimensions[0].color || dimensions[0].payload.fill }}>
-            <span className='name'>{label || dimensions[0].name}</span>
             <span className='value'>{`${formatter(dimensions[0].value)}`}</span>
             <span className='value'>{dimensions[0].payload.invalid && <span className="invalid">datos insuficientes</span>}</span>
-            {label && MEMES[label] ? <img className='meme' src={MEMES[label]} alt="meme" /> : false}
           </li>
         </ul>
       )
