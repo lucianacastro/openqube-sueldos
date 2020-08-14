@@ -91,13 +91,12 @@ export default [
                         ],
                     },
                     {
-                        title: '¿Cuánta gente contribuye al Open Source?',
+                        title: '¿Contribuís a proyectos Open Source?',
                         data: [
                             { // tab
                                 title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
-                                caption: <p>Quienes <strong>No</strong> contribuyen al Open Source, y quienes <strong>Sí</strong> lo hacen.</p>,
                                 description: <p>
                                     A diferencia de las dos últimas encuestas de sueldos, por primera vez se observa una baja de gente que contribuye al Open Source: del 17% al 14%.
                                     ¿Será que la situación económica le pega al Open Source local 🤔?
@@ -106,13 +105,12 @@ export default [
                         ],
                     },
                     {
-                        title: '¿Cuánta gente programa por hobbie?',
+                        title: '¿Programás por hobbie?',
                         data: [
                             { // tab
                                 title: 'Nivel de participación',
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
-                                caption: <p>Quienes <strong>No</strong> programan por hobbie, y quienes <strong>Sí</strong> lo hacen.</p>,
                                 description: <p>
                                     Con tan solo un punto de diferencia respecto al período anterior (a la baja), podemos decir que igualmente el número de hobbistas se mantuvo estable.
                                 </p>
