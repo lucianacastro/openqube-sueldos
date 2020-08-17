@@ -2,7 +2,10 @@ import React from 'react';
 import charts from './charts';
 import historic_charts from './historic-charts';
 
-// https://insights.stackoverflow.com/survey/2018#developer-profile
+// si al momento de publicar la nueva versión de la encuesta existe un cepo cambiario y
+// un tipo de cambio desdoblado en oficial/ahorro, agregar la fecha de publicación aquí.
+const hayDolarAhorro = ['2020-02-02', '2020-08-15'];
+
 export default [
     { // category
         title: 'Introducción',
@@ -341,7 +344,7 @@ export default [
                                 props: {
                                     // {"name": "0", "year": 2014, "part": 2, "publish_date": "2015-01-01", "Pesos Argentinos": 14000.0, "D\\u00f3lares Estadounidenses": 1637.0343952619544}
                                     data: historic_charts['historic_salary_medians'].data
-                                        .reduce((acc, dp) => acc.concat([{ ...dp, 'Dólares Estadounidenses': (dp.publish_date === '2020-02-02' ? 0.7 : 1) * dp['Dólares Estadounidenses'] }]), []),
+                                        .reduce((acc, dp) => acc.concat([{ ...dp, 'Dólares Estadounidenses': (hayDolarAhorro.includes(dp.publish_date) ? 0.7 : 1) * dp['Dólares Estadounidenses'] }]), []),
                                     xDataKey: 'publish_date',
                                     yDataKeys: ['Dólares Estadounidenses'],
                                     currency: 'US$'
