@@ -98,8 +98,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['opensource_percent'], isPercentual: true },
                                 description: <p>
-                                    A diferencia de las dos últimas encuestas de sueldos, por primera vez se observa una baja de gente que contribuye al Open Source: del 17% al 14%.
-                                    ¿Será que la situación económica le pega al Open Source local 🤔?
+                                    Se observan valores similares a los de la encuesta pasada.
                                 </p>
                             },
                         ],
@@ -112,7 +111,7 @@ export default [
                                 component: 'Pie',
                                 props: { ...charts['hobbie_percent'], isPercentual: true },
                                 description: <p>
-                                    Con tan solo un punto de diferencia respecto al período anterior (a la baja), podemos decir que igualmente el número de hobbistas se mantuvo estable.
+                                    Se observan valores similares a los de la encuesta pasada.
                                 </p>
                             },
                         ],
@@ -574,32 +573,6 @@ export default [
                     },
                 ],
             },
-            { // sub-category
-                title: 'Según Contrato',
-                data: [
-                    {  // section
-                        title: 'Sueldos dolarizados vs. en pesos',
-                        data: [
-                            {  // tab
-                                title: '',
-                                component: 'Barh', // graph
-                                props: {
-                                    data: charts['sueldo_dolarizado_salary_median'].data
-                                        .map(val => ({
-                                            ...val,
-                                            name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
-                                        })),
-                                    currency: 'AR$',
-                                },
-                                caption: 'Mediana salarial según sueldos dolarizados y experiencia.',
-                                description: <p>
-                                    En <a href="#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">este otro gráfico</a> puede verse el porcentaje de personas que gozan de este beneficio.
-                                </p>
-                            },
-                        ],
-                    },
-                ],
-            },
         ],
     },
     { // category
@@ -608,27 +581,25 @@ export default [
             <div>
                 <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:</p>
                 <ol>
-                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(15,22%)</a> creció un punto respecto al período anterior (14,22%). El grupo de Otros presenta un pequeño incremento.</li>
-                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace aún más evidente</a> a partir de los 5 - 8 años de experiencia.</li>
+                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,98%)</a> creció medio punto respecto al período anterior (14,22%). El grupo de Otros presenta un pequeño incremento.</li>
+                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace más notoria</a> a medida que aumentan los años de experiencia.</li>
                     <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
                 </ol>
                 <p>
-                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,97%</a> y se puede observar un aumento de la misma respecto del período anterior 😐.
-                    Según los datos recabados, la brecha se acentúa en mujeres con más de 5 años de experiencia,
-                    donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a> (65,86%).
+                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,48%</a> pero se puede observar una pequeña mejora respecto al período anterior.
+                    Según los datos recabados, la brecha se acentúa en mujeres con más años de experiencia,
+                    donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a>.
                 </p>
                 <h4>Algunos datos</h4>
                 <ol>
                     <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas 👩‍💻💪.</li>
                     <li>El conjunto de datos "años de experiencia" y "me identifico" (género), si bien no pertenece a una serie histórica, nos permite viajar en el tiempo y tener "una foto" de cómo eran las cosas hace unos años, incluso antes del comienzo del relevamiento de encuestas de sysarmy.
                         A partir de <a href="#Genero-Experiencia-Participacion-por-genero-segun-anos-de-experiencia">este gráfico</a>, podemos interpretar que, lentamente, hay mayor diversidad en IT año tras año 👩‍💻💪.</li>
-                    <li>A pesar de que en el año 2019 se veía equiparado el nivel de <a href="#Genero-Progresion-historica-Historico-de-conformidad">conformidad salarial</a> entre hombres y mujeres, nuevamente se observa una diferencia en el de las mujeres (2,49%) con respecto al de hombres (2,55%) 😐.</li>
                     <li>Las mujeres siguen a la cabeza en lo que respecta al <a href="#Genero-Formacion-Nivel-de-estudios-alcanzados-y-completitud">mérito académico</a> 🤓: mayor nivel de estudios, mayor grado de completitud.</li>
                 </ol>
                 <h4>Para seguir mejorando</h4>
                 <ol>
-                    <li>Los ajustes por inflación <a href="#Genero-Ajuste-salarial-Ajustes-por-inflacion-2019-2020">están lejos de ser equitatitvos</a> aún.</li>
-                    <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es mucha y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con +5 años de experiencia.</li>
+                    <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es notoria y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con mayor experiencia.</li>
                     <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">~85% hombres</a>.</li>
                 </ol>
             </div>
@@ -1053,26 +1024,7 @@ export default [
                                 caption: 'Porcentaje de tipos de contrato de trabajo en escala logarítimica.',
                             },
                         ],
-                    },
-                    {
-                        title: '¿Qué porcentaje tiene su sueldo dolarizado?',
-                        data: [
-                            { // tab
-                                title: 'Sueldos dolarizados',
-                                component: 'Pie',
-                                props: {
-                                    data: charts['sueldo_dolarizado_percent'].data
-                                        .map(val => ({
-                                            ...val,
-                                            name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
-                                        })),
-                                    isPercentual: true,
-                                },
-                                caption: <p>Porcentaje de personas que tienen su sueldo dolarizado, y quienes no lo tienen.</p>,
-                                description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
-                            },
-                        ],
-                    },
+                    }
                 ],
             },
             { // sub-category
