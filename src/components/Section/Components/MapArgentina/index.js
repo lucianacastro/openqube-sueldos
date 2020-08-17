@@ -39,8 +39,8 @@ class MapArgentina extends Component {
 
   state = {
     active: {
-      name: 'Ciudad Autónoma de Buenos Aires',
-      value: 0.6239316239316239
+      name: 'Seleccione una provincia',
+      value: -1
     },
   }
 
@@ -62,6 +62,14 @@ class MapArgentina extends Component {
     const opacity = ratio > 1 ? 1 : ratio;
 
     return `rgba(98, 50, 150, ${opacity})`;
+  }
+
+  getProvinceValue(value) {
+    if (value >= 0) {
+      return <p className='province-value'>{value !== 0 ? Math.round(value * 10000) / 100 : value} %</p>
+    } else {
+      return <p />
+    }
   }
 
   render() {
@@ -89,7 +97,7 @@ class MapArgentina extends Component {
         </svg>
         <div className='description'>
           <p className='province-name'>{this.state.active.name}</p>
-          <p className='province-value'>{value !== 0 ? Math.round(value * 10000) / 100 : value} %</p>
+          {this.getProvinceValue(value)}
         </div>
       </div>
     );
