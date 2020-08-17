@@ -227,25 +227,23 @@ export default [
                         ],
                     },
                     {
-                        title: '¿Cuánta gente realizó cursos de especialización?',
+                        title: '¿Realizaste cursos de especialización?',
                         data: [
                             { // tab
                                 title: '',
                                 component: 'Pie',
                                 props: { ...charts['specialization_percent'], isPercentual: true },
-                                caption: <p>Quienes <strong>Sí</strong> realizaron cursos de especialización alguna vez, y quienes <strong>No</strong> lo hicieron.</p>,
                                 description: '',
                             },
                         ],
                     },
                     {
-                        title: '¿Quiénes pagan por cursos de especialización?',
+                        title: 'Si realizaste, ¿Quién pagó por los cursos de especialización?',
                         data: [
                             { // tab
                                 title: '',
                                 component: 'Pie',
                                 props: { ...charts['specialization_pays_percent'], isPercentual: true },
-                                caption: <p>De qué forma, quienes realizaron cursos de especialización, financiaron los mismos.</p>,
                                 description: '',
                             },
                         ],
@@ -262,7 +260,6 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_gender_percent'], isPercentual: true },
-                                caption: <p>Nivel de participación por género.</p>,
                                 description: <div>
                                     <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>
                                     <p>Si te preguntás por qué no hay tantas mujeres, tal vez esta <a target="_blank" rel="noopener noreferrer" href="http://www.mujeresprogramadoras.com.ar">investigación de Chicas En Tecnología</a> te pueda dar una respuesta.</p>
@@ -590,7 +587,7 @@ export default [
                                     data: charts['sueldo_dolarizado_salary_median'].data
                                         .map(val => ({
                                             ...val,
-                                            name: (val.name === 'True' ? 'Sueldo dolariazdo' : 'Sueldo no dolariazdo'),
+                                            name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
                                         })),
                                     currency: 'AR$',
                                 },
@@ -1067,11 +1064,11 @@ export default [
                                     data: charts['sueldo_dolarizado_percent'].data
                                         .map(val => ({
                                             ...val,
-                                            name: (val.name === 'True' ? 'Sueldo dolariazdo' : 'Sueldo no dolariazdo'),
+                                            name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
                                         })),
                                     isPercentual: true,
                                 },
-                                caption: <p>Porcentaje de personas que tienen su sueldo dolarizados, y quienes no lo tienen.</p>,
+                                caption: <p>Porcentaje de personas que tienen su sueldo dolarizado, y quienes no lo tienen.</p>,
                                 description: <p>Podemos notar un incremento del 1% <a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
                             },
                         ],
@@ -1082,7 +1079,7 @@ export default [
                 title: 'Compensación',
                 data: [
                     {  // section
-                        title: 'Tipos de Bonos',
+                        title: '¿Recibís algún tipo de bono?',
                         data: [
                             {  // tab
                                 title: '',
@@ -1093,7 +1090,7 @@ export default [
                         ],
                     },
                     {  // section
-                        title: 'Beneficios Extra',
+                        title: '¿Tenés beneficios extra?',
                         data: [
                             {  // tab
                                 title: '',
