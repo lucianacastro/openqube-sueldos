@@ -35,7 +35,7 @@ export default [
                 <br />
                 <div className='authors-wrapper'>
                     <small>
-                        El presente informe fue realizado para openqube por <a className='author-name' href='https://twitter.com/enekaz' target="_blank" rel="noopener noreferrer">Nadia Kazlauskas</a> y <a className='author-name' href='https://twitter.com/fernandezpablo' target="_blank" rel="noopener noreferrer">Pablo Fernandez</a>
+                        El presente informe fue realizado para openqube por <a className='author-name' href='https://www.linkedin.com/in/nadiakazlauskas/' target="_blank" rel="noopener noreferrer">Nadia Kazlauskas</a> y <a className='author-name' href='https://www.linkedin.com/in/fernandezpablo85/' target="_blank" rel="noopener noreferrer">Pablo Fernandez</a>
                     </small>
                     <small>
                         (basado en el trabajo previo realizado por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>)
@@ -356,7 +356,7 @@ export default [
                                     </p>
                                     <p>
                                         Como en cada entrega de nuestros informes, siempre aparece alguna variación inesperada que puede resultar de interés para el lector.
-                                        En esta oportunidad el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particulariadd que a diferencia de años anteriores
+                                        En esta oportunidad el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particularidad que a diferencia de años anteriores
                                         no solo existe un cepo, sino también un precio único (mínimo al día de hoy) para ahorrar en dólares.
                                     </p>
                                 </div>,
