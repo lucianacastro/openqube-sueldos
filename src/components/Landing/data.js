@@ -852,7 +852,7 @@ export default [
                                 },
                                 caption: 'Porcentaje de hombres, mujeres y otros en cada grupo de sectores de la industria.',
                                 description: <p>
-                                    También podés ver el <a href="#Trabajo-Caracteristicas-de-las-Empresas-Actividad-Principal-de-la-Empresa">porcentaje de insidencia de cada sector de la industria sobre el total de la poblaciones censada</a>.
+                                    También podés ver el <a href="#Trabajo-Caracteristicas-de-las-Empresas-Actividad-Principal-de-la-Empresa">porcentaje de incidencia de cada sector de la industria sobre el total de la población censada</a>.
                                 </p>,
                             },
                         ],
