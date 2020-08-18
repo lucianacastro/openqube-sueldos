@@ -909,7 +909,7 @@ export default [
                                     isPercentual: true,
                                     isLogScale: false,
                                 },
-                                caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el año 2019 a 2020 por género.',
+                                caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el 2020 por género.',
                                 description: <>
                                     <p>
                                         Como contraste, la <a href="https://www.indec.gob.ar/uploads/informesdeprensa/ipc_07_20C7061172A2.pdf" target="_blank" rel="noopener noreferrer">inflación Enero-Junio publicada por el INDEC en su último reporte</a> fue de <strong>13,6%</strong>.
