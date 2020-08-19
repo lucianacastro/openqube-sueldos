@@ -4,9 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Notebooks
 
-* [Notebook de análisis período 2020.02](https://colab.research.google.com/drive/17PHpUokoapMxA38AU2Uui7GA8kY9J0Og)
+* [Notebook de análisis general](./pipeline/data-analysis.ipynb)
 
-* [Notebook de análisis de la serie histórica de encuestas sysarmy 2014.02 - 2020.02](https://colab.research.google.com/drive/12vYcLqlAeaOSxPhvpr33x5CYm4Y83TF4)
+* [Notebook de análisis histórico](./pipeline/historical-data-analysis.ipynb)
 
 ### Available Scripts
 
