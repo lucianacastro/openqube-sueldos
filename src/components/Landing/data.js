@@ -576,6 +576,32 @@ export default [
                     },
                 ],
             },
+            { // sub-category
+                title: 'Según Contrato',
+                data: [
+                    {  // section
+                        title: 'Sueldos dolarizados vs. en pesos',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: {
+                                    data: charts['sueldo_dolarizado_salary_median'].data
+                                        .map(val => ({
+                                            ...val,
+                                            name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
+                                        })),
+                                    currency: 'AR$',
+                                },
+                                caption: 'Mediana salarial según sueldos dolarizados y experiencia.',
+                                description: <p>
+                                    En <a href="#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">este otro gráfico</a> puede verse el porcentaje de personas que gozan de este beneficio.
+                                </p>
+                            },
+                        ],
+                    },
+                ],
+            },
         ],
     },
     { // category
@@ -1027,7 +1053,25 @@ export default [
                                 caption: 'Porcentaje de tipos de contrato de trabajo en escala logarítimica.',
                             },
                         ],
-                    }
+                    },
+                    {
+                        title: '¿Qué porcentaje tiene su sueldo dolarizado?',
+                        data: [
+                            { // tab
+                                title: 'Sueldos dolarizados',
+                                component: 'Pie',
+                                props: {
+                                    data: charts['sueldo_dolarizado_percent'].data.map(val => ({
+                                        ...val,
+                                        name: (val.name === 'True' ? 'Sueldo dolarizado' : 'Sueldo no dolarizado'),
+                                    })),
+                                    isPercentual: true,
+                                },
+                                caption: <p>Porcentaje de personas que tienen su sueldo dolarizado, y quienes no lo tienen.</p>,
+                                description: <p>Podemos notar un incremento del 3% <a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.01#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
+                            },
+                        ],
+                    },
                 ],
             },
             { // sub-category
