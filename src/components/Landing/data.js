@@ -6,6 +6,14 @@ import historic_charts from './historic-charts';
 // un tipo de cambio desdoblado en oficial/ahorro, agregar la fecha de publicación aquí.
 const hayDolarAhorro = ['2020-02-02', '2020-08-15'];
 
+function sortBySalary(salaries) {
+    return salaries.sort((a, b) => bestSalary(b) - bestSalary(a));
+}
+
+function bestSalary(s) {
+    return Math.max(s["Junior"], s["Semi-Senior"], s["Senior"]);
+}
+
 export default [
     { // category
         title: 'Introducción',
@@ -415,15 +423,16 @@ export default [
                                 title: 'Por rol y experiencia',
                                 component: 'Barh', // graph
                                 props: {
-                                    data: charts['roles_seniority_salary_median'].data
-                                        .sort((a, b) => b['Senior'] - a['Senior']),
-                                    //cutoff: 15,
+                                    data: sortBySalary(charts['roles_seniority_salary_median'].data),
+                                    cutoff: 20,
                                     currency: 'AR$',
                                     markNegativeValues: ['Senior', 'Semi-Senior', 'Junior'],
+                                    individualNegatives: true,
                                 },
                                 caption: 'Mediana salarial por rol y años de experiencia en el puesto.',
                                 description: <div>
                                     <p>El seniority aquí mencionado refiere a años de experiencia en el rol. Para más detalle ver <a href="#Metodologia">metodología</a>.</p>
+                                    <p>Las medianas en <span style={{ "color": "#AAA", "font-weight": "bold" }}>GRIS</span> contienen menos de 5 muestras y deben ser tomadas con cuidado.</p>
                                 </div>,
                             },
                             {  // tab

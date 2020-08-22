@@ -24,6 +24,7 @@ class Barh extends Component {
     cutoff: PropTypes.number,
     isStacked: PropTypes.bool,
     currency: PropTypes.string,
+    individualNegatives: PropTypes.bool,
     markNegativeValues: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.string)]),
   }
 
@@ -36,8 +37,14 @@ class Barh extends Component {
   }
 
   getData() {
-    const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
+    const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false, individualNegatives = false } = this.props;
     let _data = [...data];
+
+    if (individualNegatives) {
+      const invalidKeys = (row) => Object.keys(row).filter(k => markNegativeValues.includes(k) && row[k] < 0);
+      _data = _data.map(row => ({ ...row, invalids: invalidKeys(row) }));
+    }
+
     if (markNegativeValues) {
       const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
 
@@ -45,10 +52,8 @@ class Barh extends Component {
         ...row,
         ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key]) }), row),
         invalid: row[keys[0]] <= 0,
-      }))
-        .sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist + (row2[key] - row1[key]), 0));
+      })).sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist + (row2[key] - row1[key]), 0));
     }
-
 
     if (this.state.collapsed && cutoff) {
       const visibleRows = _data.filter((row, i) => i < cutoff);
@@ -71,11 +76,19 @@ class Barh extends Component {
     return this.getData()
       .reduce((dataKeys, row) => [...dataKeys, ...Object.keys(row)], [])
       .filter((value, index, self) => self.indexOf(value) === index) // unique keys
-      .filter(value => !['name', 'invalid'].includes(value));
+      .filter(value => !['name', 'invalid', 'invalids'].includes(value));
   }
 
   getDataKeyColor(index, row = null) {
-    if (this.props.markNegativeValues && row && row.invalid) {
+    if (row && this.props.individualNegatives) {
+      let key = this.props.markNegativeValues[2 - index]
+      let singleValueInvalid = row['invalids'].includes(key);
+      if (singleValueInvalid) {
+        return '#aaa';
+      }
+    }
+    const fullRowInvalid = this.props.markNegativeValues && row && row.invalid;
+    if (fullRowInvalid) {
       return '#eee';
     }
 
