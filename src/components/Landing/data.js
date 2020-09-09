@@ -14,17 +14,22 @@ function bestSalary(s) {
     return Math.max(s["Junior"], s["Semi-Senior"], s["Senior"]);
 }
 
-// Obesidad no es una discapacidad
-// charts['discapacidad_percent'].data = charts['discapacidad_percent'].data.filter(d => d['name'] !== "Obesidad");
+// Obesidad no es considerada una discapacidad
+ charts['discapacidad_percent'].data = charts['discapacidad_percent'].data.filter(d => d['name'] !== "Obesidad");
 
 export default [
     { // category
         title: 'Introducción',
         content: (
             <div>
+                <br />
+                <a href="https://sysar.my/covid20202" target="_blank" rel="noopener noreferrer">
+                    <img src="https://i.postimg.cc/g2X9p7g4/covid-683x90.jpg" />
+                </a>
+                <br />
+                <br />
                 <p>
-                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.
-                    ¿Cómo lo hacemos? Por medio de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
+                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT a través de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otras personas a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
                     Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
@@ -41,7 +46,7 @@ export default [
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
                 <p>
-                    A continuación te mostramos los resultados del nuevo análisis para Julio 2020 - Agosto 2020.
+                    A continuación te mostramos los resultados del nuevo análisis para julio - agosto 2020.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
@@ -51,6 +56,12 @@ export default [
                     <small>
                         (basado en el trabajo previo realizado por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>)
                     </small>
+                    <br />
+                    <br />
+                    <br />
+                    <a href="https://sysar.my/discord" target="_blank" rel="noopener noreferrer">
+                        <img src="https://i.postimg.cc/66HPZDtf/discord-683x90.jpg" />
+                    </a>
                 </div>
             </div>
         )
