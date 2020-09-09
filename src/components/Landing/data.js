@@ -14,6 +14,9 @@ function bestSalary(s) {
     return Math.max(s["Junior"], s["Semi-Senior"], s["Senior"]);
 }
 
+// Obesidad no es una discapacidad
+// charts['discapacidad_percent'].data = charts['discapacidad_percent'].data.filter(d => d['name'] !== "Obesidad");
+
 export default [
     { // category
         title: 'Introducción',
