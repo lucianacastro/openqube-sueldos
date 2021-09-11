@@ -45,19 +45,16 @@ _Disclaimer: Pertence al equipo de análisis de esta edición._
 
 ### 🗃 Datasets listos para analizar
 
-- [No historico CLEAN](https://docs.google.com/spreadsheets/d/1x-Lhp3NJJCQom3nijfu8fublQ5Ui1ZOiCy5DxagKz9M/edit?usp=sharing)
-
-Datos limpios / pre-procesados.
-
-- TODO: poner `no histórico` sin procesar cuando lo suban a github.
-
-Datos sin pre-procesar, tal como vienen de la encuesta realizada.
-
-- [Historico](https://docs.google.com/spreadsheets/d/1tUZ4kQUm-66tENFL7qF0GmgoxJ9a4qU8yqyF3uyHsto/edit?usp=sharing) 
-
-Datos con contenido de otras encuestas para medir la evolución. Sólo se consideran algunas variables. 
+- Datos limpios / pre-procesados: [No histórico CLEAN](https://docs.google.com/spreadsheets/d/1x-Lhp3NJJCQom3nijfu8fublQ5Ui1ZOiCy5DxagKz9M/edit?usp=sharing)
 
 
+- Datos sin procesar, tal cual se obtuvieron de la encuesta (anunciado en el blog): [No histórico](https://github.com/pablo14/openqube-sueldos/blob/master/data/csv/argentina/2021.02.csv)
+
+
+- Datos con contenido de otras encuestas para medir la evolución. Sólo se consideran algunas variables: [Historico](https://docs.google.com/spreadsheets/d/1tUZ4kQUm-66tENFL7qF0GmgoxJ9a4qU8yqyF3uyHsto/edit?usp=sharing) 
+
+
+- Blog post de sysarmy anunciando los datos, [aquí](https://sysarmy.com/blog/posts/resultados-de-la-encuesta-de-sueldos-2021-2/).
 
 
 
