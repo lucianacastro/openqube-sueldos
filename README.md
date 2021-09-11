@@ -1,76 +1,108 @@
-## Informe de la encuesta de sueldos 2020.02
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Edición 2021.02 (2021 - 2do semestre).
 
-### Notebooks
+<img src='https://sysarmy.com/blog/assets/carpincho.jpg' width="300px">
 
-* [Notebook de análisis general](./pipeline/data-analysis.ipynb)
+_Carpincho edition_
 
-* [Notebook de análisis histórico](./pipeline/historical-data-analysis.ipynb)
+<br>
 
-### Available Scripts
+### Acerca del análisis
 
-In the project directory, you can run:
+El objetivo es poder analizar los salarios del mundo IT de Argentina, así como su evolución a lo largo del tiempo, cruzado por distintas variables como las de género, demográficas, entre otras.
 
-#### `npm start`
+Para ello se analizó la información utilizando Python en Google Colab, por lo cual los informes son 100% reproducibles en el navegador. La información se muestra en un sitio web hecho en react.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+TODO: **Sitio web con los resultados**:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Acerca de los datos
 
-#### `npm test`
+Los datos se dividen en _no históricos_ e _históricos_. 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Los datos _no históricos_ son los usados para medir el último período de análisis (julio-agosto 2021).
 
-#### `npm run build`
+- Los _históricos_ contienen algunas de las variables que se miden a lo largo del tiempo.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Links importantes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 💻 Google colabs utilizados:
 
-#### `npm run eject`
+- [No histórico](https://colab.research.google.com/drive/1vXLMvOYTQxp1qque29Fy8e5z-04jJOBI#sxcrollTo=X752yKSDj45j)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Este colab limpia los datos y calcula los datos para luego enviarlos por json a la página web en react. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Si el lector quiere analizar los datos para crear sus propios análisis basandose en el dataset limpio**, según los criterios mostrados en el colab, entonces puede usar utilizar el dataset: `No histórico CLEAN` de la siguiente sección.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Histórico](https://colab.research.google.com/drive/10e5hZytlMatMuKmLCRo9YzpS1O9EbeV2#scrollTo=Pc5mUvyozCQ5)
 
-### Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Si querés analizar la encuesta y no sabes Python, te invitamos a hacer el: [Curso Python básico y gratuito](https://escueladedatosvivos.ai/p/curso-gratuito-introductorio-a-python). 
+_Disclaimer: Pertence al equipo de análisis de esta edición._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### Code Splitting
+### 🗃 Datasets listos para analizar
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Datos limpios / pre-procesados por los scripts de Google colab publicados: [No histórico CLEAN](https://docs.google.com/spreadsheets/d/1x-Lhp3NJJCQom3nijfu8fublQ5Ui1ZOiCy5DxagKz9M/edit?usp=sharing). Si buscás ir directo a analizar, sin tener que lidiar con las típicas inconsistencias, este es tu dataset.
 
-#### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Datos sin procesar, tal cual se obtuvieron de la encuesta (anunciado en el blog): [No histórico](https://github.com/pablo14/openqube-sueldos/blob/master/data/csv/argentina/2021.02.csv)
 
-#### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Datos con contenido de ediciones anteriores para medir la evolución. Sólo se consideran algunas variables: [Historico](https://docs.google.com/spreadsheets/d/1tUZ4kQUm-66tENFL7qF0GmgoxJ9a4qU8yqyF3uyHsto/edit?usp=sharing) 
 
-#### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Blog post de sysarmy anunciando los datos, [aquí](https://sysarmy.com/blog/posts/resultados-de-la-encuesta-de-sueldos-2021-2/).
 
-#### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-#### `npm run build` fails to minify
+<br>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+####	Valor del dólar oficial, ahorro y blue 💸 ☁️
+
+-	**Dólar oficial**: www.bloomberg.com ([link query](https://www.bloomberg.com/markets/api/bulk-time-series/price/USDARS%3ACUR?timeFrame=5_YEAR))
+
+-	**Dólar ahorro**: Se hace un cálculo directamente en front-end en base al dólar oficial. Verificar ese apartado para más detalles.
+
+-	**Dólar Blue**: Obtuvimos la cotización desde www.bluelytics.com.ar ([link api](https://api.bluelytics.com.ar/v2/evolution.csv))
+
+
+Ver más detalles sobre el dólar en [README_backend](README_backend.md)
+
+<br>
+
+### Errores
+
+<img src="https://c.tenor.com/PRN-EHOCuHwAAAAd/the-it-crowd-moss-the-it-crowd.gif" width="300px">
+
+Si detectas un error, omisión u otro problema, y reiniciar la computadora no funcionó, por favor carga un issue en el repo.
+
+<br>
+
+---
+
+## Reproducibilidad
+
+Esta sección contiene los links a la documentación con las consideraciones necesarias para que pueda mantenerse consistentemente el proyecto en el tiempo. Se incluye el procedimiento de:
+
+- Backend en `Python`, procesar archivos nuevos, consideraciones con datos históricos, etc: [README_backend](README_backend.md)
+
+- Frontend en `React`, despliegue del sitio y visualización de gráficos): [README_frontend](README_frontend.md)
+
+
+
+
+---
+
+<br>
+
+## About
+
+El presente informe fue realizado para Openqube por [Leonardo Genzano](https://ar.linkedin.com/in/leonardo-genzano-1b275193/) (Python developer) y [Nico Quiroz](https://twitter.com/cocodibuja) (frontend) y [Pablo Casas](https://twitter.com/pabloc_ds) (Líder de proyecto), de [Escuela de Datos Vivos](https://escueladedatosvivos.ai).
+
+Basado en el trabajo previo de [Nadia Kazlauskas](https://www.linkedin.com/in/nadiakazlauskas/), [Pablo Fernandez](https://www.linkedin.com/in/fernandezpablo85/), [Luciana Castro](https://twitter.com/luscastro) y [Gerardo Bort](https://twitter.com/gerardobort).
+
+
+
