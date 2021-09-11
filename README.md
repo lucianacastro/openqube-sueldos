@@ -87,9 +87,10 @@ Si detectas un error, omisión u otro problema, y reiniciar la computadora no fu
 
 Esta sección contiene los links a la documentación con las consideraciones necesarias para que pueda mantenerse consistentemente el proyecto en el tiempo. Se incluye el procedimiento de:
 
-- Backend en `Python`, procesar archivos nuevos, consideraciones con datos históricos, etc: [README_frontend](README_frontend.md)
+- Backend en `Python`, procesar archivos nuevos, consideraciones con datos históricos, etc: [README_backend](README_backend.md)
 
-- Frontend en `React`, despliegue del sitio y visualización de gráficos): [README_backend](README_backend.md)
+- Frontend en `React`, despliegue del sitio y visualización de gráficos): [README_frontend](README_frontend.md)
+
 
 
 
