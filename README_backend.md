@@ -117,8 +117,12 @@ Esa unión de jsons se subió a Google Drive para importarla directamente desde 
 -	**Dólar Blue**: Obtuvimos la cotización desde www.bluelytics.com.ar ([link api](https://api.bluelytics.com.ar/v2/evolution.csv))
 
 Seleccionar solo las columnas que nos importen (las mismas que tiene el json de dólar oficial), que son fecha y valor de compra.
+
 Filtrar por Tipo: blue y fecha:2016-08-01 (es decir, desde el comienzo de las encuestas)
+
 Luego el código es el mismo que para el dólar oficial, se obtiene la mediana por período, pero aplicando el valor de conversión del blue.
+
+Código: 
 
 ```
 dolar_blue = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/encuesta_sysarmy/evolution.csv")
@@ -128,7 +132,7 @@ dolar_blue = dolar_blue[['day','value_buy']]
 dolar_blue = dolar_blue.rename(columns={'day': "date",'value_buy':'value'})
 ```
 
-**Aquí finalizan los ajustes que hay que considerar en el caso 2 (dataset no incluido en el repositorio)**
+Nota: El archivo `evolution.csv` esta dentro de la carpeta `data` de este repo.
 
 
 
