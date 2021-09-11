@@ -4,7 +4,7 @@ import historic_charts from './historic-charts';
 
 // si al momento de publicar la nueva versión de la encuesta existe un cepo cambiario y
 // un tipo de cambio desdoblado en oficial/ahorro, agregar la fecha de publicación aquí.
-const hayDolarAhorro = ['2020-02-02', '2020-08-15'];
+const hayDolarAhorro = ['2020-02-02', '2020-08-15', '2021-02-15','2021-08-23'];
 
 function sortBySalary(salaries) {
     return salaries.sort((a, b) => bestSalary(b) - bestSalary(a));
@@ -14,22 +14,17 @@ function bestSalary(s) {
     return Math.max(s["Junior"], s["Semi-Senior"], s["Senior"]);
 }
 
-// Obesidad no es considerada una discapacidad
- charts['discapacidad_percent'].data = charts['discapacidad_percent'].data.filter(d => d['name'] !== "Obesidad");
+let genders = ['Hombre Cis', 'Mujer Cis', 'Otros', 'Prefiero No Decir', 'No Binarie']
+
 
 export default [
     { // category
         title: 'Introducción',
         content: (
             <div>
-                <br />
-                <a href="https://sysar.my/covid20202" target="_blank" rel="noopener noreferrer">
-                    <img src="https://i.postimg.cc/g2X9p7g4/covid-683x90.jpg" />
-                </a>
-                <br />
-                <br />
                 <p>
-                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT a través de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otras personas a tomar decisiones mejor informadas sobre su carrera.
+                    Desde openqube trabajamos para poner a tu alcance toda la información sobre empleos en el sector IT.
+                    ¿Cómo lo hacemos? Por medio de nuestra plataforma colaborativa, en la que podés calificar empresas en las cuales hayas trabajado, ayudando a otros a tomar decisiones mejor informadas sobre su carrera.
                 </p>
                 <p>
                     Desde el año 2014 realizamos encuestas de sueldos a la comunidad tecnológica, relevando datos que son publicados a través del <a href="https://sysarmy.com.ar/blog/" target="_blank" rel="noopener noreferrer">blog de sysarmy</a>.
@@ -40,27 +35,29 @@ export default [
                         <li><a href="https://openqube.io/encuesta-sueldos-2019.01" target="_blank" rel="noopener noreferrer">2019.01</a></li>
                         <li><a href="https://openqube.io/encuesta-sueldos-2019.02" target="_blank" rel="noopener noreferrer">2019.02</a></li>
                         <li><a href="https://openqube.io/encuesta-sueldos-2020.01" target="_blank" rel="noopener noreferrer">2020.01</a></li>
+                        <li><a href="https://sueldos.openqube.io/encuesta-sueldos-2020.02/" target="_blank" rel="noopener noreferrer">2020.02</a></li>
+                        <li><a href="https://sueldos.openqube.io/encuesta-sueldos-2021.01/" target="_blank" rel="noopener noreferrer">2021.01 </a></li>
                     </ul>
                 </p>
                 <p>
                     Con la intención de ofrecer a nuestra comunidad los resultados de una manera más accesible, nos tomamos la libertad de seleccionar algunos datos estadísticos que consideramos, son de relevancia. Para tener una mayor comprensión sobre estos, recomendamos leer el apartado de <a href="#Metodologia">metodología</a>.
                 </p>
                 <p>
-                    A continuación te mostramos los resultados del nuevo análisis para julio - agosto 2020.
+                    A continuación te mostramos los resultados del nuevo análisis para julio - agosto 2021.
                 </p>
                 <br />
                 <div className='authors-wrapper'>
+                    <center>    
+                        <small>
+                        El presente informe fue realizado para openqube por <a className='author-name' href='https://ar.linkedin.com/in/pcasas' target="_blank" rel="noopener noreferrer">Pablo Casas</a> , <a className='author-name' href='https://ar.linkedin.com/in/leonardo-genzano-1b275193/' target="_blank" rel="noopener noreferrer">Leonardo Genzano </a> y <a className='author-name' href='https://twitter.com/cocodibuja' target="_blank" rel="noopener noreferrer">Nico Quiroz</a> de <a className='author-name' href='https://escueladedatosvivos.ai/' target="_blank" rel="noopener noreferrer">Escuela de Datos Vivos </a>
+                        </small>
+                    </center>
                     <small>
-                        El presente informe fue realizado para openqube por <a className='author-name' href='https://www.linkedin.com/in/nadiakazlauskas/' target="_blank" rel="noopener noreferrer">Nadia Kazlauskas</a> y <a className='author-name' href='https://www.linkedin.com/in/fernandezpablo85/' target="_blank" rel="noopener noreferrer">Pablo Fernandez</a>
+
+                        (basado en el trabajo de <a className='author-name' href='https://www.linkedin.com/in/nadiakazlauskas/' target="_blank" rel="noopener noreferrer">Nadia Kazlauskas</a> , <a className='author-name' href='https://www.linkedin.com/in/fernandezpablo85/' target="_blank" rel="noopener noreferrer">Pablo Fernandez</a>, <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>)
                     </small>
-                    <small>
-                        (basado en el trabajo previo realizado por <a className='author-name' href='https://twitter.com/luscastro' target="_blank" rel="noopener noreferrer">Luciana Castro</a> y <a className='author-name' href='https://twitter.com/gerardobort' target="_blank" rel="noopener noreferrer">Gerardo Bort</a>)
-                    </small>
-                    <br />
-                    <br />
-                    <br />
                     <a href="https://sysar.my/discord" target="_blank" rel="noopener noreferrer">
-                        <img src="https://i.postimg.cc/66HPZDtf/discord-683x90.jpg" />
+                        <img src="https://i.postimg.cc/66HPZDtf/discord-683x90.jpg" style={{ "margin-top": "20px" }}></img>
                     </a>
                 </div>
             </div>
@@ -165,7 +162,7 @@ export default [
                                 title: 'Todos',
                                 component: 'Barh', // graph
                                 props: { ...charts['experience_years_in_company'], isPercentual: true },
-                                caption: 'Porcentaje de encuestados por años de antigüedad en su compañía actual.',
+                                caption: 'Porcentaje de encuestados por años de antigüedad en su compañía actual. Respecto a la última edición el porcentaje correspondiente al rango de 0-1 año disminuyó. Esto indica que hay menor rotación con respecto a la última encuesta',
                                 description: <p>Los datos fueron agrupados por rangos de años, en conjuntos arbitrarios.</p>
                             },
                         ],
@@ -281,12 +278,21 @@ export default [
                         title: 'Identidad de género',
                         data: [
                             {  // tab
-                                title: '',
+                                title: 'Porcentaje',
                                 component: 'Barh', // graph
                                 props: { ...charts['demographics_gender_percent'], isPercentual: true },
                                 description: <div>
                                     <p>Para mayor detalle sobre este tópico, recomendamos ver el apartado de <a href="#Genero">Género</a>.</p>
                                     <p>Si te preguntás por qué no hay tantas mujeres, tal vez esta <a target="_blank" rel="noopener noreferrer" href="http://www.mujeresprogramadoras.com.ar">investigación de Chicas En Tecnología</a> te pueda dar una respuesta.</p>
+                                </div>,
+                            },
+                            {  // tab
+                                title: 'Absoluto',
+                                component: 'Barh', // graph
+                                props: { ...charts['demographics_gender_absolute'], isPercentual: false },
+                                description: <div>
+                                    <p > Representatividad (en valor absoluto) según identidad de género</p>
+                                   
                                 </div>,
                             },
                         ],
@@ -297,7 +303,7 @@ export default [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['demographics_sexual_orientation_percent'], isPercentual: true },
+                                props: { ...charts['demographics_sexual_orientation_percent'], isLogScale: true, isPercentual: true },
                                 caption: <p>Tipos de orientaciones sexuales para la muestra.</p>,
                             },
                         ],
@@ -309,10 +315,16 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['discapacidad_percent'], isPercentual: true, isLogScale: true, minLogScale: 0.0003, },
-                                caption: <p>Porcentajes de personas que reportaron tener alguna discapacidad.</p>,
+                                caption: <p>Porcentajes de personas que reportaron tener alguna discapacidad, el  <strong>{
+                                    parseFloat(charts['n_persons_with_no_disabilities'].data.map(item => item.value)*100).toFixed(2)
+                                    }</strong> % no informaron discapacidad</p>
+  
+        
                             },
                         ],
                     },
+                    
+                    
                 ],
             },
         ],
@@ -374,7 +386,23 @@ export default [
                                 caption: <p>Serie histórica de salarios sobre cotización del dólar ahorro, en pesos.</p>,
                                 description: <div>
                                     <p>
-                                        Un dato importante a tener en cuenta a la hora de evaluar nuestro sueldo es considerar la capacidad de ahorro.
+                                        Un dato importante a tener en cuenta a la hora de evaluar nuestro sueldo es considerar la capacidad de ahorro .
+                                    </p>
+                                    <p>
+                                        Como en cada entrega de nuestros informes, siempre aparece alguna variación inesperada que puede resultar de interés para el lector.
+                                        En esta oportunidad el desdoblamiento del dólar vuelve a cobrar protagonismo, con la particularidad que a diferencia de años anteriores
+                                        no solo existe un cepo, sino también un precio único (mínimo al día de hoy) para ahorrar en dólares.
+                                    </p>
+                                </div>,
+                            },
+                            {  // tab
+                                title: 'Salarios en US$ (Blue)',
+                                component: 'Line', // graph
+                                props: { ...historic_charts['historic_salary_medians'], xDataKey: 'publish_date', yDataKeys: ['Dólares Estadounidenses Blue'], currency: 'US$' },
+                                caption: <p>Serie histórica de salarios sobre cotización del dólar Blue, en pesos.</p>,
+                                description: <div>
+                                    <p>
+                                        Un dato importante a tener en cuenta a la hora de evaluar nuestro sueldo es considerar la capacidad de ahorro .
                                     </p>
                                     <p>
                                         Como en cada entrega de nuestros informes, siempre aparece alguna variación inesperada que puede resultar de interés para el lector.
@@ -404,7 +432,7 @@ export default [
                                 </div>,
                             },
                             {  // tab
-                                title: 'Acumulado de ajustes 2019 - 2020',
+                                title: 'Acumulado de ajustes 2021',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_adjustment'], isPercentual: true, isLogScale: false, markNegativeValues: true, },
                                 caption: '¿Cuál fue porcentaje de ajuste por inflación acumulado típico en cada región?',
@@ -417,7 +445,7 @@ export default [
                                 title: 'Nivel de conformidad',
                                 component: 'Barh', // graph
                                 props: { ...charts['regions_salary_acquiescence'], isPercentual: false, isLogScale: false, markNegativeValues: true, },
-                                caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4, de poco a muy conforme.',
+                                caption: 'Media de conformidad con el sueldo por región del país, en escala del 1 - 4, de poco a muy conforme. Si bien el ranking cambio respecto a la ultima encuesta, los valores de diferencia no son muy altos',
                                 description: <div>
                                     <p>Para este ranking entre regiones, hemos aplicado un umbral mínimo de muestras requeridas, del 0.5% sobre el total.  Aquellas regiones o provincias que no cuenten con dicho mínimo de respuestas, consideraremos que tienen <a href="#Perfil-de-participantes-Regiones">datos insuficientes</a> y solo se mostrarán al clickear "ver más" en color grisado.</p>
                                     <p>Más sobre la representatividad de la muestra en el apartado <a href="#Metodologia">Metodología</a>.</p>
@@ -631,17 +659,15 @@ export default [
         title: 'Género',
         content: (
             <div>
-                <p>En cuanto a los datos analizados en cuestión de género, podemos destacar los siguientes puntos interesantes:</p>
-                <ol>
-                    <li>El nivel de participación de mujeres <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(14,98%)</a> creció medio punto respecto al período anterior (14,22%). El grupo de Otros presenta un pequeño incremento.</li>
-                    <li>La brecha salarial en la población muestreada <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se hace más notoria</a> a medida que aumentan los años de experiencia.</li>
-                    <li>Se evidencia un bajo <a href="#Genero-Experiencia-Conformidad">nivel de conformidad salarial</a> en mujeres con muchos años de experiencia.</li>
-                </ol>
-                <p>
-                    La brecha salarial general es grande: <a href="#Genero-Progresion-historica-Historico-de-salarios">20,48%</a> pero se puede observar una pequeña mejora respecto al período anterior.
-                    Según los datos recabados, la brecha se acentúa en mujeres con más años de experiencia,
-                    donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a>.
-                </p>
+                <p>En esta edición la pregunta sobre identidad de género constaba de varias opciones fijas y la posibilidad de ingresar texto libre. Esto permitió la aparición de nuevas representaciones, como personas no binaries y quienes prefieren no responder sobre su género.</p>
+                <p>Para la producción de este apartado mantuvimos el mismo criterio que aplicamos en el resto de los análisis, por lo que no incluímos dentro de los gráficos aquellos géneros que tuvieron una representación menor al 0.05% de la muestra.</p>
+                <p>La pluralidad de opciones provocó una menor representación de hombres cis, sin embargo el nivel de participación de las mujeres cis <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">(~16,53%)</a> se mantuvo prácticamente igual al del período anterior.</p>
+                <p></p>
+
+                <p>La <a href="#Genero-Progresion-historica-Historico-de-salarios">brecha salarial</a> en la población muestreada se hace más notoria a medida que aumentan los años de experiencia.</p>
+                <p>La brecha salarial entre hombres y mujeres cis es de 25% y de ~3% entre hombres cis y personas que prefieren no responder sobre su género. Según los datos recabados, la brecha se acentúa en mujeres con más años de experiencia, donde <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">se encuentra el mayor porcentaje de participación</a>.</p>
+                <p></p>
+
                 <h4>Algunos datos</h4>
                 <ol>
                     <li>Las nuevas generaciones de mujeres en IT parecen tener condiciones de trabajo más equitativas 👩‍💻💪.</li>
@@ -651,8 +677,8 @@ export default [
                 </ol>
                 <h4>Para seguir mejorando</h4>
                 <ol>
-                    <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a>, es notoria y el progreso en este punto pareciera haberse estancado. Especialmente para profesionales con mayor experiencia.</li>
-                    <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">~85% hombres</a>.</li>
+                    <li>La brecha salarial entre hombres y mujeres <a href="#Genero-Experiencia-Salario-por-genero-segun-anos-de-experiencia">sigue existiendo</a> y parece haberse acentuado: ~25% respecto a un ~20% un año atrás.</li>
+                    <li>La población que participa en la encuesta sigue siendo <a href="#Genero-Progresion-historica-Historico-de-nivel-de-participacion">~80% hombres cis</a>.</li>
                 </ol>
             </div>
         ),
@@ -664,7 +690,7 @@ export default [
                         title: 'Histórico de nivel de participación',
                         data: [
                             {  // tab
-                                title: 'Mujeres / Otros',
+                                title: 'Mujeres Cis y Otros',
                                 component: 'Area', // graph
                                 props: {
                                     data: Object.values(
@@ -674,16 +700,16 @@ export default [
                                                 [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
                                                     ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
-                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.count,
+                                                    [row.name.match(/'([\w é]+)'\)$/)[1]]: row.count,
                                                 },
                                             }), {})
                                     ),
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Mujer', 'Otros'],
+                                    yDataKeys: genders.filter(g => g !== "Hombre Cis"),
                                     isPercentual: true,
                                 },
                                 caption: 'Serie de tiempo de porcentaje de participación por género basada en encuestas anteriores (excluyendo mayoría).',
-                                description: 'Al excluir la parte mayoritaria, puede apreciarse mejor la relación de porcentajes para Mujeres y Otros.',
+                                description: 'Al excluir la parte mayoritaria, puede apreciarse mejor la relación de porcentajes para Mujeres Cis y Otros ',
                             },
                             {  // tab
                                 title: 'Todos',
@@ -696,12 +722,12 @@ export default [
                                                 [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
                                                     ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
-                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.count,
+                                                    [row.name.match(/'([\w é]+)'\)$/)[1]]: row.count,
                                                 },
                                             }), {})
                                     ),
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Mujer', 'Otros', 'Hombre'],
+                                    yDataKeys: genders,
                                     isPercentual: true,
                                 },
                                 caption: 'Serie de tiempo de porcentaje de participación por género basada en encuestas anteriores.',
@@ -722,17 +748,17 @@ export default [
                                                 [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
                                                     ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
-                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.salary,
+                                                    [row.name.match(/'([\w é]+)'\)$/)[1]]: row.salary,
                                                 },
                                             }), {})
                                     ),
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    yDataKeys: genders,
                                     currency: 'AR$',
                                     customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Serie histórica de salarios basada en encuestas anteriores.',
-                                description: 'Se han aplicado reglas de normalización. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
+                                description: '',
                             },
                             {  // tab
                                 title: 'Histórico de brecha salarial',
@@ -747,24 +773,25 @@ export default [
                                                 [row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]]: {
                                                     publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1],
                                                     ...dates[row.name.match(/(\d{4}-\d{2}-\d{2})/)[1]],
-                                                    [row.name.match(/'(\w+)'\)$/)[1]]: row.salary,
+                                                    [row.name.match(/'([\w é]+)'\)$/)[1]]: row.salary,
                                                 },
                                             }), {})
                                     )
                                         // dates: [ { publish_date: '2016-02-01', 'Hombre': 9999, 'Mujer': 9999, 'Otros': 9999 } }, ...]
                                         .map((date) => ({
                                             publish_date: date.publish_date,
-                                            'Mujer-Hombre': (date['Hombre'] - date['Mujer']) / Math.min(date['Hombre'], date['Mujer']),
-                                            'Otros-Hombre': (date['Hombre'] - date['Otros']) / Math.min(date['Hombre'], date['Otros']),
+                                            'Mujer Cis-Hombre Cis': (date['Hombre Cis'] - date['Mujer Cis']) / Math.min(date['Hombre Cis'], date['Mujer Cis']),
+                                            'Otros-Hombre Cis': (date['Hombre Cis'] - date['Otros']) / Math.min(date['Hombre Cis'], date['Otros']),
+                                            'Prefiero No Decir-Hombre Cis': (date['Hombre Cis'] - date['Prefiero No Decir']) / Math.min(date['Hombre Cis'], date['Prefiero No Decir']),
+                                            'No Binarie-Hombre Cis': (date['Hombre Cis'] - date['No Binarie']) / Math.min(date['Hombre Cis'], date['No Binarie']),
                                         })),
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Mujer-Hombre', 'Otros-Hombre'],
+                                    yDataKeys: ['Mujer Cis-Hombre Cis', 'Otros-Hombre Cis', 'Prefiero No Decir-Hombre Cis', 'No Binarie-Hombre Cis'],
                                     isPercentual: true,
-                                    customStroke: { 'Otros-Hombre': '#ccc' },
+                                    customStroke: { 'Otros-Hombre Cis': '#ccc' },
                                 },
                                 caption: 'Serie histórica de brecha salarial de minorías respecto del grupo mayoritario.',
                                 description: (<>
-                                    <p>Se han aplicado reglas de normalización. El segmento de "otros" está grisado, ya que no se cuenta con suficientes datos.</p>
                                     <p>
                                         El cálculo de la brecha salarial general aquí mostrado se realizó obteniendo la diferencia de medianas salariales entre los grupos comparados, sobre el mínimo de ambos.
                                         Esto representa el porcentaje de aumento que debería aplicarse al grupo de menor salario, para equiparar las condiciones.
@@ -783,11 +810,11 @@ export default [
                                     data: historic_charts['historic_acquiescence_means'].data
                                         .map(row => ({ ...row, Otros: row.Otros || undefined, publish_date: row.name.match(/(\d{4}-\d{2}-\d{2})/)[1] })), // remove 0 values
                                     xDataKey: 'publish_date',
-                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    yDataKeys: genders,
                                     customStroke: { 'Otros': '#ccc' },
                                 },
                                 caption: 'Serie histórica del nivel de conformidad con los salarios basada en encuestas anteriores.',
-                                description: 'Escala de 1 - 4. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes.',
+                                description: '4 Representa el nivel máximo de conformidad',
 
                             },
                         ],
@@ -799,7 +826,7 @@ export default [
                 content: <div>
                     <p>
                         En este apartado segmentamos los niveles de educación formal alcanzados y el grado de completitud de cada uno, por género.
-                        Cabe aclarar que en el caso de Otros, tal como se puede ver en el apartado <a href="#Perfil-de-participantes-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
+                        Cabe aclarar que excepto para Hombres y Mujeres Cis, tal como se puede ver en el apartado <a href="#Perfil-de-participantes-Demografia">Demografía</a>, el número de muestras es extremadamente reducido, y es muy posible que lo detallado aquí no sea representativo de la realidad.
                     </p>
                 </div>,
                 data: [
@@ -807,24 +834,31 @@ export default [
                         title: 'Nivel de estudios alcanzados y completitud',
                         data: [
                             {  // tab
-                                title: 'Hombres',
+                                title: 'Hombres Cis',
                                 component: 'Barh', // graph
-                                props: { ...charts['education_hombre_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de los hombres, y cuál es su estado actual?',
+                                props: { ...charts['education_hombre_cis_stacked'], isPercentual: true, isStacked: true },
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de los hombres cis, y cuál es su estado actual?',
                                 description: 'Los valores porcentuales de cada segmento son sobre el total de los hombres encuestados.'
                             },
                             {  // tab
-                                title: 'Mujeres',
+                                title: 'Mujeres Cis',
                                 component: 'Barh', // graph
-                                props: { ...charts['education_mujer_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de las mujeres, y cuál es su estado actual?',
+                                props: { ...charts['education_mujer_cis_stacked'], isPercentual: true, isStacked: true },
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de las mujeres cis, y cuál es su estado actual?',
                                 description: 'Los valores porcentuales de cada segmento son sobre el total de los mujeres encuestadas.'
                             },
                             {  // tab
-                                title: 'Otros',
+                                title: 'Prefiero No Decir',
                                 component: 'Barh', // graph
-                                props: { ...charts['education_otros_stacked'], isPercentual: true, isStacked: true },
-                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de otros géneros, y cual es su estado actual?',
+                                props: { ...charts['education_no_decir_stacked'], isPercentual: true, isStacked: true },
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de personas que prefieren no responder sobre su género, y cual es su estado actual?',
+                                description: 'Los valores porcentuales de cada segmento son sobre el total de otros géneros encuestados.'
+                            },
+                            {  // tab
+                                title: 'No Binarie',
+                                component: 'Barh', // graph
+                                props: { ...charts['education_no_bin_stacked'], isPercentual: true, isStacked: true },
+                                caption: '¿Cuál es el mayor nivel de estudios alcanzado de personas no binaries, y cual es su estado actual?',
                                 description: 'Los valores porcentuales de cada segmento son sobre el total de otros géneros encuestados.'
                             },
                         ],
@@ -843,12 +877,12 @@ export default [
                                 props: {
                                     data: charts['experience_gender_salary_median'].data,
                                     xDataKey: 'name',
-                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
+                                    yDataKeys: ['Hombre Cis', 'Mujer Cis', 'Prefiero No Decir', 'No Binarie'],
                                     currency: 'AR$',
-                                    customStroke: { 'Otros': '#ccc' },
+                                    customStroke: { 'No Binarie': '#ccc' },
                                 },
                                 caption: 'Mediana salarial por género, según años de experiencia.',
-                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci.',
                             },
                         ],
                     },
@@ -856,16 +890,16 @@ export default [
                         title: 'Participación por género según años de experiencia',
                         data: [
                             {  // tab
-                                title: 'Mujeres / Otros',
+                                title: 'Mujeres Cis / No Decir / No Binaries',
                                 component: 'Area', // graph
                                 props: {
                                     data: charts['experience_gender_percent'].data,
                                     xDataKey: 'name',
-                                    yDataKeys: ['Mujer', 'Otros'],
+                                    yDataKeys: ['Mujer Cis', 'Prefiero No Decir', 'No Binarie'],
                                     isPercentual: true,
                                 },
                                 caption: 'Nivel de participación por género, según años de experiencia. El porcentaje restante es de hombres.',
-                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El grupo de hombres fue excluido por ser amplia mayoría.',
+                                description: 'Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci. El grupo de Hombres Cis fue excluído por ser amplia mayoría.',
                             },
                         ],
                     },
@@ -878,11 +912,11 @@ export default [
                                 props: {
                                     data: charts['experience_gender_conformidad_mean'].data,
                                     xDataKey: 'name',
-                                    yDataKeys: ['Hombre', 'Mujer', 'Otros'],
-                                    customStroke: { 'Otros': '#ccc' },
+                                    yDataKeys: ['Hombre Cis', 'Mujer Cis', 'Prefiero No Decir', 'No Binarie'],
+                                    customStroke: { 'No Binarie': '#ccc' },
                                 },
                                 caption: 'Conformidad con los salarios por género según años de experiencia.',
-                                description: 'Escala de 1 - 4.  Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci.  El segmento "otros" está grisado, ya que no se cuenta con datos suficientes, de ahí la alternancia.',
+                                description: '4 Representa el nivel máximo de conformidad.  Los grupos de años de experiencia son arbitrarios, en base a la serie de Fibonacci.',
 
                             },
                         ],
@@ -895,11 +929,11 @@ export default [
                                 component: 'Barh', // graph
                                 props: {
                                     data: charts['actividad_principal_gender_percent'].data
-                                        .sort((a, b) => b['Mujer'] - a['Mujer']),
+                                        .sort((a, b) => b['Mujer Cis'] - a['Mujer Cis']),
                                     isPercentual: true,
                                     isLogScale: true,
                                 },
-                                caption: 'Porcentaje de hombres, mujeres y otros en cada grupo de sectores de la industria.',
+                                caption: 'Porcentaje de las distintas identidades de género en cada grupo de sectores de la industria.',
                                 description: <p>
                                     También podés ver el <a href="#Trabajo-Caracteristicas-de-las-Empresas-Actividad-Principal-de-la-Empresa">porcentaje de incidencia de cada sector de la industria sobre el total de la población censada</a>.
                                 </p>,
@@ -947,7 +981,7 @@ export default [
                     //     ],
                     // },
                     {  // section
-                        title: 'Ajustes por inflación 2019-2020',
+                        title: 'Ajustes por inflación 2021',
                         data: [
                             {  // tab
                                 title: '',
@@ -958,18 +992,36 @@ export default [
                                     isPercentual: true,
                                     isLogScale: false,
                                 },
-                                caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el 2020 por género.',
+                                caption: 'Mediana de porcentaje de ajustes por inflación acumulados en el 2021 por género.',
                                 description: <>
                                     <p>
-                                        Como contraste, la <a href="https://www.indec.gob.ar/uploads/informesdeprensa/ipc_07_20C7061172A2.pdf" target="_blank" rel="noopener noreferrer">inflación Enero-Junio publicada por el INDEC en su último reporte</a> fue de <strong>13,6%</strong>.
+                                        Como contraste, la <a href="https://www.indec.gob.ar/uploads/informesdeprensa/ipc_08_21C4CDE45C19.pdf" target="_blank" rel="noopener noreferrer">inflación Enero-Julio publicada por el INDEC en su último reporte</a> fue de <strong>26%</strong>.
                                     </p>
                                     <p>
-                                        No se observan diferencias de ajustes en cuanto a género como <a href="https://openqube.io/encuesta-sueldos-2020.01#Genero-Ajuste-salarial" _target="blank">ocurría en el informe anterior.</a>
+                                        Hay diferencias en cuanto a identidad de género: los Hombres Cis tienen un 3% más de ajuste No Binaries y quienes prefieren no responder sobre su género; y un 5% más sobre las Mujeres Cis.
                                     </p>
                                 </>,
                             },
                         ],
                     },
+                ],
+            },
+            { // sub-category
+                title: 'Posiciones de liderazgo',
+                data: [
+                    {  // section
+                        title: 'Posiciones de liderazgo abierto por identidad de género',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: { ...charts['leadership_gender_percent'], isPercentual: true },
+                                description: <div> Se define posición de liderazgo (Si) la que tiene al menos 1 persona a su cargo. Dejamos expresados los porcentajes de las personas que se reconocen como no binarie: 0.6 % y prefiero no decir 4%. 
+                                </div>,
+                            },
+                        ],
+                    },
+                    
                 ],
             },
         ],
@@ -1076,8 +1128,7 @@ export default [
                                 caption: 'Porcentaje de tipos de contrato de trabajo en escala logarítimica.',
                             },
                         ],
-                    },
-                    {
+                    },{
                         title: '¿Qué porcentaje tiene su sueldo dolarizado?',
                         data: [
                             { // tab
@@ -1091,7 +1142,18 @@ export default [
                                     isPercentual: true,
                                 },
                                 caption: <p>Porcentaje de personas que tienen su sueldo dolarizado, y quienes no lo tienen.</p>,
-                                description: <p>Podemos notar un incremento del 3% <a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.01#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
+                                description: <p>disminuyó 2% respecto a 2021.01 <a target="_blank" rel="noopener noreferrer" href="(https://sueldos.openqube.io/encuesta-sueldos-2021.01/#Trabajo-Tipos-de-contrato-Que-porcentaje-tiene-su-sueldo-dolarizado">respecto al reporte pasado</a>.</p>,
+                            },
+                        ],
+                    },{
+                        title: 'Distribución del top 10 mejor pago',
+                        data: [
+                            {  // tab
+                                title: 'Distribución del top 10 mejor pago',
+                                component: 'Barh', // graph
+                                props: { ...charts['salary_by_role_top10'], isPercentual: false, isLogScale: false, minLogScale: 0.0004, cutoff: 10, sumOthers: false },
+                                caption: 'Para este análisis nos quedamos con el top 10% de los salarios más altos. Esto responde la pregunta de ¿Cuánto ganan los que más ganan por rol?, los valores se muestran utilizando la mediana.',
+                                
                             },
                         ],
                     },
@@ -1107,7 +1169,9 @@ export default [
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['recibis_algun_tipo_de_bono'], isLogScale: true, isPercentual: true },
-                                caption: 'Porcentaje de participantes que han recibido o no, bonos como parte de la compensación, en escala logarítimica.',
+                                caption: <p>Porcentaje de participantes que han recibido o no, bonos como parte de la compensación, en escala logarítimica, el <strong>
+                                    {parseFloat(charts['recibe_algun_tipo_de_bono'].data.map(item => item.value)*100).toFixed(2)}</strong> % de los encuestados reciben algún tipo de bono</p>
+                                
                             },
                         ],
                     },
@@ -1124,15 +1188,16 @@ export default [
                         ],
                     },
                     {  // section
-                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2020)',
+                        title: 'Porcentajes de Ajuste por Inflación a la fecha (2021)',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
                                 props: { ...charts['de_que_fue_el_ajuste'], isPercentual: true },
-                                description: <div>
+                                caption: <div>
                                     <p>Los rangos (eje vertical) representan el porcentaje de ajuste o aumento por inflación recibido en el año. La longitud de las barras representa el porcentaje de encuestados que recibieron ajustes dentro de ese rango.</p>
                                 </div>,
+                                description:'El 27% de los encuestados, no tuvo ajuste salarial en los últimos 6 meses, Inflación Marzo - Agosto: 21.4% (Agosto se estima en 3%)'
                             },
                         ],
                     },
@@ -1142,12 +1207,12 @@ export default [
                 title: 'Características de las Empresas',
                 data: [
                     {  // section
-                        title: 'Cantidad de Empleados',
+                        title: 'Cantidad de Personas',
                         data: [
                             {  // tab
                                 title: '',
                                 component: 'Barh', // graph
-                                props: { ...charts['cantidad_de_empleados'], isPercentual: true },
+                                props: { ...charts['cantidad_de_personas_en_tu_organizacion'], isPercentual: true },
                                 description: 'Datos porcentuales',
                             },
                         ],
@@ -1172,6 +1237,38 @@ export default [
                                 props: { ...charts['la_recomendas_como_un_buen_lugar_para_trabajar'], isPercentual: true },
                                 description: (<span>
                                     Datos porcentuales, por clase según indicador&nbsp;<a target='_blank' href='https://es.wikipedia.org/wiki/Net_Promoter_Score' rel="noopener noreferrer">Net Promoter Score</a>.
+                                </span>),
+                            },
+                        ],
+                    },
+
+                    {  // section
+                        title: 'De existir ¿Cómo calificás las políticas de diversidad e inclusión de tu empresa?',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: { ...charts['politicas_diversidad_e_inclusion'], isPercentual: true },
+                                description: (<span>
+                                    Un 72.5% considera que las políticas de inclusión son buenas, muy buenas o excelentes. Este valor se redujo con respecto al anterior (85%).
+                                </span>),
+                            },
+                        ],
+                    },
+                    {  // section
+                        title: '¿Presenciaste una situación de violencia laboral?',
+                        data: [
+                            {  // tab
+                                title: '',
+                                component: 'Barh', // graph
+                                props: { ...charts['demographics_laboral_violence'], isPercentual: true },
+                                description: (<span>
+                                 Casi un 31% de las personas encuestadas presenció una situación de violencia laboral en un trabajo previo y un 8% lo hizo en su trabajo actual.
+                                 El <strong>{parseFloat(charts['demographics_laboral_violence_ever'].data.map(item => item.value)*100).toFixed(1)}</strong>%   indicó que fueron testigos de violencia laboral alguna vez.
+
+                               
+                                 
+
                                 </span>),
                             },
                         ],
@@ -1256,7 +1353,7 @@ export default [
                     Para abordar este problema, quienes preparamos este informe escribimos <a target="_blank" rel="noopener noreferrer" href="https://colab.research.google.com/drive/12wza039dl0UjCSypYZY3gtTqW6OWbFI9#scrollTo=mY9g6cyoPou2">una serie de reglas basadas en expresiones regulares</a> para normalizar los valores y también reducir la dimensionalidad.
                 </p>
                 <p>
-                    Como mejora al relevamiento anterior, hemos además provisto durante la encuesta 2020.01, todos los valores más relevantes normalizados como resultado del análisis 2020.02.
+                    Como mejora al relevamiento anterior, hemos además provisto durante la encuesta 2021.01, todos los valores más relevantes normalizados como resultado del análisis 2021.02.
                     De esta forma, no solo hemos facilitado el proceso de carga de datos, sino también hemos minimizado la necesidad de normalización, dando lugar a un análisis aún más preciso.
                 </p>
                 <h4>Series temporales</h4>
@@ -1285,12 +1382,16 @@ export default [
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/openqube/openqube-sueldos">Código fuente de esta publicación (sitio web)</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/openqube/openqube-sueldos/tree/master/pipeline">Notebooks de análisis y procesamiento de datos</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://sysarmy.com/blog">Dataset de esta encuesta</a></li>
                 </ul>
                 <h4>Análisis previos</h4>
                 <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.01">Resultados de la encuesta de sueldos 2019.01</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2019.02">Resultados de la encuesta de sueldos 2019.02</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.01">Resultados de la encuesta de sueldos 2020.01</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://openqube.io/encuesta-sueldos-2020.02">Resultados de la encuesta de sueldos 2020.02</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://sueldos.openqube.io/encuesta-sueldos-2021.01/">Resultados de la encuesta de sueldos 2021.01</a></li>
+                    
                 </ul>
             </div>
         )
