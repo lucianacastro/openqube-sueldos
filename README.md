@@ -13,7 +13,7 @@ El objetivo es poder analizar los salarios del mundo IT de Argentina, así como 
 
 Para ello se analizó la información utilizando Python en Google Colab, por lo cual los informes son 100% reproducibles en el navegador. La información se muestra en un sitio web hecho en react.
 
-TODO: **Sitio web con los resultados**:
+[Sitio web con los resultados](https://sueldos.openqube.io/encuesta-sueldos-2021.02)
 
 ### Acerca de los datos
 
