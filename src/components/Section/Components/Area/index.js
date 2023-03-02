@@ -11,7 +11,7 @@ import {
 } from 'recharts';
 
 import './styles.css';
-import { COLORS1 as COLORS } from '../chartsUtils';
+import { COLORS2 as COLORS } from '../chartsUtils';
 
 class Area extends Component {
   static propTypes = {

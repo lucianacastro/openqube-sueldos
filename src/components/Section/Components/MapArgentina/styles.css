@@ -5,7 +5,7 @@
 }
 
 .map-argentina-container path:hover {
-    stroke: #ffb57c;
+    stroke: #FFC800;
     stroke-width: 2px;
 }
 
@@ -44,11 +44,11 @@
     margin: 0;
 }
 .province-name {
-    color: #623296;
+    color: #763DFE;
 }
 .province-value {
     font-size: 22px;
-    color: #623296;
+    color: #763DFE;
     font-weight: 600;
 }
 

@@ -8,7 +8,7 @@
 
 .title a {
   text-decoration: none;
-  color: #623296;
+  color: #313142;
 }
 
 .title.category {
@@ -43,13 +43,13 @@
   height: 3px;
 }
 .color-bar-section-1 {
-  background-color: #F4A04B;
+  background-color: #FFC800;
 }
 .color-bar-section-2 {
-  background-color: #ED5C88;
+  background-color: #FF4632;
 }
 .color-bar-section-3 {
-  background-color: #623296;
+  background-color: #763DFE;
 }
 
 @media (max-width: 460px) {

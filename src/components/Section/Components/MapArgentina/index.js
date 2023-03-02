@@ -61,7 +61,7 @@ class MapArgentina extends Component {
     const ratio = (data.find(row => row.name === regionId) || { value: 0 }).value * 15 + 0.05;
     const opacity = ratio > 1 ? 1 : ratio;
 
-    return `rgba(98, 50, 150, ${opacity})`;
+    return `rgba(118, 61, 255, ${opacity})`;
   }
 
   getProvinceValue(value) {

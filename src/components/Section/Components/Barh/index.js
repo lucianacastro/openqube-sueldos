@@ -26,6 +26,7 @@ class Barh extends Component {
     currency: PropTypes.string,
     individualNegatives: PropTypes.bool,
     markNegativeValues: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.string)]),
+    fixed: PropTypes.number,
   }
 
   state = {
@@ -99,8 +100,8 @@ class Barh extends Component {
     return `${(decimal * 100 * 100).toFixed(fixed) / 100}%`;
   }
 
-  toNumber(decimal, fixed = 2) {
-    let { currency } = this.props;
+  toNumber(decimal) {
+    let { currency, fixed = 2 } = this.props;
     currency = currency === 'AR$' ? '$' : currency;
     return `${currency ? currency + ' ' : ''}${(decimal).toFixed(fixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }

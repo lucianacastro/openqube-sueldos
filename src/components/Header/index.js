@@ -11,7 +11,7 @@ class Header extends Component {
         <div className='container'>
           <div className='header-brand'>
             <a href='/'>
-              <img src='./logo-text.png' className='header-logo-img' alt='logo' />
+              <img src='./logo-text.svg' className='header-logo-img' alt='logo' />
             </a>
             <div className='header-slogan'>
               <span className="header-slogan-slash">/</span>

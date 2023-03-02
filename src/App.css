@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Red Hat Display' ;
+  src: url('./fonts/RedHatDisplay-Regular.ttf')  format('ttf');
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   line-height: 1.42857;
   -webkit-font-smoothing: unset;
 }

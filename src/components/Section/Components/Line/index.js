@@ -21,6 +21,7 @@ class Line extends Component {
     xDataKey: PropTypes.string.isRequired,
     yDataKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
     isPercentual: PropTypes.bool,
+    ticks: PropTypes.arrayOf(PropTypes.any),
   }
 
   state = {
@@ -46,7 +47,7 @@ class Line extends Component {
   }
 
   render() {
-    const { data, xDataKey, yDataKeys, isPercentual, customStroke = {} } = this.props;
+    const { data, xDataKey, yDataKeys, isPercentual, ticks, customStroke = {} } = this.props;
 
     return (
       <LineChart width={650} height={400} data={data}
@@ -54,7 +55,7 @@ class Line extends Component {
         className='line-chart'>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={xDataKey} />
-        <YAxis tickFormatter={isPercentual ? this.toPercent : this.toRoundNumber.bind(this)} />
+        <YAxis ticks={ticks} tickFormatter={isPercentual ? this.toPercent : this.toRoundNumber.bind(this)} />
         <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
         {!yDataKeys.includes('value') ? <Legend /> : null}
         {yDataKeys.map((dataKey, i) => (
