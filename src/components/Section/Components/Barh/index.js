@@ -24,34 +24,43 @@ class Barh extends Component {
     cutoff: PropTypes.number,
     isStacked: PropTypes.bool,
     currency: PropTypes.string,
-    markNegativeValues: PropTypes.oneOfType(PropTypes.bool, PropTypes.arrayOf(PropTypes.string)),
+    individualNegatives: PropTypes.bool,
+    markNegativeValues: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.string)]),
+    fixed: PropTypes.number,
   }
 
   state = {
     collapsed: true,
   }
 
+  isOneDimensional(data) {
+    return data[0] && data[0].value !== undefined;
+  }
+
   getData() {
-    const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false } = this.props;
-    const isOneDimensional = data[0] && data[0].value !== undefined;
-    let _data = [ ...data ];
+    const { data = [], cutoff = 0, sumOthers = true, markNegativeValues = false, individualNegatives = false } = this.props;
+    let _data = [...data];
+
+    if (individualNegatives) {
+      const invalidKeys = (row) => Object.keys(row).filter(k => markNegativeValues.includes(k) && row[k] < 0);
+      _data = _data.map(row => ({ ...row, invalids: invalidKeys(row) }));
+    }
+
     if (markNegativeValues) {
       const keys = true === markNegativeValues ? ['value'] : [...markNegativeValues];
 
       _data = _data.map(row => ({
         ...row,
-        ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key])}), row),
+        ...keys.reduce((row, key) => ({ ...row, [key]: Math.abs(row[key]) }), row),
         invalid: row[keys[0]] <= 0,
-      }))
-      .sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist+(row2[key] - row1[key]), 0));
+      })).sort((row1, row2) => keys.reduce((manhattanDist, key) => manhattanDist + (row2[key] - row1[key]), 0));
     }
-
 
     if (this.state.collapsed && cutoff) {
       const visibleRows = _data.filter((row, i) => i < cutoff);
       const hiddenRows = _data.filter((row, i) => i >= cutoff);
 
-      return isOneDimensional ? visibleRows.concat({
+      return this.isOneDimensional(data) ? visibleRows.concat({
         name: 'Otros',
         value: sumOthers ? hiddenRows.reduce((val, row) => val + row.value, 0) : Math.max(...hiddenRows.map(r => r.value)),
       }) : visibleRows;
@@ -68,11 +77,19 @@ class Barh extends Component {
     return this.getData()
       .reduce((dataKeys, row) => [...dataKeys, ...Object.keys(row)], [])
       .filter((value, index, self) => self.indexOf(value) === index) // unique keys
-      .filter(value => !['name', 'invalid'].includes(value));
+      .filter(value => !['name', 'invalid', 'invalids'].includes(value));
   }
 
   getDataKeyColor(index, row = null) {
-    if (this.props.markNegativeValues && row && row.invalid) {
+    if (row && this.props.individualNegatives) {
+      let key = this.props.markNegativeValues[2 - index]
+      let singleValueInvalid = row['invalids'].includes(key);
+      if (singleValueInvalid) {
+        return '#aaa';
+      }
+    }
+    const fullRowInvalid = this.props.markNegativeValues && row && row.invalid;
+    if (fullRowInvalid) {
       return '#eee';
     }
 
@@ -83,8 +100,9 @@ class Barh extends Component {
     return `${(decimal * 100 * 100).toFixed(fixed) / 100}%`;
   }
 
-  toNumber(decimal, fixed = 2) {
-    const { currency } = this.props;
+  toNumber(decimal) {
+    let { currency, fixed = 2 } = this.props;
+    currency = currency === 'AR$' ? '$' : currency;
     return `${currency ? currency + ' ' : ''}${(decimal).toFixed(fixed).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
 
@@ -127,7 +145,7 @@ class Barh extends Component {
           <Tooltip content={<CustomizedTooltip />} formatter={isPercentual ? this.toPercent : this.toNumber.bind(this)} />
           {!dataKeys.includes('value') ? <Legend /> : null}
           {dataKeys.map((dataKey, indexGroup) =>
-            <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} >
+            <Bar key={dataKey} dataKey={dataKey} stackId={isStacked ? 'a' : null} fill={this.getDataKeyColor(indexGroup)} barSize={this.isOneDimensional(data) || isStacked ? 15 : 3}>
               {
                 data.map((entry, indexRow) => (
                   <Cell cursor="pointer" fill={entry.name === 'Otros' && data[0].value !== undefined ? '#82ca9d' : this.getDataKeyColor(indexGroup, entry)} key={`cell-${indexRow}`} />

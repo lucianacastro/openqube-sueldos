@@ -11,7 +11,10 @@ footer .footer-top {
   width: calc(100% / 12 * 8);
 }
 
-.footer-top-left-content img,
+.footer-top-left-content img {
+  width: 180px;
+  height: auto
+}
 .footer-top-left-content p {
   display: inline-block;
 }

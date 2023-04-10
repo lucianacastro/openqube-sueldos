@@ -4,9 +4,10 @@
     max-width: 1733px;
     height: 200px;
     margin: 0 auto;
-    background-image: url('https://openqube.io/img/slider_bg.jpg'); 
+    background-image: url('https://sueldos.openqube.io/encuesta-sueldos-2023.01/back.svg'); 
     background-position: 0;
-    filter: hue-rotate(30deg);
+    background-size: cover
+    /* filter: hue-rotate(-30deg); */
 }
 
 .main-title {
@@ -14,9 +15,9 @@
     align-self: center;
     padding: 0 20px;
     margin: 11px auto;
-    color: #f7f7f7;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 28px;
+    color: #FFFFFF;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 38px;
     font-weight: 300;
     box-sizing: border-box;
     text-transform: uppercase;

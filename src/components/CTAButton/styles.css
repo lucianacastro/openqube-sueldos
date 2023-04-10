@@ -1,12 +1,12 @@
 button.cta {
     padding: 10px 20px;
-    background-color: #623296; 
+    background-color: #763DFE; 
     border-radius: 4px;
     transition: all ease-in-out 0.3s;
 }
 
 button.cta:hover {
-    background-color: #562c83;
+    background-color: #313142;
     transition: all ease-in-out 0.3s;
 }
 
